@@ -1,37 +1,30 @@
 ---
 slug: /
+sidebar_position: "1"
 ---
 
-# Tutorial Intro
+# Engenharia de Computação - Módulo 5
 
-Lalala
+Bem vindos ao material do módulo 5!
+Este módulo aborda diversos temas, tendo seu foco principal na visão holistica sobre o processo de automação. Diversas integrações serão abordados ao longo do módulo e formas de manipular estas integrações serão estudadas.
 
-Let's discover **Docusaurus in less than 5 minutes**.
+Espera-se que ao termino do módulo, os estudantes possam compreender o processo de automação, quando ele deve ser aplicado, como planejar arquiteturas de sistemas e como realizar suas integrações.
 
-## Getting Started
+## Professores do Módulo
 
-Get started by **creating a new site**.
+Os professores que vão acompanhar o módulo em 2024.1 são:
 
-Or **try Docusaurus immediately** with **[docusaurus.new](https://docusaurus.new)**.
+- TODO
 
-### What you'll need
+## Cronograma do Módulo
 
-- [Node.js](https://nodejs.org/en/download/) version 18.0 or above:
-  - When installing Node.js, you are recommended to check all checkboxes related to dependencies.
+- TODO
 
-## Generate a new site
+## Ferramentas Utilizadas no Módulo
 
-Generate a new Docusaurus site using the **classic template**.
+- TODO
 
-The classic template will automatically be added to your project after you run the command:
-
-```bash
-npm init docusaurus@latest my-website classic
-```
-
-You can type this command into Command Prompt, Powershell, Terminal, or any other integrated terminal of your code editor.
-
-The command also installs all necessary dependencies you need to run Docusaurus.
+<div class="loader-mario"></div>
 
 ## Start your site
 
