@@ -53,7 +53,14 @@ Para informações detalhadas dos critérios de qualidade deste artefato, acesse
 
 ## 3. Proposta de Arquitetura do Sistema
 
-A proposta de arquitetura do sistema deve ser apresentada neste artefato.
+A proposta de arquitetura do sistema deve ser apresentada neste artefato. Quando estamos avaliando a proposta de arquitetura do sistema, espera-se encontrar informações o bastante para que possa ser possível compreender a solução que será construída, a dor que ela pretende atender, a forma como os elementos que vão resolver está dor estão interligados e como eles vão trocar informações entre si.
+
+É importante observar que está proposta de arquitetura, em um primeiro momento, não precisa estar fortemente ligada as tecnologias que serão utilizadas para implementar o sistema. O grupo deve se preocupar em apresentar uma proposta de arquitetura que seja capaz de resolver a dor do parceiro, que seja escalável e que possa ser implementada utilizando as tecnologias que o grupo julgar mais adequadas para o projeto. Vale destacar também que a proposta de arquitetura deve ser capaz de atender os requisitos funcionais e não funcionais do sistema.
+
+O levantamento de requisitos funcionais e não funcionais do sistema deve ser realizado com base nas informações que o grupo obteve durante a imersão no negócio. É importante que o grupo tenha em mente que os requisitos funcionais e não funcionais do sistema devem ser capazes de atender as necessidades do parceiro, bem como as necessidades dos usuários do sistema. Vale destacar também que o grupo deve ser capaz de evidenciar como esses requisitos funcionais e não funcionais serão atendidos pela proposta de arquitetura do sistema.
+
+Para saber mais sobre requisitos funcionais e não funcionais: [link](https://www.mestresdaweb.com.br/tecnologias/requisitos-funcionais-e-nao-funcionais-o-que-sao).
+
 
 ### 3.1 Padrão de entrega
 
@@ -70,6 +77,19 @@ Essa proposta deve ser entregue na documentação do projeto, como uma seção n
 4. Descrição da forma como os componentes propostos no sistema estão interligados e trocam informações (até 2.0 pontos);
 5. Proposta com baixo acoplamento e facilidade de realizar as modificações necessárias no sistema (até 2.0 pontos).
 
-## Documentação
+## 4. Documentação
 
-- TODO
+Este artefato deve ser responsável por apresentar toda a documentação realizada ao longo da Sprint. 
+
+### 4.1 Padrão de entrega
+
+Ela deve conter a descrição e documentação dos demais artefatos, bem como apresentações, vídeos de demonstrações e instruções para executar o projeto até o momento desta entrega. Deve ser realizada também um "RELEASE" do repositório, destacando a documentação que foi entregue referente a sprint que passou. 
+
+É importante destacar que na documentação deve existir um log com o registro da evolução das tarefas do projeto, bem como a quantidade de tempo que foi investido em cada tarefa que foi desenvolvida durante a sprint. Todos os artefatos de documentação devem ser elaborados utilizando o Docusaurus (https://docusaurus.io/). Ela deve estar disponível no GitHub Pages da equipe e deve seguir os padrões definidos na orientação. Espera-se também neste artefato que os estudantes construam o pipeline de automação do GitHub para que a documentação construída com o Docusaurus possa ser visualizada no GitHub Pages do repositório da equipe. 
+
+### 4.2 Padrão de qualidade
+
+1. A documentação traz os passos necessários para executar a versão atual da sprint (até 3.0 pontos);
+2. A documentação contém todos os arquivos de mídia utilizados pela equipe (apresentações e vídeos) (até 2.0 pontos);
+3. A documentação atende os requisitos apresentados pelo escritório de projetos para entrega ao parceiro (até 2.0 pontos);
+4. Pipeline de entrega utilizando o GitHub Pages e o Docusaurus (até 3.0 pontos).

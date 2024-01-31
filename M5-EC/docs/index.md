@@ -17,17 +17,21 @@ Espera-se que ao termino do módulo, os estudantes possam compreender o processo
 
 Os professores que vão acompanhar o módulo em 2024.1 são:
 
-- TODO: Arrumar CSS do ProfileCard
+<section class="profile-card-display">
+    <ProfileCard name="Murilo Zanini de Carvalho" photo={useBaseUrl("/img/murilo.jpeg")} description="Professor orientador e de computação" mail="murilo.zanini@prof.inteli.edu.br"/>
 
-<ProfileCard name="Murilo Zanini de Carvalho" photo={useBaseUrl("/img/murilo.jpeg")} description="Professor orientador e de computação" mail="murilo.zanini@prof.inteli.edu.br"/>
+    <ProfileCard name="Rodrigo Nicola" photo={useBaseUrl("/img/rodrigo-nicola.png")} description="Professor computação" mail="nicola@prof.inteli.edu.br"/>
 
-Nicola
-Lisane
-Geraldo
-Francisco
-Filipe
-Monica
-Michele - Coordenadora
+    <ProfileCard name="Lisane Valdo" photo={useBaseUrl("/img/lisane.jpeg")} description="Professora negócios" mail="nicola@prof.inteli.edu.br"/>
+
+    <ProfileCard name="Geraldo Vasconcelos" photo={useBaseUrl("/img/geraldo.jpeg")} description="Professor matemática" mail="nicola@prof.inteli.edu.br"/>
+
+    <ProfileCard name="Francisco Escobar" photo={useBaseUrl("/img/francisco.png")} description="Professor UX" mail="nicola@prof.inteli.edu.br"/>
+
+    <ProfileCard name="Monica Anastassiu" photo={useBaseUrl("/img/monica.png")} description="Professora liderança" mail="nicola@prof.inteli.edu.br"/>
+
+    <ProfileCard name="Michele Bazana de Souza" photo={useBaseUrl("/img/michele.png")} description="Coordenadora do Curso" mail="nicola@prof.inteli.edu.br"/>
+</section>
 
 ## Cronograma do Módulo
 

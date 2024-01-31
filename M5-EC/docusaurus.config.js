@@ -10,7 +10,7 @@ import {themes as prismThemes} from 'prism-react-renderer';
 const config = {
   title: 'M5-Engenharia-Computação',
   tagline: 'Engenharia de Computação',
-  favicon: 'img/favicon.ico',
+  favicon: 'img/inteli.svg',
 
   // Set the production url of your site here
   url: 'https://murilo-zc.github.io/',
@@ -55,7 +55,7 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       // Replace with your project's social card
-      image: 'img/docusaurus-social-card.jpg',
+      image: 'img/m5-social-card.svg',
       navbar: {
         title: 'Engenharia de Computação',
         logo: {
