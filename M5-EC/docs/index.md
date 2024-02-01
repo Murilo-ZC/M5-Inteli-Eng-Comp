@@ -28,9 +28,9 @@ Os professores que vão acompanhar o módulo em 2024.1 são:
 
     <ProfileCard name="Francisco Escobar" photo={useBaseUrl("/img/francisco.png")} description="Professor UX" mail="nicola@prof.inteli.edu.br"/>
 
-    <ProfileCard name="Monica Anastassiu" photo={useBaseUrl("/img/monica.png")} description="Professora liderança" mail="nicola@prof.inteli.edu.br"/>
+    <ProfileCard name="Monica Anastassiu" photo={useBaseUrl("/img/Monica.png")} description="Professora liderança" mail="nicola@prof.inteli.edu.br"/>
 
-    <ProfileCard name="Michele Bazana de Souza" photo={useBaseUrl("/img/michele.png")} description="Coordenadora do Curso" mail="nicola@prof.inteli.edu.br"/>
+    <ProfileCard name="Michele Bazana de Souza" photo={useBaseUrl("/img/Michele.png")} description="Coordenadora do Curso" mail="nicola@prof.inteli.edu.br"/>
 </section>
 
 ## Cronograma do Módulo

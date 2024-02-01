@@ -55,7 +55,7 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       // Replace with your project's social card
-      image: 'img/m5-social-card.svg',
+      image: 'img/m5-social-card.jpg',
       navbar: {
         title: 'Engenharia de Computação',
         logo: {
