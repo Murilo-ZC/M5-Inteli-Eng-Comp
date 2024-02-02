@@ -1,7 +1,7 @@
 import React from "react";
 import './ProfileCard.css';
 
-const ProfileCard = ({ name,description,mail,photo }) => {
+const ProfileCard = ({ name,description,mail,photo,github }) => {
     return <div class="profile-card">
     <div class="profile-card-image">
       <img src={photo} alt="user photo" class="profile-card-image-pic"/>
@@ -11,8 +11,8 @@ const ProfileCard = ({ name,description,mail,photo }) => {
       <span>{description}</span>
     </div>
     <div class="profile-card-buttons">
-      <a href={`mailto:${mail}`} class="btn">Message</a>
-      <a href="#" class="btn">Github</a>
+      <a href={`mailto:${mail}`} class="btn">E-mail</a>
+      <a href={`${github}`} class="btn">Github</a>
     </div>
   </div>
 };
