@@ -1,3 +1,5 @@
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 # Artefatos das Entregas
 
 Ao longo desta seção vocês vão encontrar as descrições dos artefatos que devem ser produzidos ao longo do projeto. Eles estão organizados por entregas, e cada entrega possui uma descrição com os artefatos produzidos.
@@ -45,3 +47,10 @@ Abaixo, mas ainda nesta seção, está descrito os critérios de aceitação par
   - Apresenta o código fonte do robô (módulo embarcado)?
 
 </details> 
+
+
+## Resumo dos Artefatos
+
+Aqui está um resumo dos artefatos que devem ser produzidos ao longo do projeto. Eles estão organizados por entregas, e cada entrega possui uma descrição com os artefatos produzidos.
+
+<img class="image-intro" src={useBaseUrl("/img/sprint_artefatos.jpg")} alt="Resumo dos artefatos"/>
