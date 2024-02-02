@@ -48,14 +48,14 @@ Os critérios de avaliação individual das equipes é composto por 2 pilares:
 
 Quando avaliando as `Hard Skills`, o que será avaliado é a capacidade de vocês de aplicar os conhecimentos técnicos adquiridos ao longo do módulo. Isso significa que vocês vão ser avaliados em como vocês aplicam os conhecimentos técnicos adquiridos em situações práticas.
 
-- ***Tarefas Concluídas***: São as tarefas que você ficou encarregado de realizar ao longo da sprint. A evidencia que deve ser apresentada aqui é o `commit` com entrega da tarefa realizada.
-- ***Contribuições para o Projeto***: Aqui são avaliados o quanto você contríbuiu para o desenvolvimento do projeto. Isso inclui o projeto de dispositivos, a documentação do que foi desenvolvido, a implementação de uma *feature* ou ainda a correção de um *bug*. Deve ser evidênciado com o conjunto de `commits` que apresentem tal implementação.
+- ***Tarefas Concluidas***: São as tarefas que você ficou encarregado de realizar ao longo da sprint. A evidência que deve ser apresentada aqui é o `commit` com entrega da tarefa realizada.
+- ***Contribuições para o Projeto***: Aqui são avaliados o quanto você contribuiu para o desenvolvimento do projeto. Isso inclui o projeto de dispositivos, a documentação do que foi desenvolvido, a implementação de uma *feature* ou ainda a correção de um *bug*. Deve ser evidenciado com o conjunto de `commits` que apresentem tal implementação.
 - ***Executando Método de Estudo***: aqui é avaliado se o estudante realizou todas as tarefas que ele deveria ter realizado na sprint vigente. Isso inclui a realização de todos os estudos obrigatórios propostos e a realização de todas as atividades propostas . A evidência aqui é a realização das atividades propostas na Adalove.
 
 Quando avaliando as `Soft Skills`, o que será avaliado é a capacidade de vocês de trabalhar em equipe e de se organizar para realizar as atividades propostas. Isso significa que vocês vão ser avaliados em como vocês se organizam para realizar as atividades propostas e como vocês trabalham em equipe.
 
 - ***Relatórios Individuais***: Aqui é avaliado se o estudante preencheu o relatório individual com as atividades realizadas ao longo da sprint. A evidência aqui é o relatório preenchido.
-- ***Entrevista da Equipe***: Aqui é realizada um entrevista com a equipe de desenvolvimento. Obrigatóriamente esta entrevista tem duração de máxima de `10 minutos`. Os estudantes apresentam como foi a interação ao longo da sprint, como foi a divisão de tarefas e como foi a realização das atividades propostas. A evidência aqui é a entrevista realizada.
+- ***Entrevista da Equipe***: Aqui é realizada uma entrevista com a equipe de desenvolvimento. Obrigatoriamente esta entrevista tem duração de máxima de `10 minutos`. Os estudantes apresentam como foi a interação ao longo da sprint, como foi a divisão de tarefas e como foi a realização das atividades propostas. A evidência aqui é a entrevista realizada.
 - ***Realização das Daily's***: Aqui é avaliado se todos os membros da equipe realizarão o ritual das daily's. A evidência aqui é o questionamento diário respondido.
 
 :::tip[Sobre as Daily's]

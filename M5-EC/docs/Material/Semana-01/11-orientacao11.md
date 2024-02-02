@@ -17,6 +17,7 @@ Este encontro tem como objetivo apresentar as premissas iniciais para o desenvol
 Ao longo deste encontro, vamos conhecer nosso parceiro, sua demanda, os grupos de trabalho, as ferramentas abordadas ao longo do módulo e o robô que será utilizado para o desenvolvimento do projeto.
 
 
+
 ## 3. Slides do Encontro
 
 Os slides do encontro podem ser encontrados em: [link](https://docs.google.com/presentation/d/e/2PACX-1vSP-hp4sFH8FVAd_1lAQVcFBsZRIWPvoUiDOJTaE3TR5nD4HaOvVmJ768wNwrcM7KB_ZQmBV3ogoQ49/pub?start=false&loop=false).
