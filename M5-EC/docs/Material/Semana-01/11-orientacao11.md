@@ -19,7 +19,7 @@ Ao longo deste encontro, vamos conhecer nosso parceiro, sua demanda, os grupos d
 
 ## 3. Slides do Encontro
 
-- TODO
+<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vSP-hp4sFH8FVAd_1lAQVcFBsZRIWPvoUiDOJTaE3TR5nD4HaOvVmJ768wNwrcM7KB_ZQmBV3ogoQ49/embed?start=false&loop=false&delayms=3000" frameborder="0" width="100%" height="400" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true" style={{ display: 'block', marginLeft: 'auto', marginRight: 'auto' }}></iframe>
 
 ## 4. Material de Apoio
 
