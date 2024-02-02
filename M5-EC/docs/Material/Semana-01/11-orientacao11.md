@@ -4,7 +4,7 @@ sidebar_label: "1 - Encontro de Orientação"
 
 # Onboarding e Sprint Planning 1	
 
-Este encontro tem como objetivo apresentar as premissas iniciais para o desenvolvimento 
+Este encontro tem como objetivo apresentar as premissas iniciais para o desenvolvimento. 
 
 ## 1. Objetivos
 
