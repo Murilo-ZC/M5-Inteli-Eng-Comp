@@ -33,7 +33,7 @@ Os slides do encontro podem ser encontrados em: [link](https://docs.google.com/p
 
 Esse material NÃO substitui de forma alguma o uso da Adalove. Você DEVE entrar na Adalove com frequência e REGISTRAR O SEU PROGRESSO. Entendeu? Ainda não? Pera aí que vou desenhar:
 
-<img src="/img/memes/aviso-adalove.png" alt="ACESSE A ADALOVE" style={{ display: 'block', marginLeft: 'auto', maxHeight: '40vh', marginRight: 'auto' }} />
+<img src={useBaseUrl("/img/memes/aviso-adalove.png")} alt="ACESSE A ADALOVE" style={{ display: 'block', marginLeft: 'auto', maxHeight: '40vh', marginRight: 'auto' }} />
 
 :::
 
@@ -67,6 +67,18 @@ Esse material NÃO substitui de forma alguma o uso da Adalove. Você DEVE entrar
         <summary mdxType="summary">Esqueça isso e seu projeto estará condenado 🚫 (Análise de Requisitos)</summary>
 
         - https://www.youtube.com/watch?v=rVbJ7ykuLig
+    </details> 
+
+    <details> 
+        <summary mdxType="summary">Functional and Nonfunctional Requirements: Specification and Types</summary>
+
+        - https://www.altexsoft.com/blog/functional-and-non-functional-requirements-specification-and-types/
+    </details> 
+
+    <details> 
+        <summary mdxType="summary">The Scrum Development Process</summary>
+
+        - https://www.scrum.org/resources/scrum-development-process
     </details> 
   </TabItem>
 </Tabs>

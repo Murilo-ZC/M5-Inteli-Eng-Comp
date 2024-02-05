@@ -95,6 +95,10 @@ Os professores que vão acompanhar o módulo em 2024.1 são:
 <details> 
 <summary mdxType="summary">Equipe 01</summary>
 
+:::tip[Github]
+[Link](https://github.com/Inteli-College/2024-T0008-EC05-G01)
+:::
+
 - Breno Arthur Guimarães Santos
 - Eduardo Henrique dos Santos
 - Gabrielle Mitoso Araujo Santos
@@ -109,6 +113,10 @@ Os professores que vão acompanhar o módulo em 2024.1 são:
 <details> 
 <summary mdxType="summary">Equipe 02</summary>
 
+:::tip[Github]
+[Link](https://github.com/Inteli-College/2024-T0008-EC05-G02)
+:::
+
 - Ana Clara Madureira Marques
 - Guilherme Ferreira Linhares
 - Gustavo Gouveia
@@ -121,6 +129,10 @@ Os professores que vão acompanhar o módulo em 2024.1 são:
 
 <details> 
 <summary mdxType="summary">Equipe 03</summary>
+
+:::tip[Github]
+[Link](https://github.com/Inteli-College/2024-T0008-EC05-G02)
+:::
 
 - Antonio Artimonte Vaz Guimarães
 - Daniel Quintão Dávila
@@ -135,6 +147,10 @@ Os professores que vão acompanhar o módulo em 2024.1 são:
 <details> 
 <summary mdxType="summary">Equipe 04</summary>
 
+:::tip[Github]
+[Link](https://github.com/Inteli-College/2024-T0008-EC05-G02)
+:::
+
 - Cecília Gio Alonso Gonçalves
 - Eduardo Santos Barreto
 - Fernando Antonio Sampaio Cabral de Vasconcellos
@@ -147,6 +163,10 @@ Os professores que vão acompanhar o módulo em 2024.1 são:
 
 <details> 
 <summary mdxType="summary">Equipe 05</summary>
+
+:::tip[Github]
+[Link](https://github.com/Inteli-College/2024-T0008-EC05-G02)
+:::
 
 - Bruno Gottardo Conti
 - Caio Teixeira de Paula
