@@ -1,2 +1,8 @@
 # M5-Inteli-Eng-Comp
+
 Repositório criado para apresentar o material dos encontros e orientação.
+
+O conteúdo deste repositório é atualizado de forma constante. Sempre que possível, voltem para verificar as atualizações.
+
+Encontrou algum erro ou alguma coisa que possa melhorar no material? Abra uma issue no [repositório do módulo](https://github.com/Murilo-ZC/M5-Inteli-Eng-Comp).
+
