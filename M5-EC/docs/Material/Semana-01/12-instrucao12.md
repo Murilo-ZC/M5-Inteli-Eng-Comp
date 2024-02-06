@@ -10,21 +10,16 @@ Apresentação das ferramentas do módulo e a forma como elas serão utilizadas 
 
 ## 1. Objetivos
 
-- TODO
-
-## 2. Material de Estudo
-
-- TODO
+- Conhecer algumas das ferramentas de software que serão utilizadas ao longo do módulo.
+- Realizar *refresher* das ferramentas que serão utilizadas.
 
 
-## 3. Slides do Encontro
+## 2. Slides do Encontro
 
-- TODO
+<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vQC61sHirw6wd5a4nbJOWEQvGZs7_GG3khZlPLGNNXL9i-Xzf9fFJyU23jUXFXW68onGUswG9UkHLty/embed?start=false&loop=false&delayms=3000" frameborder="0" width="75%" height="400" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true" style={{ display: 'block', marginLeft: 'auto', marginRight: 'auto' }} ></iframe>
 
-## 4. Material de Apoio
+## 3. Material de Apoio
 
-- TODO
-
-## 5. Referências
+### 3.1 Material de Autoestudo
 
 - TODO
