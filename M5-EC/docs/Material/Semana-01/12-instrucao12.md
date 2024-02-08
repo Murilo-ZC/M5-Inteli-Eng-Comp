@@ -176,13 +176,51 @@ Quer conhecer um pouco mais sobre o controle de versão e a história da criaç�
 <iframe width="560" height="315" src="https://www.youtube.com/embed/6Czd1Yetaac?si=GQpEYzp_o2nt0L9o" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style={{display:"block", marginLeft:"auto", marginRight:"auto", marginBottom:"8px"}}></iframe>
 
 > NÃO É UM TUTORIAL, MAS UMA HISTÓRIA SOBRE O GIT.
+
+Para utilizar o Git de forma mais avançada, `NÃO` recomendo de forma alguma iniciar por ele até que vocês estejam confortáveis com o básico. No entanto, para quem já está confortável com o básico, recomendo assistir:
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/6OokP-NE49k?si=duoEn8VI6zwgVvqb" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style={{display:"block", marginLeft:"auto", marginRight:"auto", marginBottom:"8px"}}></iframe>
+
 :::
 
 - 
 
 #### Utilizando o Github
 
-<div class="loader-mario"></div>
+O `GitHub` é uma plataforma de hospedagem de código-fonte e arquivos com controle de versão usando o Git. Ele permite que desenvolvedores de software armazenem e controlem versões de seu código. O `GitHub` é muito utilizado por desenvolvedores de software para armazenar e compartilhar código. Ele é utilizado por empresas e por desenvolvedores independentes.
+
+O `GitHub` pode ser utilizado para armazenar código-fonte, documentação e qualquer tipo de arquivo. Ele permite que desenvolvedores de software trabalhem em equipe e compartilhem código. O `GitHub` também permite que desenvolvedores de software trabalhem em projetos de código aberto. Projetos de código aberto são projetos de software que são desenvolvidos e mantidos por uma comunidade de desenvolvedores.
+
+Para adicionar um repositório criado no `GitHub` ao seu repositório local, é necessário utilizar o comando `git remote`. O comando `git remote` adiciona um repositório remoto ao seu repositório local. 
+
+```bash
+git remote add origin endereco_do_repo_remoto_no_github
+```
+
+O `origin` é o nome do repositório remoto. Ele é utilizado para referenciar o repositório remoto. Para enviar as mudanças para o repositório remoto, é necessário utilizar o comando `git push`.  
+
+```bash
+git push -u origin master
+```
+
+Onde `master` é o nome da branch que será enviada para o repositório remoto. O `-u` é utilizado para configurar o repositório remoto como repositório padrão. Isso significa que o comando `git push` enviará as mudanças para o repositório remoto configurado.
+
+Para utilizar o `Github`, desde 2020, é necessário configurar a autenticação de dois fatores. Isso significa que é necessário utilizar um token para autenticar o `Github`. O token é uma forma de autenticação que é utilizada para acessar o `Github`. O token pode ser gerado no site do `Github`. Outra forma de autenticação é utilizando a chave SSH. A chave SSH é uma forma de autenticação que é utilizada para acessar o `Github`. A chave SSH pode ser gerada no terminal.
+
+Para realizar a autenticação utilizando a chave SSH, sugiro a leitura deste [artigo](https://docs.github.com/pt/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent).
+
+Quer ver em vídeo?
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/X40b9x9BFGo?si=9eG3QyO3GI1Lh_GU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style={{display:"block", marginLeft:"auto", marginRight:"auto", marginBottom:"24px"}}></iframe>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/snCP3c7wXw0?si=JXFAfoe1x-w8w8Zy" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style={{display:"block", marginLeft:"auto", marginRight:"auto", marginBottom:"16px"}}></iframe>
+
+
+:::tip[Para saber mais sobre SSH]
+<iframe width="560" height="315" src="https://www.youtube.com/embed/qWKK_PNHnnA?si=2RdgyP3Sugoo8A46" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style={{display:"block", marginLeft:"auto", marginRight:"auto", marginBottom:"16px"}}></iframe>
+:::
+
+
 
 #### Utilizando o VSCode
 
@@ -192,19 +230,19 @@ O `VSCode` pode ser baixado no site oficial do projeto: [VSCode](https://code.vi
 
 Algumas extensões que podem ser utilizadas para aumentar a produtividade são:
 
-- Python: Extensão para desenvolvimento em Python.
-- GitLens: Extensão para visualizar informações do Git.
-- Live Share: Extensão para compartilhar o ambiente de desenvolvimento com outras pessoas.
-- Remote - SSH: Extensão para desenvolvimento remoto com SSH.
-- Git Graph: Extensão para visualizar o grafo do Git.
-- Thunder Client: Extensão para realizar requisições HTTP.
+- `Python`: Extensão para desenvolvimento em Python.
+- `GitLens`: Extensão para visualizar informações do Git.
+- `Live Share`: Extensão para compartilhar o ambiente de desenvolvimento com outras pessoas.
+- `Remote - SSH`: Extensão para desenvolvimento remoto com SSH.
+- `Git Graph`: Extensão para visualizar o grafo do Git.
+- `Thunder Client`: Extensão para realizar requisições HTTP.
 
 Algumas configurações que podem ser realizadas para aumentar a produtividade são:
 
-- Zoom com o mouse: Utilize o comando `Ctrl` + `Scroll` para aumentar ou diminuir o zoom.
-- Word Wrap: Utilize o comando `Alt` + `Z` para ativar ou desativar o Word Wrap.
-- Terminal: Utilize o comando `Ctrl` + ` para abrir o terminal.
-- Atalhos: Utilize o comando `Ctrl` + `Shift` + `P` para abrir o painel de comandos.
+- `Zoom com o mouse`: Utilize o comando `Ctrl` + `Scroll` para aumentar ou diminuir o zoom.
+- `Word Wrap`: Utilize o comando `Alt` + `Z` para ativar ou desativar o Word Wrap.
+- `Terminal`: Utilize o comando `Ctrl` + ` para abrir o terminal.
+- `Atalhos`: Utilize o comando `Ctrl` + `Shift` + `P` para abrir o painel de comandos.
 
 :::tip[Como deixar o VSCode mais bonito?]
 
