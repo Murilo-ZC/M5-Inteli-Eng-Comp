@@ -183,7 +183,6 @@ Para utilizar o Git de forma mais avançada, `NÃO` recomendo de forma alguma in
 
 :::
 
-- 
 
 #### Utilizando o Github
 
