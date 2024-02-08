@@ -131,7 +131,7 @@ Os professores que vão acompanhar o módulo em 2024.1 são:
 <summary mdxType="summary">Equipe 03</summary>
 
 :::tip[Github]
-[Link](https://github.com/Inteli-College/2024-T0008-EC05-G02)
+[Link](https://github.com/Inteli-College/2024-T0008-EC05-G03)
 :::
 
 - Antonio Artimonte Vaz Guimarães
