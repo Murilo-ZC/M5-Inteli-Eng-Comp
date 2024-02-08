@@ -597,3 +597,32 @@ print(soma_lista(entrada))
 
 Podemos especificar que um tipo de dado é uma classe utilizando o nome da classe. Podemos especificar que um tipo de dado é uma lista de um determinado tipo de dado utilizando o nome da classe entre colchetes. Podemos especificar que um tipo de dado é uma tupla de um determinado tipo de dado utilizando o nome da classe entre parênteses.
 
+### Exercícios
+
+Pessoal aqui vão existir alguns exercícios para auxiliar vocês a fixar alguns dos conteúdos apresentados. Lembrando, eles não valem nota ou precisam ser entregues, servem apenas para práticar a utilização do Python.
+
+1. Construa um programa que permita que o usuário informe os 3 lados de um triângulo, A, B e C. Apresente para ele o valor da área do triângulo utilizando a fórmula de [Hierão](https://pt.khanacademy.org/math/geometry-home/geometry-volume-surface-area/heron-formula-tutorial/v/heron-s-formula#:~:text=a%20%2B%20b%20%2B%20c%20dividido%20por,fórmula%20de%20Herão%2C%20esta%20combinação.). ATENÇÃO: Para o calculo do semiperimetro (s) e da Área, elabore uma função.
+
+2. Elabore um programa capaz de converter a temperatura monitorada em graus C, informada por um usuário, para graus K e F. OBRIGATÓRIAMENTE: utilize duas funções, uma para converter a temperatura para graus K e outra para graus F.
+
+3. Elabore um programa que armazene os dados do usuário (nome, idade e cpf) em strings diferentes. Utilize uma função para realizar a leitura dos dados do usuário e uma função de exibição para mostrar todas as informações lidas. 
+
+4. Elabore um programa que possibilite o usuário inserir 15 medições de tempo. Determine quais foram os tempos máximo, mínimo e médio. Considere que os valores de tempo informado estão todos em segundos, apenas valores interiores são fornecidos e cada uma das funcionalidades deve ser implementada em uma função distinta. 
+
+5. Existem diversas maneiras de se resolver algumas equações. Dentre elas, algumas abordagens são bastantes conhecidas na literatura, como o Algoritmo de Euclides para calcular o Máximo Divisor Comum. Elabore uma função que realize sua implementação.
+
+6. Faça um Programa para leitura de três notas parciais de um aluno. O programa deve calcular a média alcançada por aluno e presentar:
+
+  - A mensagem "Aprovado", se a média for maior ou igual a 7, com a respectiva média alcançada;
+  - A mensagem "Reprovado", se a média for menor do que 7, com a respectiva média alcançada;
+  - A mensagem "Aprovado com Distinção", se a média for igual a 10. 
+  (Retirado de https://wiki.python.org.br/EstruturaDeDecisao).
+
+7. Faça um Programa que leia três números e mostre o maior e o menor deles. (Retirado de https://wiki.python.org.br/EstruturaDeDecisao).
+
+8.  Tendo como dado de entrada a altura (h) de uma pessoa, construa um algoritmo que calcule seu peso ideal, utilizando as seguintes fórmulas:
+  - Para homens: (72.7*h) - 58
+  - Para mulheres: (62.1*h) - 44.7
+  Lembre-se de realizar a leitura do sexo da pessoa. (Adaptado de https://wiki.python.org.br/EstruturaDeDecisao).
+
+9. Faça um programa para uma loja de tintas. O programa deverá pedir o tamanho em metros quadrados da área a ser pintada. Considere que a cobertura da tinta é de 1 litro para cada 3 metros quadrados e que a tinta é vendida em latas de 18 litros, que custam R$ 80,00. Informe ao usuário a quantidades de latas de tinta a serem compradas e o preço total. (Retirado de https://wiki.python.org.br/EstruturaDeDecisao).
