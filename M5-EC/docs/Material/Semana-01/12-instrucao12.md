@@ -88,9 +88,86 @@ Esse material NÃO substitui de forma alguma o uso da Adalove. Você DEVE entrar
 
 ## 4. Material de Aula
 
-#### Utilizando o Git 
+### Utilizando o Git 
 
-<div class="loader-mario"></div>
+O Git é um software utiilzado para controlar versões. Isso significa que ele monitora mudanças no código e permite que você volte para versões anteriores do código. O Git é uma ferramenta muito utilizada por desenvolvedores de software. Ele é utilizado para controlar versões de código, mas também pode ser utilizado para controlar versões de documentos e de qualquer tipo de arquivo.
+
+Para utilizar o `Git`, primeiro é necessário instalar o software. O Git pode ser baixado no site oficial do projeto: [Git](https://git-scm.com/download/win). Após a instalação, é necessário configurar o Git. Isso pode ser feito utilizando o comando `git config`. 
+
+```bash
+git config --global user.name "Seu Nome"
+git config --global user.email "seuemail@mail.com"
+```
+
+Após a configuração, é possível utilizar o Git para controlar versões de código. O Git é utilizado através do terminal. O terminal é uma interface de linha de comando que permite que comandos sejam executados no computador. O terminal do Git é chamado de `Git Bash`. Ele é uma interface de linha de comando que permite que comandos do Git sejam executados. Além disso, o `Git Bash` possibilita utilizar alguns comandos do Linux no Windows.
+
+Para iniciar o controle de versão em um repositório, é necessário inicializar o repositório. Isso pode ser feito utilizando o comando `git init`. O comando `git init` cria um repositório Git vazio. O repositório é criado na pasta onde o comando é executado. 
+
+```bash
+git init
+```
+
+Após a inicialização do repositório, é possível adicionar arquivos ao repositório. Isso pode ser feito utilizando o comando `git add`. O comando `git add` adiciona arquivos ao repositório. O comando `git add` pode ser utilizado para adicionar um arquivo específico ou todos os arquivos de uma vez. 
+
+```bash
+# Adiciona um arquivo por vez
+git add arquivo1.txt
+# Adiciona todos os arquivos
+git add .
+```
+
+Após adicionar os arquivos ao repositório, é necessário realizar um commit. O commit é uma forma de salvar as mudanças no repositório. O commit é realizado utilizando o comando `git commit`. O comando `git commit` salva as mudanças no repositório. O commit deve ser acompanhado de uma mensagem que descreve as mudanças realizadas. 
+
+```bash
+git commit -m "Mensagem do commit"
+```
+
+Após realizar o commit, é possível enviar as mudanças para um repositório remoto. Isso pode ser feito utilizando o comando `git push`. O comando `git push` envia as mudanças para um repositório remoto. O repositório remoto é um repositório que está em um servidor. O servidor pode ser o Github, o Gitlab ou qualquer outro servidor que utilize o Git. 
+
+```bash
+git push
+```
+
+Para realizar o download das mudanças de um repositório remoto, é possível utilizar o comando `git pull`. O comando `git pull` realiza o download das mudanças de um repositório remoto para a sua versão local. 
+
+```bash
+git pull
+```
+
+Quando desejamos acompanhar o status do repositório, podemos utilizar o comando `git status`. O comando `git status` mostra o status do repositório. Ele mostra quais arquivos foram modificados, quais arquivos foram adicionados e quais arquivos foram removidos. 
+
+```bash
+git status
+```
+
+A utilização do `Git` pode ser extendida para a utilização de branches, que são ramificações do código principal. A utilização de branches permite que diferentes versões do código sejam desenvolvidas ao mesmo tempo. A utilização de branches é muito útil para o desenvolvimento de software.
+
+Para criar uma branch, é necessário utilizar o comando `git branch`. O comando `git branch` cria uma nova branch. 
+
+```bash
+git branch nome-da-branch
+```
+
+Após criar a branch, é necessário mudar para a branch. Isso pode ser feito utilizando o comando `git checkout`. O comando `git checkout` muda para a branch desejada. 
+
+```bash
+git checkout nome-da-branch
+```
+
+Após realizar as mudanças na branch, é necessário realizar um merge. O merge é uma forma de unir duas branches. O merge é realizado utilizando o comando `git merge`. O `git merge` deve ser realizado na branch que receberá as mudanças. 
+
+```bash
+# Mudando para a branch que receberá as mudanças
+git checkout nome-da-branch-que-recebera-mudancas
+# Realizando o merge
+git merge nome-da-branch
+```
+
+Para saber mais sobre a utilização do Git, recomendo fortemente assistir:
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ts-H3W1uLMM?si=HLi3X2eQju5IKMc3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style={{display:"block", marginLeft:"auto", marginRight:"auto"}}></iframe>
+
+- 
 
 #### Utilizando o Github
 
