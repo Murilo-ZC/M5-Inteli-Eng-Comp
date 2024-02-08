@@ -165,7 +165,18 @@ git merge nome-da-branch
 
 Para saber mais sobre a utilização do Git, recomendo fortemente assistir:
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/ts-H3W1uLMM?si=HLi3X2eQju5IKMc3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style={{display:"block", marginLeft:"auto", marginRight:"auto"}}></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ts-H3W1uLMM?si=HLi3X2eQju5IKMc3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style={{display:"block", marginLeft:"auto", marginRight:"auto", marginBottom:"24px"}}></iframe>
+
+
+
+:::danger[Conteúdo Avançado]
+
+Quer conhecer um pouco mais sobre o controle de versão e a história da criação do Git? Recomendo assistir:
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/6Czd1Yetaac?si=GQpEYzp_o2nt0L9o" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style={{display:"block", marginLeft:"auto", marginRight:"auto", marginBottom:"8px"}}></iframe>
+
+> NÃO É UM TUTORIAL, MAS UMA HISTÓRIA SOBRE O GIT.
+:::
 
 - 
 
@@ -175,7 +186,32 @@ Para saber mais sobre a utilização do Git, recomendo fortemente assistir:
 
 #### Utilizando o VSCode
 
-<div class="loader-mario"></div>
+O `VSCode` é um editor de código muito utilizado por desenvolvedores de software. Ele é um editor de código gratuito e de código aberto.  Ele possui diversas extensões que podem ser utilizadas para aumentar a sua produtividade. 
+
+O `VSCode` pode ser baixado no site oficial do projeto: [VSCode](https://code.visualstudio.com/). Após a instalação, é possível utilizar o o comando `code` no terminal para abrir o `VSCode` na pasta que deseja. Para iniciar o `VSCode` no diretório atual, basta utilizar o comando `code .` no terminal.
+
+Algumas extensões que podem ser utilizadas para aumentar a produtividade são:
+
+- Python: Extensão para desenvolvimento em Python.
+- GitLens: Extensão para visualizar informações do Git.
+- Live Share: Extensão para compartilhar o ambiente de desenvolvimento com outras pessoas.
+- Remote - SSH: Extensão para desenvolvimento remoto com SSH.
+- Git Graph: Extensão para visualizar o grafo do Git.
+- Thunder Client: Extensão para realizar requisições HTTP.
+
+Algumas configurações que podem ser realizadas para aumentar a produtividade são:
+
+- Zoom com o mouse: Utilize o comando `Ctrl` + `Scroll` para aumentar ou diminuir o zoom.
+- Word Wrap: Utilize o comando `Alt` + `Z` para ativar ou desativar o Word Wrap.
+- Terminal: Utilize o comando `Ctrl` + ` para abrir o terminal.
+- Atalhos: Utilize o comando `Ctrl` + `Shift` + `P` para abrir o painel de comandos.
+
+:::tip[Como deixar o VSCode mais bonito?]
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/u1Pu_hKVYa8?si=zZFgbncKWIXvhPGV" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style={{display:"block", marginLeft:"auto", marginRight:"auto", marginBottom:"8px"}}></iframe>
+
+:::
+
 
 ### Utilizando o Python
 
