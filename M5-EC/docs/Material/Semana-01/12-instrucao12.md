@@ -1,6 +1,10 @@
 ---
-sidebar_label: "1 - Encontro de Instrução"
+sidebar_label: "1 - Encontro de Instrução Computação"
 ---
+
+import useBaseUrl from '@docusaurus/useBaseUrl';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 # Instrução de Computação
 
@@ -22,4 +26,68 @@ Apresentação das ferramentas do módulo e a forma como elas serão utilizadas 
 
 ### 3.1 Material de Autoestudo
 
-- TODO
+:::danger[Acesse a Adalove!]
+
+Esse material NÃO substitui de forma alguma o uso da Adalove. Você DEVE entrar na Adalove com frequência e REGISTRAR O SEU PROGRESSO. Entendeu? Ainda não? Pera aí que vou desenhar:
+
+<img src={useBaseUrl("/img/memes/aviso-adalove.png")} alt="ACESSE A ADALOVE" style={{ display: 'block', marginLeft: 'auto', maxHeight: '40vh', marginRight: 'auto' }} />
+
+:::
+
+<Tabs>
+  <TabItem value="autoestudos-obrigatorios" label="📘 Autoestudos Obrigatórios" default>
+     <details> 
+        <summary mdxType="summary">	Software de controle de versão Git</summary>
+
+        - https://git-scm.com/download/win
+    </details> 
+
+    <details> 
+        <summary mdxType="summary">Ambiente de Programação Visual Studio Code</summary>
+
+        - https://code.visualstudio.com/
+    </details> 
+
+    <details> 
+        <summary mdxType="summary">Criando uma conta no GitHub</summary>
+
+        - https://git-scm.com/book/pt-br/v2/GitHub-Configurando-uma-conta
+    </details> 
+
+    <details> 
+        <summary mdxType="summary">	Thonny Python IDE</summary>
+
+        - https://thonny.org/
+    </details> 
+
+    <details> 
+        <summary mdxType="summary">	Docusaurus </summary>
+
+        - https://docusaurus.io/
+    </details> 
+
+    <details> 
+        <summary mdxType="summary">	NodeJS </summary>
+
+        - https://nodejs.org/en
+    </details> 
+
+    <details> 
+        <summary mdxType="summary">	Build Stunning Documentation With React & Docusaurus (Complete Guide) </summary>
+
+        - https://www.youtube.com/watch?v=xKOhIJQi84w
+    </details> 
+  </TabItem>
+  <TabItem value="autoestudos-opcionais" label="📔 Autoestudos Opcionais">
+     
+        <img class="image-intro" src={useBaseUrl("/img/memes/mash_celebrando.gif")} style={{ display: 'block', marginLeft: 'auto', maxHeight: '40vh', marginRight: 'auto' }}/>
+
+  </TabItem>
+  <TabItem value="autoestudos-adicionais" label="📓 Autoestudos Adicionais">
+        <img class="image-intro" src={useBaseUrl("/img/memes/mash_celebrando.gif")} style={{ display: 'block', marginLeft: 'auto', maxHeight: '40vh', marginRight: 'auto' }}/>
+  </TabItem>
+</Tabs>
+
+### 3.2 Material de Aula
+
+<div class="loader-mario"></div>
