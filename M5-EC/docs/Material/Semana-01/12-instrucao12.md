@@ -184,7 +184,7 @@ Para utilizar o Git de forma mais avançada, `NÃO` recomendo de forma alguma in
 :::
 
 
-#### Utilizando o Github
+### Utilizando o Github
 
 O `GitHub` é uma plataforma de hospedagem de código-fonte e arquivos com controle de versão usando o Git. Ele permite que desenvolvedores de software armazenem e controlem versões de seu código. O `GitHub` é muito utilizado por desenvolvedores de software para armazenar e compartilhar código. Ele é utilizado por empresas e por desenvolvedores independentes.
 

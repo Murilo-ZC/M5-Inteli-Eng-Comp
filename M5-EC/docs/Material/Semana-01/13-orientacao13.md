@@ -22,9 +22,7 @@ Workshop com parceiro de mercado para entendimento de negócio.
 - TODO
 
 
-## 3. Material de Apoio
-
-### 3.1 Material de Autoestudo
+## 3. Material de Autoestudo
 
 :::danger[Acesse a Adalove!]
 
@@ -65,3 +63,8 @@ Esse material NÃO substitui de forma alguma o uso da Adalove. Você DEVE entrar
     </details> 
   </TabItem>
 </Tabs>
+
+## 4. Material de Aula
+
+Vamos iniciar a utilização do Docusaurus para a construção de um site de documentação. Recomendo fortemente que todos façam os exemplos propostos aqui, para que possam entender como funciona a ferramenta.
+
