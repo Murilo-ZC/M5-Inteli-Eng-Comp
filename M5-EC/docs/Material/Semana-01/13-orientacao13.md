@@ -19,7 +19,7 @@ Workshop com parceiro de mercado para entendimento de negócio.
 
 ## 2. Slides do Encontro
 
-- TODO
+Os slides do encontro podem ser encontrados em: [link](https://docs.google.com/presentation/d/1Ko9vBMs9WU2K-_kH7_HkFxz1LepEG1H92nriC2okJuQ/edit?usp=sharing)
 
 
 ## 3. Material de Autoestudo
