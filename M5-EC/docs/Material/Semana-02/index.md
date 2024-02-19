@@ -12,6 +12,6 @@ Encontrou algum erro ou alguma coisa que possa melhorar no material? `bug🐞`? 
 
 Está semana teremos os seguintes encontros:
 
-- [Encontro de Orientação](/docs/Material/Semana-01/13-orientacao13.md): Segundo encontro de orientação.
+- [Encontro de Orientação](/docs/Material/Semana-02/25-orientacao25.md): Terceiro encontro de orientação.
 
 
