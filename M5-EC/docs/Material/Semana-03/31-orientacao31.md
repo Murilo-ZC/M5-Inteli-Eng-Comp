@@ -201,3 +201,18 @@ git push origin --tags
 Desta forma, todas as tags que você criou no seu repositório local serão enviadas para o repositório remoto. Para enviar apenas uma tag específica, utilizar o comando `git push origin v1.0`.
 
 Agora vamos definir o padrão de tags que vamos utilizar. No final de cada sprint, a versão que deve ser entregue, deve estar com a tag `vX.Y`, onde `X` é o número da sprint e `Y` é o número da versão. Por exemplo, a versão que vocês vão entregar no final da sprint 2, deve estar com a tag `v2.0`. As melhorias e correções que forem realizadas na versão que vocês vão entregar no final da sprint 2, devem estar com a tag `v2.1`, e assim por diante.
+
+### Kit de Grupo
+
+Os kits de grupo são os materiais que estarão disponíveis para vocês utilizarem durante a realização do projeto. Lembrando que as regras para a utilização dos materiais seguem as mesmas da utilização do robô. Logo eles não devem deixar a instituição e devem ser devolvidos no laboratório no final do dia.
+
+Os elementos de cada kit são:
+- 1x Raspberry Pi Pico;
+- 1x Robô Dobot Magician Lite;
+- 3x Bandejas com divisórias;
+- 1x Mini Protoboard;
+- 1x Cabo Micro USB;
+- 1x Buzzer;
+- 1x LDR;
+- 1x Res 10k Ohms;
+- 1x Conjunto de Jumpers M-M e M-F.
