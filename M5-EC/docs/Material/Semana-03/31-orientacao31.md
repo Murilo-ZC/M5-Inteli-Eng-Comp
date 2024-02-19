@@ -78,11 +78,83 @@ Esse material NÃO substitui de forma alguma o uso da Adalove. Você DEVE entrar
   </TabItem>
   <TabItem value="autoestudos-adicionais" label="📓 Autoestudos Adicionais">
     
-        <img class="image-intro" src={useBaseUrl("/img/memes/mash_celebrando.gif")} style={{ display: 'block', marginLeft: 'auto', maxHeight: '40vh', marginRight: 'auto' }}/>
+    <details> 
+        <summary mdxType="summary">	Lean Inception em 15 Minutos | 📎 Zup Clipes ✂️</summary>
+
+        - https://www.youtube.com/watch?v=8BI6jFwmVPA
+    </details> 
+    <details> 
+        <summary mdxType="summary">	#Lean Inception - Resumo do livro de Paulo Caroli</summary>
+
+        - https://www.youtube.com/watch?v=2OldFNkGZEs
+    </details> 
+    <details> 
+        <summary mdxType="summary">	Design Sprint Methodology - What Is Design Sprint Process (from Day 1 to Day 5)</summary>
+
+        - https://www.youtube.com/watch?v=WWEJCLkf1D4
+    </details> 
+    <details> 
+        <summary mdxType="summary">	Criando TAGS no GIT e GITHUB!</summary>
+
+        - https://www.youtube.com/watch?v=CqJvlBXgCfc
+    </details>     
 
   </TabItem>
 </Tabs>
 
 ## 4. Material de Aula
 
-Realizar os autoestudos!!
+
+### Metodologia Ágil
+
+Podemos definir a `Metodologia Ágil` como  um conjunto de princípios e práticas para gerenciar e desenvolver projetos de forma flexível, adaptável e colaborativa. Ela surgiu como uma alternativa à metodologia tradicional em cascata, que era considerada rígida e pouco eficiente para lidar com mudanças frequentes nos requisitos e no ambiente de negócios.
+
+Os principais pontos da metodologia ágil são:
+
+- `Valorização da entrega incremental e contínua`: O foco está em entregar funcionalidades do produto final em ciclos curtos e frequentes, permitindo que o cliente avalie o progresso e forneça feedback.
+- `Adaptabilidade a mudanças`: A metodologia ágil reconhece que as necessidades do cliente e o ambiente de negócios podem mudar durante o desenvolvimento do projeto, e por isso é importante ser capaz de se adaptar rapidamente a essas mudanças.
+- `Colaboração entre todos os stakeholders`: A equipe de desenvolvimento, o cliente e outros stakeholders trabalham juntos de forma colaborativa durante todo o ciclo de vida do projeto.
+- `Aprendizagem e melhoria contínua`: A metodologia ágil incentiva a equipe a aprender com seus erros e a buscar constantemente formas de melhorar o processo de desenvolvimento.
+
+Ela pode ser utilizada em diversos tipos de projetos, mas é especialmente adequada para projetos complexos e inovadores, onde a incerteza e a mudança são constantes. Alguns tipos de projetos que podemos utilizar ela:
+
+- `Desenvolvimento de software`: A metodologia ágil é especialmente adequada para o desenvolvimento de software, pois permite que a equipe se adapte rapidamente às mudanças nos requisitos e entregue funcionalidades de forma incremental.
+- `Gestão de projetos`: A metodologia ágil pode ser utilizada para gerenciar qualquer tipo de projeto, desde projetos de desenvolvimento de software até projetos de marketing e vendas.
+- `Outros tipos de projetos`: A metodologia ágil também pode ser utilizada em outros tipos de projetos, como projetos de design, projetos de construção e projetos de pesquisa.
+
+### Lean Inception
+
+A `Lean Inception` é uma técnica de planejamento e alinhamento de equipes que tem como objetivo definir o escopo e as metas de um projeto de forma colaborativa e eficiente. Ela foi criada por Paulo Caroli e é baseada nos princípios do Lean Startup e do Design Thinking.
+
+Com a `Lean Inception` é possível alinhar a equipe em relação ao escopo e às metas do projeto, definir as funcionalidades mínimas necessárias para lançar o produto no mercado e criar um plano de ação para o desenvolvimento do projeto. As funcionalidades do projeto são entregues de forma incremental, sempre priorizando as mais importantes para o cliente e as que geram mais valor para o negócio.
+
+Podemos definir como principais pontos da `Lean Inception` (adaptado de [Lean Inception](https://www.caroli.org/lean-inception/)):
+
+1. `Visão do produto:` Defina uma visão clara e compartilhada do produto que será desenvolvido. Todos devem compreender o propósito e os objetivos.
+2. `É – Não é – Faz – Não faz`: Esclareça as características do produto, identificando o que ele é, o que não é, o que faz e o que não faz. Isso evita ambiguidades e define os limites do escopo. ***FAÇAM ESTÁ ANÁLISE PARA O PROJETO DE VOCÊS!***
+
+3. `Personas`: Desenvolva personas que representem os diferentes perfis de usuários do produto. Compreender suas necessidades e características ajuda a direcionar as decisões.
+4. `Jornada de usuários`: Mapeie a jornada que os usuários percorrerão ao interagir com o produto. Identifique etapas, pontos de contato e possíveis desafios.
+5. `Brainstorming`: Realize sessões criativas para gerar ideias de funcionalidades e recursos que agreguem valor ao produto.
+6. `Revisão Técnica, de UX e de Negócio`: Analise as ideias geradas e avalie sua viabilidade técnica, a experiência do usuário e o impacto no negócio. Ajuste conforme necessário.
+7. `Sequenciador`: Priorize as funcionalidades considerando sua importância e valor para os usuários, para o negócio e a viabilidade técnica. Crie uma sequência lógica para o desenvolvimento.
+8. `Canvas MVP`: Desenvolva o Canvas do MVP (Minimum Viable Product) para definir os elementos essenciais do produto inicial. Isso ajuda a focar no mínimo necessário para validar o direcionamento do seu negócio.
+
+:::tip[Em relação ao nosso projeto]
+
+Pessoal é importante observar aqui, que após a sprint 1, diversos dos pontos acima já foram realizados. Então, é importante que vocês revisitem esses pontos e vejam o que já foi feito e o que ainda falta ser feito. Vale destacar também para adicionar as observações que os parceiros fizeram sobre o projeto de vocês na sprint review 1.
+
+:::
+
+### Ações para o Projeto
+
+Agora, retomados os pontos acima, é importante que vocês realizem as seguintes ações:
+
+- `Realização das Etapas do Lean Incpetion`: Realizem as etapas do Lean Inception que ainda não foram realizadas. Em especial, a etapa do ***FAZ e NÃO FAZ***, que é muito importante para definir o escopo do projeto e quais as funcionalidades que vocês vão implementar. É muito importante destacar que, características que estão dentro do escopo do ***NÃO FAZ***, não devem ser implementadas nesta versão atual do projeto, mas podem ser adicionadas em um backlog para implementações futuras do projeto.
+
+- `Criação do Release no Github`: Crie um release no Github com as funcionalidades que vocês vão implementar nesta sprint. Isso é importante para que vocês possam acompanhar o progresso do projeto e para que os parceiros possam acompanhar o progresso de vocês. Vamos avaliar um pouco mais sobre o processo de criação de ***releases*** no Github.
+
+- `Realização de Balanceamento das Tarefas`: Pessoal não estou dizendo que vocês devem realizar um planning poker com as tarefas de vocês, mas estou sugerindo que vocês façam uma avaliação crítica quanto ao tempo que vocês vão gastar em cada tarefa. Isso é importante para que vocês possam dimensionar melhor as próximas tarefas e divisão de ações. 
+
+- `Escrevão Padrões de Qualidade`: Além dos baremas, escrevam padrões de qualidade de vocês para definir o que é aceito como uma entrega de qualidade. Isso é importante para que vocês possam ter um norte quanto ao que é esperado de vocês e evita posteriores atritos na equipe quanto a qualidade de entrega de alguma tarefa.
+
