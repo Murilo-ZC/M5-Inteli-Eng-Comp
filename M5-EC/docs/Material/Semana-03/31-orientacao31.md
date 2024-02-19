@@ -158,3 +158,46 @@ Agora, retomados os pontos acima, é importante que vocês realizem as seguintes
 
 - `Escrevão Padrões de Qualidade`: Além dos baremas, escrevam padrões de qualidade de vocês para definir o que é aceito como uma entrega de qualidade. Isso é importante para que vocês possam ter um norte quanto ao que é esperado de vocês e evita posteriores atritos na equipe quanto a qualidade de entrega de alguma tarefa.
 
+### Criando Tags no Git e no GitHub
+
+Agora, vamos falar um pouco sobre como criar tags no Git e no GitHub. Elas são importantes para marcar versões do seu projeto e para que vocês possam acompanhar o progresso do projeto. Vamos ver um pouco mais sobre isso.
+
+:::tip[Tags no Git]
+
+As tags no Git são referências a pontos específicos na história do seu repositório. Elas são geralmente usadas para marcar versões de lançamento (como v1.0 e v2.0). Ao contrário dos *branches*, as tags não mudam com o tempo. Se você criar uma tag para um commit específico, ela sempre apontará para esse commit, mesmo que você crie novos commits no repositório.
+
+:::
+
+:::danger[Manter o Repositório Atualizado]
+
+É importante que vocês mantenham o repositório de vocês atualizado com as tags. Isso é importante para que vocês possam acompanhar o progresso do projeto e para que os parceiros possam acompanhar o progresso de vocês.
+
+Lembre-se de utiizar o comando `git pull` para manter o repositório de vocês atualizado.
+
+:::
+
+Utilizando o comando `git tag` você pode criar tags no seu repositório. Vamos ver um exemplo de como criar uma tag no Git:
+
+```bash
+git tag -a v1.0 -m "Versão 1.0"
+```
+
+O que está acontecendo aqui é que estamos criando uma tag chamada `v1.0` com a mensagem `Versão 1.0`. Isso é importante para que vocês possam acompanhar o progresso do projeto e para que os parceiros possam acompanhar o progresso de vocês. O parâmetro `-a` é para criar uma tag anotada, que é uma tag que contém uma mensagem. O parâmetro `-m` é para adicionar uma mensagem à tag.
+
+Por *default*, uma tag é associada ao último commit que você fez. Se você quiser associar a tag a um commit específico, você pode passar o hash do commit como um parâmetro para o comando `git tag`. Por exemplo:
+
+```bash
+git tag -a v1.0 9fceb02 -m "Versão 1.0"
+```
+
+Onde o `9fceb02` é o hash do commit que você quer associar à tag.
+
+Agora precisamos mandar nossas tags para o repositório remoto. Para fazer isso, utilizamos o comando `git push` com a opção `--tags`. Vamos ver um exemplo de como fazer isso:
+
+```bash
+git push origin --tags
+```
+
+Desta forma, todas as tags que você criou no seu repositório local serão enviadas para o repositório remoto. Para enviar apenas uma tag específica, utilizar o comando `git push origin v1.0`.
+
+Agora vamos definir o padrão de tags que vamos utilizar. No final de cada sprint, a versão que deve ser entregue, deve estar com a tag `vX.Y`, onde `X` é o número da sprint e `Y` é o número da versão. Por exemplo, a versão que vocês vão entregar no final da sprint 2, deve estar com a tag `v2.0`. As melhorias e correções que forem realizadas na versão que vocês vão entregar no final da sprint 2, devem estar com a tag `v2.1`, e assim por diante.
