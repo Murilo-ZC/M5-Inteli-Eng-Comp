@@ -757,4 +757,182 @@ Pessoal a partir daqui os códigos pode ser escritos, mas façam a validação d
 
 :::
 
+### 4.6 Adicionando o robô
+
+A partir deste momento vamos avaliar algumas formas de realizar a comunicação com o robô. Nós estudamos até aqui que é possível realizar a comunicação com o robô utilizando o software `DobotStudio`. Mas também é possível realizar a comunicação com o robô utilizando a biblioteca `pydobot`. Vamos avaliar como podemos realizar a comunicação com o robô utilizando a biblioteca `pydobot`.
+
+Primeiro vamos adicionar a biblioteca `pydobot` no nosso ambiente virtual e depois vamos atualizar as dependências do nosso projeto. Para isso, vamos executar o seguinte comando:
+
+```bash
+pip install pydobot
+pip freeze > requirements.txt
+```
+
+:::danger[PROBLEMA]
+
+Até o momento da escrita deste material, a biblioteca `pydobot` não estava funcionando quando baixada pelo `pip`. A forma de utilizar ela é baixar ela localmente no projeto e incluir ela no repositório.
+
+Para isso, vamos baixar a biblioteca `pydobot` no nosso ambiente virtual. Para isso, vamos executar o seguinte comando:
+
+```bash
+git clone https://github.com/luismesas/pydobot.git
+```
+
+Ainda execute o comando de instalação pelo `pip`, para trazer as dependências necessárias para a biblioteca `pydobot`.
+
+:::
+
+Para mais detalhes da documentação da biblioteca, recomendo verificar a [documentação do pacote](https://pypi.org/project/pydobot/).
+
+Agora vamos alterar o nosso arquivo `robo.py` para adicionar a comunicação com o robô.
+
+```python
+# robo.py
+
+# Traz a ferramenta serial para apresentar quais portas estão disponíveis
+from serial.tools import list_ports
+
+import pydobot
+
+# Listas as portas seriais disponíveis
+available_ports = list_ports.comports()
+
+
+# Imprime as portas disponíveis
+print(f'available ports: {[x.device for x in available_ports]}')
+
+```
+
+Após a execução deste programa, você deve ser capaz de ver as portas seriais que estão disponíveis no seu sistema. Isso é importante para que possamos saber qual é a porta que o robô está utilizando.
+
+:::tip[Dica]
+
+Se você estiver utilizando o Windows, a porta que o robô está utilizando deve ser algo como `COM3`, `COM4`, `COM5`, etc. Se você estiver utilizando o Linux, a porta que o robô está utilizando deve ser algo como `/dev/ttyUSB0`, `/dev/ttyUSB1`, `/dev/ttyUSB2`, etc. Se você estiver utilizando o MacOS, a porta que o robô está utilizando deve ser algo como `/dev/tty.usbserial-0001`, `/dev/tty.usbserial-0002`, `/dev/tty.usbserial-0003`, etc.
+
+:::
+
+Agora, vamos alterar nosso programa para utilizar o `inquirer` para apresentar as portas seriais para que possamos escolher qual vamos utilizar. Vamos alterar o arquivo `robo.py`.
+
+```python
+# robo.py
+
+# Traz a ferramenta serial para apresentar quais portas estão disponíveis
+from serial.tools import list_ports
+import inquirer
+import pydobot
+
+# Listas as portas seriais disponíveis
+available_ports = list_ports.comports()
+
+
+# Pede para o usuário escolher uma das portas disponíveis
+porta_escolhida = inquirer.prompt([
+    inquirer.List("porta", message="Escolha a porta serial", choices=[x.device for x in available_ports])
+])["porta"]
+
+print('Porta escolhida:', porta_escolhida)
+
+```
+
+Agora vamos colocar o nosso sistema para comunicar com o Robô. Vamos alterar o arquivo `robo.py`.
+
+```python
+# robo.py
+
+# Traz a ferramenta serial para apresentar quais portas estão disponíveis
+from serial.tools import list_ports
+import inquirer
+import pydobot
+
+# Listas as portas seriais disponíveis
+available_ports = list_ports.comports()
+
+
+# Pede para o usuário escolher uma das portas disponíveis
+porta_escolhida = inquirer.prompt([
+    inquirer.List("porta", message="Escolha a porta serial", choices=[x.device for x in available_ports])
+])["porta"]
+
+# Conecta a porta escolhida ao sistema
+porta_escolhida = available_ports[available_ports.index[porta_escolhida]].device
+
+# Cria uma instância do robô
+robo = pydobot.Dobot(port=porta_escolhida, verbose=False)
+
+# Vamos adicionar nossa lógica aqui!
+
+# Fecha a conexão com o robô
+robo.close()
+```
+
+O que aconteceu aqui foi utilizar a porta escolhida para realizar a comunicação com o robô. O programa até o momento não faz nenhuma ação diferente de abrir e fechar a conexão com o robô. Mas isso é importante para que possamos saber que a comunicação com o robô está funcionando. O parâmetro `verbose` é utilizado para que possamos ver as mensagens que estão sendo trocadas entre o programa e o robô. Isso é importante para que possamos saber se a comunicação com o robô está funcionando.
+
+Agora vamos pegar a posição atual do robô. Vamos alterar o arquivo `robo.py`.
+
+```python
+# robo.py
+
+# Traz a ferramenta serial para apresentar quais portas estão disponíveis
+from serial.tools import list_ports
+import inquirer
+import pydobot
+
+# Listas as portas seriais disponíveis
+available_ports = list_ports.comports()
+
+
+# Pede para o usuário escolher uma das portas disponíveis
+porta_escolhida = inquirer.prompt([
+    inquirer.List("porta", message="Escolha a porta serial", choices=[x.device for x in available_ports])
+])["porta"]
+
+# Conecta a porta escolhida ao sistema
+porta_escolhida = available_ports[available_ports.index[porta_escolhida]].device
+
+# Cria uma instância do robô
+robo = pydobot.Dobot(port=porta_escolhida, verbose=False)
+
+# Pega a posição atual do robô
+posicao_atual = robo.pose()
+print(f"Posição atual: {posicao_atual}")
+
+# Fecha a conexão com o robô
+robo.close()
+```
+
+A posição atual do robô é uma tupla com as informações de:
+- `x`: posição em `x` em relação a base do robô;
+- `y`: posição em `y` em relação a base do robô;
+- `z`: posição em `z` em relação a base do robô;
+- `r`: rotação da ferrameta do robô;
+- `j1`: rotação da junta `j1` do robô;
+- `j2`: rotação da junta `j2` do robô;
+- `j3`: rotação da junta `j3` do robô;
+- `j4`: rotação da junta `j4` do robô.
+
+### Vindo ainda
+
+Aqui está o que será adicionado nessa seção:
+
+.move_to(x, y, z, r, wait=False) queues a translation in dobot to given coordinates
+
+x: float x cartesian coordinate to move
+y: float y cartesian coordinate to move
+z: float z cartesian coordinate to move
+r: float r effector rotation
+wait: bool waits until command has been executed to return to process
+.speed(velocity, acceleration) changes velocity and acceleration at which the dobot moves to future coordinates
+
+velocity: float desired translation velocity
+acceleration: float desired translation acceleration
+.suck(enable)
+
+enable: bool enables/disables suction
+.grip(enable)
+
+enable: bool enables/disables gripper
+.wait(ms) adds a waiting period to the internal queue of messages
+
+ms: int number of milliseconds to wait
+
 <div class="loader-mario"></div>
