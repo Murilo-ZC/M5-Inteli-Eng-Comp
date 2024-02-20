@@ -323,6 +323,61 @@ Nome do Script: src/main.py
 Soma dos elementos fornecidos: 18.3
 ```
 
+### 4.3 Criando a CLI do Projeto - Versão Pré-Pré-Alfa
+
+Agora será que podemos melhorar essa nossa interação com a CLI? ***Sim*** ou ***Com Certeza***? Vamos atualizar nosso sistema para utilizar a biblioteca [`Typer`](https://typer.tiangolo.com/). 
+
+> ***MAS MURILÃO, POR QUE EU DEVO UTILIZAR O TYPER?***
+> O `Typer` é uma biblioteca que nos ajuda a criar CLIs de forma rápida e fácil. Ele é baseado no `click`, mas com a diferença de que ele é mais rápido e mais fácil de utilizar. Além disso, ele é baseado no `Python 3.6+` e utiliza as `type hints` para criar a interface da CLI. Ela foi desenvolvida pelo [Sebastián Ramírez](https://tiangolo.com/), o mesmo desenvolvedor do `FastAPI`.
+
+Para instalar o `Typer`, basta executar o seguinte comando:
+
+```bash
+pip install "typer[all]"
+```
+
+Isso vai instalar o `Typer` no ambiente virtual do projeto. Agora vamos atualizar o nosso arquivo `main.py` para utilizar o `Typer`.
+
+```python
+# main.py
+import typer
+
+# Vamos configurar está função main() para ser executada apenas quando o script for o ponto de entrada da aplicação
+def main(valor1: float, valor2: float):
+    # Somando os demais elementos do script
+    soma = valor1 + valor2
+    print(f'Soma dos elementos fornecidos: {soma}')
+
+if __name__ == "__main__":
+    typer.run(main)
+```
+
+Agora vamos executar o nosso script com o comando: `python3 src/main.py`, para obter a seguinte saída na tela:
+
+```bash
+Usage: main.py [OPTIONS] VALOR1 VALOR2
+Try 'main.py --help' for help.
+Error: Missing argument 'VALOR1'.
+```
+
+O que o terminal está mostrando para nós agora é que estamos utilizando a biblioteca `Typer` para criar a nossa CLI. E que estamos utilizando dois argumentos para a execução do nosso script. Vamos executar o script novamente, mas agora fornecendo os valores para ele:
+
+```bash
+python3 src/main.py 1 2.3
+```
+
+A saída que vamos obter agora é:
+
+```bash
+Soma dos elementos fornecidos: 3.3
+```
+
+Vamos atualizar as dependencias do nosso projeto. Para isso, vamos criar uma nova versão do arquivo chamado `requirements.txt` na raiz do projeto. Este arquivo deve conter todas as dependências do projeto. 
+
+```bash
+python3 -m pip freeze > requirements.txt
+```
+
 
 
 <div class="loader-mario"></div>
