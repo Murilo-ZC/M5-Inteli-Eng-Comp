@@ -642,6 +642,119 @@ Ao executar o programa com `python3 src/main.py calculadora`, vamos ver que ele 
 {'operacao': 'subtração', 'a': '3', 'b': '4'}
 ```
 
-Podemos ver que as respostas do usuário ficam disponíveis em um dicionário. Isso é importante para que possamos utilizar as respostas do usuário para realizar as operações que ele deseja. Agora, além de adicionarmos as operações propriamente ditas, vamos adicionar também a barra de carregamento para o usuário. Para isso, vamos utilizar a [`yaspin`](https://github.com/pavdmyt/yaspin).
+Podemos ver que as respostas do usuário ficam disponíveis em um dicionário. Isso é importante para que possamos utilizar as respostas do usuário para realizar as operações que ele deseja. Agora, além de adicionarmos as operações propriamente ditas, vamos adicionar também a barra de carregamento para o usuário. Para isso, vamos utilizar a [`yaspin`](https://github.com/pavdmyt/yaspin). A biblioteca `yaspin` é uma biblioteca que nos permite criar barras de carregamento de forma fácil e rápida. 
+
+Vamos adicionar ela no nosso ambiente virtual e depois vamos atualizar as dependências do nosso projeto. Para isso, vamos executar o seguinte comando:
+
+```bash
+pip install yaspin
+pip freeze > requirements.txt
+```
+
+Agora vamos alterar o nosso arquivo `main.py` para adicionar uma barra de carregamento para o usuário.
+
+```python
+# main.py
+import typer
+import inquirer
+from yaspin import yaspin
+import time
+
+# Cria uma instância da aplicação
+app = typer.Typer()
+
+# Cria um comando do CLI
+@app.command()
+def soma(a: int, b: int = 0):
+    print(a + b)
+
+# Cria um segundo comando do CLI
+@app.command()
+def subtracao(a: int, b: int = 0):
+    print(a - b)
+
+# Cria um terceiro comando do CLI
+@app.command()
+def soma_interativa():
+    continuar = True
+    while continuar:
+        a = typer.prompt("Digite o primeiro número")
+        b = typer.prompt("Digite o segundo número")
+        print(int(a) + int(b))
+        continuar = typer.confirm("Deseja continuar?")
+
+# Cria um quarto comando do CLI
+@app.command()
+def calculadora():
+    # realiza lista de perguntas para o usuário
+    perguntas = [
+        inquirer.List("operacao", message="Qual operação deseja realizar?", choices=["soma", "subtração","multiplicacao","divisao"]),
+        inquirer.Text("a", message="Digite o primeiro número"),
+        inquirer.Text("b", message="Digite o segundo número")
+    ]
+    # realiza a leitura das respostas
+    respostas = inquirer.prompt(perguntas)
+    # chama a funcao que processa a operação e exibe uma spinner para o usuário
+    spinner = yaspin(text="Processando...", color="yellow")
+    # inicia o spinner
+    spinner.start()
+    # realiza a operação
+    saida = processar(respostas)
+    # para o spinner
+    spinner.stop()
+    # exibe o resultado
+    print(saida)
+
+# Função que processa a operação
+def processar(dados):
+    time.sleep(5)
+    operacao = dados["operacao"]
+    a = float(dados["a"])
+    b = float(dados["b"])
+    if operacao == "soma":
+        return (a + b)
+    elif operacao == "subtração":
+        return (a - b)
+    elif operacao == "multiplicacao":
+        return (a * b)
+    elif operacao == "divisao":
+        return (a / b)
+    
+# Executa a aplicação
+if __name__ == "__main__":
+    app()
+
+```
+
+O resultado da execução do nosso programa (`python3 src/main.py calculadora`) vai ser uma barra de carregamento que vai aparecer para o usuário enquanto o programa está processando a operação que ele escolheu.
+
+```bash
+[?] Qual operação deseja realizar?: 
+   soma
+ > subtração
+   multiplicacao
+   divisao
+
+[?] Digite o primeiro número: 3
+[?] Digite o segundo número: 4
+Processando...
+-3
+```
+
+:::tip[Cuidado com o volume de informação]
+
+<img src="https://media1.tenor.com/m/sgdOFizLVJcAAAAC/mashle-gojo.gif" alt="Gojo Dançando Mashle" style={{ display: 'block', marginLeft: 'auto', maxHeight: '40vh', marginRight: 'auto', marginBottom: 24 }} />
+
+Pessoal até aqui, fomos de forma incremental, mas ainda assim não foi pouco conteúdo. É importante que você registre, teste, aplique os conhecimentos que apresentamos até aqui. E se você tiver dúvidas, não hesite em perguntar.
+
+:::
+
+:::danger[Demanda do Robô para Continuar a Desenvolver]
+
+<img src="https://64.media.tumblr.com/89b73637c1c5a5741fb4594214334d6d/4fdec4ce2e98de01-ad/s1280x1920/82fe7bb633bcc2f7cc86c6d9e514eec037657266.gif" alt="Atenção para necessidade do robô" style={{ display: 'block', marginLeft: 'auto', maxHeight: '40vh', marginRight: 'auto', marginBottom: 24 }} />
+
+Pessoal a partir daqui os códigos pode ser escritos, mas façam a validação deles utilizando o robô.
+
+:::
 
 <div class="loader-mario"></div>

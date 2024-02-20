@@ -1,6 +1,8 @@
 # main.py
 import typer
 import inquirer
+from yaspin import yaspin
+import time
 
 # Cria uma instância da aplicação
 app = typer.Typer()
@@ -36,8 +38,32 @@ def calculadora():
     ]
     # realiza a leitura das respostas
     respostas = inquirer.prompt(perguntas)
-    # apresenta as respostas que o usuário digitou
-    print(respostas)
+    # chama a funcao que processa a operação e exibe uma spinner para o usuário
+    spinner = yaspin(text="Processando...", color="yellow")
+    # inicia o spinner
+    spinner.start()
+    # realiza a operação
+    saida = processar(respostas)
+    # para o spinner
+    spinner.stop()
+    # exibe o resultado
+    print(saida)
+
+# Função que processa a operação
+def processar(dados):
+    time.sleep(5)
+    operacao = dados["operacao"]
+    a = float(dados["a"])
+    b = float(dados["b"])
+    if operacao == "soma":
+        return (a + b)
+    elif operacao == "subtração":
+        return (a - b)
+    elif operacao == "multiplicacao":
+        return (a * b)
+    elif operacao == "divisao":
+        return (a / b)
+    
 # Executa a aplicação
 if __name__ == "__main__":
     app()
