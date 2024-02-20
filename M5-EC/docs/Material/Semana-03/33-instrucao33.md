@@ -472,7 +472,176 @@ Usage: main.py soma [OPTIONS] A
   --help Show this message and exit.   
 ```
 
+Maravilha, estamos avançando com nossa aplicação em CLI. Vamos agora tornar ela mais interativa com o usuário, pedindo entradas para ele, quando ela for executada.
 
+### 4.4 Criando CLI do Projeto - Versão Pré-Alfa
 
+Agora, vamos alterar nosso arquivo `main.py` para que ele peça entradas para o usuário.
+
+```python
+# main.py
+import typer
+
+# Cria uma instância da aplicação
+app = typer.Typer()
+
+# Cria um comando do CLI
+@app.command()
+def soma(a: int, b: int = 0):
+    print(a + b)
+
+# Cria um segundo comando do CLI
+@app.command()
+def subtracao(a: int, b: int = 0):
+    print(a - b)
+
+# Cria um terceiro comando do CLI
+@app.command()
+def soma_interativa():
+    a = typer.prompt("Digite o primeiro número")
+    b = typer.prompt("Digite o segundo número")
+    print(int(a) + int(b))
+    
+# Executa a aplicação
+if __name__ == "__main__":
+    app()
+
+```
+
+Agora pessoal, vamos primeiro ver como ficaram nossos comandos. Vamos executar o comando `python3 src/main.py --help`, para obter a seguinte saída na tela:
+
+```bash
+Usage: main.py [OPTIONS] COMMAND [ARGS]...
+ Options 
+ --install-completion          Install completion for the current shell.
+ --show-completion             Show completion for the current shell, to copy it or customize the installation.               
+ --help                        Show this message and exit.                                               
+
+ Commands  
+  soma
+  subtracao
+  soma-interativa
+```
+
+Agora vamos testar nossa aplicação com o comando `soma-interativa`:
+
+```bash
+python3 src/main.py soma-interativa
+```
+
+Esse comando vai abrir a interação do sistema com o usuário, permitindo que ele digite os valores para a soma.
+Vamos melhorar ainda mais essa experiência, não encerrando o programa quando ele está em execução, vamos perguntar para o usuário se ele deseja sair ou se ele deseja continuar em nossa interação.
+
+```python
+# main.py
+import typer
+
+# Cria uma instância da aplicação
+app = typer.Typer()
+
+# Cria um comando do CLI
+@app.command()
+def soma(a: int, b: int = 0):
+    print(a + b)
+
+# Cria um segundo comando do CLI
+@app.command()
+def subtracao(a: int, b: int = 0):
+    print(a - b)
+
+# Cria um terceiro comando do CLI
+@app.command()
+def soma_interativa():
+    continuar = True
+    while continuar:
+        a = typer.prompt("Digite o primeiro número")
+        b = typer.prompt("Digite o segundo número")
+        print(int(a) + int(b))
+        continuar = typer.confirm("Deseja continuar?")
+
+# Executa a aplicação
+if __name__ == "__main__":
+    app()
+
+```
+
+Repare que agora, nossa aplicação não apenas interage com o usuário para que ele possa informar os parâmetros dela, mas também interage com o usuário para que ele possa decidir se deseja continuar ou não com a interação 🍱.
+
+Agora vamos adicionar um conjunto de outras dependencias em nossa aplicação para elevar ainda mais a interação com o usuário do sistema.
+
+### 4.5 Criando CLI do Projeto - Versão Alfa
+
+Vamos adicionar algumas outras funcionalidades no sistema, como barra de carregamento e algumas interações para escolher entre algumas opções pré-definidas para o usuário. Para isso vamos utilizar a biblioteca [`inquirer`](https://python-inquirer.readthedocs.io/en/latest/). Ela foi inspirada em uma biblioteca de mesmo nome para o Node.js, e nos permite criar interações com o usuário de forma fácil e rápida.
+
+Primeiro vamos adicionar essa biblioteca em nosso ambiente virtual e depois vamos atualizar as dependências do nosso projeto. Para isso, vamos executar o seguinte comando:
+
+```bash
+pip install inquirer
+pip freeze > requirements.txt
+```
+
+Agora vamos alterar o nosso arquivo `main.py` para adicionar uma interação para escolher entre algumas opções pré-definidas para o usuário.
+
+```python
+# main.py
+import typer
+import inquirer
+
+# Cria uma instância da aplicação
+app = typer.Typer()
+
+# Cria um comando do CLI
+@app.command()
+def soma(a: int, b: int = 0):
+    print(a + b)
+
+# Cria um segundo comando do CLI
+@app.command()
+def subtracao(a: int, b: int = 0):
+    print(a - b)
+
+# Cria um terceiro comando do CLI
+@app.command()
+def soma_interativa():
+    continuar = True
+    while continuar:
+        a = typer.prompt("Digite o primeiro número")
+        b = typer.prompt("Digite o segundo número")
+        print(int(a) + int(b))
+        continuar = typer.confirm("Deseja continuar?")
+
+# Cria um quarto comando do CLI
+@app.command()
+def calculadora():
+    # realiza lista de perguntas para o usuário
+    perguntas = [
+        inquirer.List("operacao", message="Qual operação deseja realizar?", choices=["soma", "subtração","multiplicacao","divisao"]),
+        inquirer.Text("a", message="Digite o primeiro número"),
+        inquirer.Text("b", message="Digite o segundo número")
+    ]
+    # realiza a leitura das respostas
+    respostas = inquirer.prompt(perguntas)
+    # apresenta as respostas que o usuário digitou
+    print(respostas)
+# Executa a aplicação
+if __name__ == "__main__":
+    app()
+```
+
+Ao executar o programa com `python3 src/main.py calculadora`, vamos ver que ele vai apresentar para o usuário uma lista de opções para ele escolher. E depois que ele escolher a opção, ele vai pedir para o usuário digitar os valores para a operação.
+
+```bash
+[?] Qual operação deseja realizar?: 
+   soma
+ > subtração
+   multiplicacao
+   divisao
+
+[?] Digite o primeiro número: 3
+[?] Digite o segundo número: 4
+{'operacao': 'subtração', 'a': '3', 'b': '4'}
+```
+
+Podemos ver que as respostas do usuário ficam disponíveis em um dicionário. Isso é importante para que possamos utilizar as respostas do usuário para realizar as operações que ele deseja. Agora, além de adicionarmos as operações propriamente ditas, vamos adicionar também a barra de carregamento para o usuário. Para isso, vamos utilizar a [`yaspin`](https://github.com/pavdmyt/yaspin).
 
 <div class="loader-mario"></div>
