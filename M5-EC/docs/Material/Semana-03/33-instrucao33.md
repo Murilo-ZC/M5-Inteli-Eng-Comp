@@ -210,5 +210,45 @@ Olá, Mundo!
 Quando este arquivo é executado: __main__
 ```
 
+:::warning[Atenção]
+
+<img src={useBaseUrl("/img/memes/chotto-matte.jpeg")} alt="ESPERE UM POUCO" style={{ display: 'block', marginLeft: 'auto', maxHeight: '40vh', marginRight: 'auto' }} />
+
+Muito cuidado deste ponto em diante! Em especial, porque neste momento, se você está acompanhando as aulas, deve ter passado em cabeça a seguinte afirmação:
+
+> "Como eu escrevi código e quero manter a rastreabilidade das minhas ações, vou commitar o que eu fiz até agora."
+
+E você ***ESTÁ ABSOLUTAMENTE CERTO***! Mas antes de fazer isso, vamos adicionar no nosso `.gitignore` o diretório `venv` para que ele não seja versionado. Isso é importante para que outras pessoas que baixarem o projeto não tenham que baixar o ambiente virtual também. Para isso, basta adicionar a seguinte linha no arquivo `.gitignore`:
+
+```bash
+venv
+```
+
+> ***MAS MURILÃO, POR QUE EU NÃO DEVO COMMITAR O AMBIENTE VIRTUAL?***
+> Porque o ambiente virtual é uma dependência do projeto. E como dependência, ele não deve ser versionado. Isso porque cada pessoa que baixar o projeto pode ter uma versão diferente do Python, ou mesmo do sistema operacional. E se o ambiente virtual for versionado, pode ser que o projeto não funcione em outras máquinas.
+
+> ***MAS MURILÃO, COMO EU FAÇO PARA QUE OUTRAS PESSOAS POSSAM EXECUTAR O MEU PROJETO?***
+> Você deve adicionar um arquivo chamado `requirements.txt` na raiz do projeto. Este arquivo deve conter todas as dependências do projeto. E para que as pessoas consigam instalar estas dependências, basta que elas executem o seguinte comando:
+
+```bash
+pip install -r requirements.txt
+```
+
+> ***MAS MURILÃO, COMO EU FAÇO PARA CRIAR O ARQUIVO `requirements.txt`?***
+> Você pode criar este arquivo manualmente, ou você pode utilizar o seguinte comando:
+
+```bash
+pip freeze > requirements.txt
+```
+
+Este comando vai criar um arquivo chamado `requirements.txt` com todas as dependências do projeto. 
+
+> ***MAS MURILÃO, EU OLHEI NO SEU GITHUB E VI QUE EM UM COMMIT O SEU VENV FOI ADICIONADO. POR QUE?***
+> Como vocês acham que eu lembrei de colocar esse aviso aqui?
+
+:::
+
+
+
 
 <div class="loader-mario"></div>
