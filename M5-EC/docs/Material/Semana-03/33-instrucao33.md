@@ -378,6 +378,101 @@ Vamos atualizar as dependencias do nosso projeto. Para isso, vamos criar uma nov
 python3 -m pip freeze > requirements.txt
 ```
 
+Agora vamos deixar nosso projeto mais sofisticado. Vamos criar um comando para a nossa CLI. Vamos criar um comando que realiza a soma e outro que realiza a subtração de dois números. Vamos alterar o nosso arquivo `main.py`.
+
+```python
+# main.py
+import typer
+
+# Cria uma instância da aplicação
+app = typer.Typer()
+
+# Cria um comando do CLI
+@app.command()
+def soma(a: int, b: int):
+    print(a + b)
+
+# Cria um segundo comando do CLI
+@app.command()
+def subtracao(a: int, b: int):
+    print(a - b)
+
+# Executa a aplicação
+if __name__ == "__main__":
+    app()
+
+```
+
+Agora, vamos executar o nosso script com o comando: `python3 src/main.py --help`, para obter a seguinte saída na tela:
+
+```bash
+Usage: main.py [OPTIONS] COMMAND [ARGS]...
+ Options 
+ --install-completion          Install completion for the current shell.
+ --show-completion             Show completion for the current shell, to copy it or customize the installation.               
+ --help                        Show this message and exit.                                               
+
+ Commands  
+  soma
+  subtracao    
+```
+
+Agora vamos testar nossa aplicação com o comando `soma`:
+
+```bash
+python3 src/main.py soma 1 2
+```
+
+E posteriormente com o comando:
+
+```bash
+python3 src/main.py subtracao 1 2
+```
+
+Assim criamos duas funcionalidades para nossa CLI. Agora precisamos compreender a diferença entre parâmetros opcionais e obrigatórios. Quando criamos um parâmetro, ele é obrigatório por padrão. Se quisermos que um parâmetro seja opcional, basta adicionar o valor padrão para ele. Vamos alterar o nosso arquivo `main.py` para adicionar um parâmetro opcional.
+
+Parâmetros que são opcionais devem ter um valor padrão. Por exemplo, se quisermos que o parâmetro `b` seja opcional, basta adicionar um valor padrão para ele. Vamos alterar o nosso arquivo `main.py` para adicionar um parâmetro opcional.
+
+```python
+# main.py
+import typer
+
+# Cria uma instância da aplicação
+app = typer.Typer()
+
+# Cria um comando do CLI
+@app.command()
+def soma(a: int, b: int = 0):
+    print(a + b)
+
+# Cria um segundo comando do CLI
+@app.command()
+def subtracao(a: int, b: int = 0):
+    print(a - b)
+
+# Executa a aplicação
+if __name__ == "__main__":
+    app()
+
+```
+
+Agora ao executar o comando `python3 src/main.py soma --help`, vamos obter a seguinte saída na tela:
+
+```bash
+Usage: main.py soma [OPTIONS] A
+ Options 
+ --install-completion          Install completion for the current shell.
+ --show-completion             Show completion for the current shell, to copy it or customize the installation.               
+ --help                        Show this message and exit.                                               
+
+ Arguments 
+  a                             [required]
+ Options 
+  --b INTEGER[default:0]                                                                                          │
+  --help Show this message and exit.   
+```
+
+
 
 
 <div class="loader-mario"></div>

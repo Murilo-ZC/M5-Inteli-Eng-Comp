@@ -1,11 +1,19 @@
 # main.py
 import typer
 
-# Vamos configurar está função main() para ser executada apenas quando o script for o ponto de entrada da aplicação
-def main(valor1: float, valor2: float):
-    # Somando os demais elementos do script
-    soma = valor1 + valor2
-    print(f'Soma dos elementos fornecidos: {soma}')
+# Cria uma instância da aplicação
+app = typer.Typer()
 
+# Cria um comando do CLI
+@app.command()
+def soma(a: int, b: int = 0):
+    print(a + b)
+
+# Cria um segundo comando do CLI
+@app.command()
+def subtracao(a: int, b: int = 0):
+    print(a - b)
+
+# Executa a aplicação
 if __name__ == "__main__":
-    typer.run(main)
+    app()
