@@ -212,7 +212,7 @@ Quando este arquivo é executado: __main__
 
 :::warning[Atenção]
 
-<img src={useBaseUrl("/img/memes/chotto-matte.jpeg")} alt="ESPERE UM POUCO" style={{ display: 'block', marginLeft: 'auto', maxHeight: '40vh', marginRight: 'auto' }} />
+<img src={useBaseUrl("/img/memes/chotto-matte.jpeg")} alt="ESPERE UM POUCO" style={{ display: 'block', marginLeft: 'auto', maxHeight: '40vh', marginRight: 'auto', marginBottom: 24 }} />
 
 Muito cuidado deste ponto em diante! Em especial, porque neste momento, se você está acompanhando as aulas, deve ter passado em cabeça a seguinte afirmação:
 
@@ -248,6 +248,39 @@ Este comando vai criar um arquivo chamado `requirements.txt` com todas as depend
 
 :::
 
+Pessoal vamos voltar para o nosso código. Se observarmos ele, o `__name__` apareceu com o valor de `__main__`. Isso acontece porque o Python atribui o valor de `__main__` para o arquivo que está sendo executado. Isso é importante para que possamos saber se o arquivo está sendo executado como um módulo ou como um arquivo principal.
+
+Vamos fazer um teste: criar um outro arquivo e importar o nosso arquivo `main` dentro dele. Vamos chamar este arquivo de `teste_import.py`.
+
+```python
+# teste_import.py
+import main
+print(f'Este é o __name__ do teste_import.py: {__name__}')
+```
+
+Agora vamos executar o arquivo `teste_import.py`:
+
+```bash
+python3 src/teste_import.py
+```
+
+Vamos obter como saída:
+
+```bash
+Olá, Mundo!
+Quando este arquivo é executado: main
+Este é o __name__ do teste_import.py: __main__
+```
+
+Podemos reparar que o `__name__` do arquivo `main.py` é `main`, e o `__name__` do arquivo `teste_import.py` é `__main__`. Isso acontece porque o Python atribui o valor de `__main__` para o arquivo que está sendo executado. Para os demais módulo, o valor de `__name__` é o nome do módulo.
+
+:::tip[Dica]
+
+Vale destacar um comportamento aqui: ao importar um módulo, todo o código que está no corpo daquele módulo é executado. Isso é importante para que possamos inicializar variáveis, funções, classes, etc. que são necessárias para o funcionamento do módulo.
+
+:::
+
+Agora vamos iniciar a criação da nossa CLI. Quando estamos executando uma CLI, podemos ter diferentes comportamentos de acordo com os argumentos que são passados para ela. Por exemplo, se executarmos o comando `ls` no terminal, ele vai listar os arquivos e diretórios do diretório atual. Se executarmos o comando `ls -l`, ele vai listar os arquivos e diretórios do diretório atual, mas com mais informações. Se executarmos o comando `ls -a`, ele vai listar os arquivos e diretórios do diretório atual, mas com os arquivos ocultos. E assim por diante.
 
 
 
