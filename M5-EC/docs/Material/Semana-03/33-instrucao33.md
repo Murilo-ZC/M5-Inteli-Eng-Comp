@@ -282,6 +282,47 @@ Vale destacar um comportamento aqui: ao importar um módulo, todo o código que 
 
 Agora vamos iniciar a criação da nossa CLI. Quando estamos executando uma CLI, podemos ter diferentes comportamentos de acordo com os argumentos que são passados para ela. Por exemplo, se executarmos o comando `ls` no terminal, ele vai listar os arquivos e diretórios do diretório atual. Se executarmos o comando `ls -l`, ele vai listar os arquivos e diretórios do diretório atual, mas com mais informações. Se executarmos o comando `ls -a`, ele vai listar os arquivos e diretórios do diretório atual, mas com os arquivos ocultos. E assim por diante.
 
+Vamos focar nesse tipo de solução por hora, onde enviamos os parâmetros para a execução do nosso programa. Vamos iniciar criando um programa que realiza a soma de dois números. Vou alterar nosso programa `main.py`.
+
+```python
+# main.py
+import sys
+
+# Vamos configurar está função main() para ser executada apenas quando o script for o ponto de entrada da aplicação
+def main():
+    # Nome do script
+    print(f'Nome do Script: {sys.argv[0]}')
+
+    # Somando os demais elementos do script
+    soma = 0
+    for elemento in sys.argv[1:]:
+        soma += float(elemento)
+    print(f'Soma dos elementos fornecidos: {soma}')
+
+if __name__ == "__main__":
+    main()
+```
+
+Vamos executar primeiro o nosso script com o comando: `python3 src/main.py`, para obter a seguinte saída na tela:
+
+```bash
+Nome do Script: src/main.py
+Soma dos elementos fornecidos: 0
+```
+
+Vamos executar o script novamente, mas agora fornecendo alguns valores para ele:
+
+```bash
+python3 src/main.py 1 2.3 4 5 6
+```
+
+A saída que vamos obter agora é:
+
+```bash
+Nome do Script: src/main.py
+Soma dos elementos fornecidos: 18.3
+```
+
 
 
 <div class="loader-mario"></div>
