@@ -910,29 +910,133 @@ A posição atual do robô é uma tupla com as informações de:
 - `j3`: rotação da junta `j3` do robô;
 - `j4`: rotação da junta `j4` do robô.
 
-### Vindo ainda
+Agora vamos trabalhar na movimentação do robô. Sem definirmos aceleração e velocidade, o robô vai se mover com os parâmetros previamente configurados. Vamos alterar o arquivo `robo.py`.
 
-Aqui está o que será adicionado nessa seção:
+```python
+# robo.py
 
-.move_to(x, y, z, r, wait=False) queues a translation in dobot to given coordinates
+# Traz a ferramenta serial para apresentar quais portas estão disponíveis
+from serial.tools import list_ports
+import inquirer
+import pydobot
+from yaspin import yaspin
 
-x: float x cartesian coordinate to move
-y: float y cartesian coordinate to move
-z: float z cartesian coordinate to move
-r: float r effector rotation
-wait: bool waits until command has been executed to return to process
-.speed(velocity, acceleration) changes velocity and acceleration at which the dobot moves to future coordinates
+# Traz o spinner para apresentar uma animação enquanto o robô está se movendo
+spinner = yaspin(text="Processando...", color="yellow")
 
-velocity: float desired translation velocity
-acceleration: float desired translation acceleration
-.suck(enable)
+# Listas as portas seriais disponíveis
+available_ports = list_ports.comports()
 
-enable: bool enables/disables suction
-.grip(enable)
 
-enable: bool enables/disables gripper
-.wait(ms) adds a waiting period to the internal queue of messages
+# Pede para o usuário escolher uma das portas disponíveis
+porta_escolhida = inquirer.prompt([
+    inquirer.List("porta", message="Escolha a porta serial", choices=[x.device for x in available_ports])
+])["porta"]
 
-ms: int number of milliseconds to wait
+# Conecta a porta escolhida ao sistema
+porta_escolhida = available_ports[available_ports.index[porta_escolhida]].device
 
-<div class="loader-mario"></div>
+# Cria uma instância do robô
+robo = pydobot.Dobot(port=porta_escolhida, verbose=False)
+
+# Define a velocidade e a aceleracao do robô
+robo.speed(30, 30)
+
+# Move o robô para a posição (200, 0, 0)
+spinner.start()
+robo.move_to(200, 0, 0, 0, wait=True)
+spinner.stop()
+
+# Move o robô para a posição (200, 200, 0)
+spinner.start()
+robo.move_to(200, 200, 0, 0, wait=True)
+spinner.stop()
+
+# Move o robô para a posição (0, 200, 0)
+spinner.start()
+robo.move_to(0, 200, 0, 0, wait=True)
+spinner.stop()
+# Pega a posição atual do robô
+posicao_atual = robo.pose()
+print(f"Posição atual: {posicao_atual}")
+
+# Fecha a conexão com o robô
+robo.close()
+
+```
+
+O método `move_to` move o robô para a posição desejada. O parâmetro `wait` é utilizado para que o programa espere o robô chegar na posição desejada antes de continuar a execução. Isso é importante para que possamos saber que o robô chegou na posição desejada antes de continuar a execução do programa. 
+
+Agora vamos adicionar a funcionalidade de pegar e soltar objetos. Vamos alterar o arquivo `robo.py`.
+
+```python
+# robo.py
+
+# Traz a ferramenta serial para apresentar quais portas estão disponíveis
+from serial.tools import list_ports
+import inquirer
+import pydobot
+from yaspin import yaspin
+
+# Traz o spinner para apresentar uma animação enquanto o robô está se movendo
+spinner = yaspin(text="Processando...", color="yellow")
+
+# Listas as portas seriais disponíveis
+available_ports = list_ports.comports()
+
+
+# Pede para o usuário escolher uma das portas disponíveis
+porta_escolhida = inquirer.prompt([
+    inquirer.List("porta", message="Escolha a porta serial", choices=[x.device for x in available_ports])
+])["porta"]
+
+# Conecta a porta escolhida ao sistema
+porta_escolhida = available_ports[available_ports.index[porta_escolhida]].device
+
+# Cria uma instância do robô
+robo = pydobot.Dobot(port=porta_escolhida, verbose=False)
+
+# Define a velocidade e a aceleracao do robô
+robo.speed(30, 30)
+
+# Move o robô para a posição (200, 0, 0)
+spinner.start()
+robo.move_to(200, 0, 0, 0, wait=True)
+spinner.stop()
+
+# Inicializa o efetuador do robô
+spinner.start()
+robo.suck(True)
+# Adiciona um delay para o robô efetuar a operação
+robo.wait(200)
+spinner.stop()
+
+# Move o robô para a posição (200, 200, 0)
+spinner.start()
+robo.move_to(200, 200, 0, 0, wait=True)
+spinner.stop()
+
+# Move o robô para a posição (0, 200, 0)
+spinner.start()
+robo.move_to(0, 200, 0, 0, wait=True)
+spinner.stop()
+
+# Inicializa o efetuador do robô
+spinner.start()
+robo.suck(False)
+# Adiciona um delay para o robô efetuar a operação
+robo.wait(200)
+spinner.stop()
+
+# Pega a posição atual do robô
+posicao_atual = robo.pose()
+print(f"Posição atual: {posicao_atual}")
+
+# Fecha a conexão com o robô
+robo.close()
+
+```
+
+Agora estamos com os elementos principais para construir nossa CLI e comunicar com o robô. Vamos agora continuar estudando essas funcionalidades para que possamos criar uma aplicação mais robusta e que atenda as necessidades do nosso projeto ✌️🦾🤖.
+
+<img src={useBaseUrl("/img/mashle-gambatte.jpg")} style={{ display: 'block', marginLeft: 'auto', maxHeight: '40vh', marginRight: 'auto', marginBottom: 24 }} />
