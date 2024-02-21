@@ -775,7 +775,7 @@ Até o momento da escrita deste material, a biblioteca `pydobot` não estava fun
 Para isso, vamos baixar a biblioteca `pydobot` no nosso ambiente virtual. Para isso, vamos executar o seguinte comando:
 
 ```bash
-git clone https://github.com/luismesas/pydobot.git
+python3 -m pip install git+https://github.com/luismesas/pydobot.git
 ```
 
 Ainda execute o comando de instalação pelo `pip`, para trazer as dependências necessárias para a biblioteca `pydobot`.

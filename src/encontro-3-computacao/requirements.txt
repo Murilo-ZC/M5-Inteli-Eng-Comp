@@ -5,7 +5,9 @@ editor==1.6.6
 inquirer==3.2.3
 markdown-it-py==3.0.0
 mdurl==0.1.2
+pydobot==1.3.2
 Pygments==2.17.2
+pyserial==3.4
 readchar==4.0.5
 rich==13.7.0
 runs==1.2.2
