@@ -18,14 +18,12 @@ porta_escolhida = inquirer.prompt([
     inquirer.List("porta", message="Escolha a porta serial", choices=[x.device for x in available_ports])
 ])["porta"]
 
-# Conecta a porta escolhida ao sistema
-porta_escolhida = available_ports[available_ports.index[porta_escolhida]].device
-
+### AJUSTAR NOS EXEMPLOS
 # Cria uma instância do robô
 robo = pydobot.Dobot(port=porta_escolhida, verbose=False)
 
 # Define a velocidade e a aceleracao do robô
-robo.speed(30, 30)
+robo.speed(200, 100)
 
 # Move o robô para a posição (200, 0, 0)
 spinner.start()

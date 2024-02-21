@@ -853,9 +853,6 @@ porta_escolhida = inquirer.prompt([
     inquirer.List("porta", message="Escolha a porta serial", choices=[x.device for x in available_ports])
 ])["porta"]
 
-# Conecta a porta escolhida ao sistema
-porta_escolhida = available_ports[available_ports.index[porta_escolhida]].device
-
 # Cria uma instância do robô
 robo = pydobot.Dobot(port=porta_escolhida, verbose=False)
 
@@ -885,9 +882,6 @@ available_ports = list_ports.comports()
 porta_escolhida = inquirer.prompt([
     inquirer.List("porta", message="Escolha a porta serial", choices=[x.device for x in available_ports])
 ])["porta"]
-
-# Conecta a porta escolhida ao sistema
-porta_escolhida = available_ports[available_ports.index[porta_escolhida]].device
 
 # Cria uma instância do robô
 robo = pydobot.Dobot(port=porta_escolhida, verbose=False)
@@ -932,9 +926,6 @@ available_ports = list_ports.comports()
 porta_escolhida = inquirer.prompt([
     inquirer.List("porta", message="Escolha a porta serial", choices=[x.device for x in available_ports])
 ])["porta"]
-
-# Conecta a porta escolhida ao sistema
-porta_escolhida = available_ports[available_ports.index[porta_escolhida]].device
 
 # Cria uma instância do robô
 robo = pydobot.Dobot(port=porta_escolhida, verbose=False)
@@ -989,9 +980,6 @@ available_ports = list_ports.comports()
 porta_escolhida = inquirer.prompt([
     inquirer.List("porta", message="Escolha a porta serial", choices=[x.device for x in available_ports])
 ])["porta"]
-
-# Conecta a porta escolhida ao sistema
-porta_escolhida = available_ports[available_ports.index[porta_escolhida]].device
 
 # Cria uma instância do robô
 robo = pydobot.Dobot(port=porta_escolhida, verbose=False)
