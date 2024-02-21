@@ -32,15 +32,15 @@ Esse material NÃO substitui de forma alguma o uso da Adalove. Você DEVE entrar
 
 :::
 
-<Tabs>
+<!-- <Tabs>
   <TabItem value="autoestudos-obrigatorios" label="📘 Autoestudos Obrigatórios" default>
      
-     <details> 
-        <summary mdxType="summary">	SCRUM O QUE É (de um Jeito BEM Prático)</summary>
+    <details> 
+        <summary mdxType="summary"> Python TinyDB: base de dados em arquivos JSON</summary>
 
-        - https://www.youtube.com/watch?v=HlmiVz0SqNQ
+        - https://www.youtube.com/watch?v=99Vm0c9eNOA
     </details> 
-   
+    
   </TabItem>
   <TabItem value="autoestudos-opcionais" label="📔 Autoestudos Opcionais">
      
@@ -56,7 +56,9 @@ Esse material NÃO substitui de forma alguma o uso da Adalove. Você DEVE entrar
     </details> 
 
   </TabItem>
-</Tabs>
+</Tabs> -->
+
+<img src="https://i.redd.it/q0dd3k02unqb1.gif" alt="Boot process" style={{ display: 'block', marginLeft: 'auto', maxHeight: '30vh', marginRight: 'auto' }} />
 
 ## 4. Material de Aula
 
