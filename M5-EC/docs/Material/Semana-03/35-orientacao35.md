@@ -32,7 +32,7 @@ Esse material NÃO substitui de forma alguma o uso da Adalove. Você DEVE entrar
 
 :::
 
-<!-- <Tabs>
+<Tabs>
   <TabItem value="autoestudos-obrigatorios" label="📘 Autoestudos Obrigatórios" default>
      
     <details> 
@@ -40,7 +40,17 @@ Esse material NÃO substitui de forma alguma o uso da Adalove. Você DEVE entrar
 
         - https://www.youtube.com/watch?v=99Vm0c9eNOA
     </details> 
-    
+    <details> 
+        <summary mdxType="summary"> TinyDB - Getting Started</summary>
+
+        - https://tinydb.readthedocs.io/en/latest/getting-started.html
+    </details> 
+    <details> 
+        <summary mdxType="summary"> Como usar JSON em PYTHON - Arquivos e Strings</summary>
+
+        - https://www.youtube.com/watch?v=wdL5ZjMpn-w
+    </details> 
+
   </TabItem>
   <TabItem value="autoestudos-opcionais" label="📔 Autoestudos Opcionais">
      
@@ -50,13 +60,18 @@ Esse material NÃO substitui de forma alguma o uso da Adalove. Você DEVE entrar
   <TabItem value="autoestudos-adicionais" label="📓 Autoestudos Adicionais">
     
     <details> 
-        <summary mdxType="summary">	Lean Inception em 15 Minutos | 📎 Zup Clipes ✂️</summary>
+        <summary mdxType="summary">	Reading and Writing Files in Python (Guide)</summary>
 
-        - https://www.youtube.com/watch?v=8BI6jFwmVPA
+        - https://realpython.com/read-write-files-python/
+    </details> 
+    <details> 
+        <summary mdxType="summary">	File Handling in Python</summary>
+
+        - https://www.geeksforgeeks.org/file-handling-python/
     </details> 
 
   </TabItem>
-</Tabs> -->
+</Tabs>
 
 <img src="https://i.redd.it/q0dd3k02unqb1.gif" alt="Boot process" style={{ display: 'block', marginLeft: 'auto', maxHeight: '30vh', marginRight: 'auto' }} />
 
