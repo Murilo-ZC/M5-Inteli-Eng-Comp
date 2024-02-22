@@ -1,5 +1,5 @@
 ---
-sidebar_label: "13 - Encontro de Orientação"
+sidebar_label: "9 - Encontro de Orientação"
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -8,11 +8,11 @@ import TabItem from '@theme/TabItem';
 
 # Instrução de Orientação	
 
-Planning da Sprint 5.
+Entrega da Sprint 3.
 
 ## 1. Objetivos
 
-- Planejamento da Sprint 5.
+- Apresentação para o parceiro.
 
 ## 2. Slides do Encontro
 
