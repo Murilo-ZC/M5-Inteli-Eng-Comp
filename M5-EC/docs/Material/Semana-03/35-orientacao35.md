@@ -18,9 +18,9 @@ Preparação dos Entregáveis
 
 ## 2. Slides do Encontro
 
-<!-- <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vSG6q7EZA2isyGW3V_1pXMM7IJquzznhrFYcQA0ygtI8Nfv7v7SvdBN_jbO2XuOBN3kg1zpmRzti5Om/embed?start=false&loop=false&delayms=3000" frameborder="0" width="75%" height="400" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true" style={{ display: 'block', marginLeft: 'auto', marginRight: 'auto' }}></iframe> -->
+<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vRSCYX-BksZgC3qNZj19u_BZumNhbymTws3izHnf0aAIGmqeBuFvq-O4OZYA2C5Mtq_P_cjJUWAdzSP/embed?start=false&loop=false&delayms=3000" frameborder="0" width="75%" height="400" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true" style={{ display: 'block', marginLeft: 'auto', marginRight: 'auto' }}></iframe>
 
-<img src="https://i.redd.it/q0dd3k02unqb1.gif" alt="Boot process" style={{ display: 'block', marginLeft: 'auto', maxHeight: '30vh', marginRight: 'auto' }} />
+<!-- <img src="https://i.redd.it/q0dd3k02unqb1.gif" alt="Boot process" style={{ display: 'block', marginLeft: 'auto', maxHeight: '30vh', marginRight: 'auto' }} /> -->
 
 ## 3. Material de Autoestudo
 
@@ -366,3 +366,95 @@ if __name__ == '__main__':
 
 A primeira grande diferença que podemos observar é que não estamos mais criando nosso banco, estamos acessando um banco que já foi criado. Além disso, estamos utilizando uma classe para representar os dados que estamos manipulando. Isso é uma prática bastante comum quando estamos trabalhando com bancos de dados.
 
+Vamos avaliar o código anterior por partes:
+
+- `class Funcionario`: Classe para representar um funcionário. Ela possui um método `__init__` para inicializar os atributos da classe e um método `__str__` para representar a classe como uma string.
+
+- `ler_funcionario`: Função para ler um funcionário do banco de dados. Ela recebe a conexão com o banco de dados e o id do funcionário. O método `cursor` cria um cursor para executar comandos SQL. O método `execute` executa o comando SQL para ler o funcionário do banco de dados. O método `fetchone` retorna a primeira linha do resultado da consulta. O método `print` imprime o funcionário.
+
+- `listar_funcionarios`: Função para listar os funcionários do banco de dados. Ela recebe a conexão com o banco de dados. O método `cursor` cria um cursor para executar comandos SQL. O método `execute` executa o comando SQL para listar os funcionários do banco de dados. O método `fetchall` retorna todas as linhas do resultado da consulta. O método `print` imprime os funcionários.
+
+> ***Mas Murilão, e se for necessário manipular diversas entradas?*** É possível sim, o SQLite é um banco de dados relacional que suporta a maioria das funcionalidades do SQL. Isso significa que você pode criar tabelas, inserir registros, listar registros, atualizar registros, deletar registros, entre outras operações.
+
+Agora, será que existe uma forma mais interessante de armazenar os dados? Algo que facilite a leitura de um valor específico, como o que foi setado para uma configuração específica? Claro que existe! Podemos trabalhar com bancos de dados documentais.
+
+### 4.4. Bancos de Dados Documentais
+
+Bancos de dados documentais fazem parte da categoria de banco de dados chamada de NoSQL. NoSQL é um termo genérico que se refere a bancos de dados que não utilizam o modelo relacional. Os bancos de dados documentais são um dos tipos mais comuns de bancos de dados NoSQL. Eles são baseados no modelo de documento, que é um modelo de dados que organiza os dados em documentos. Cada documento é composto por campos e valores. Os bancos de dados documentais são bastante utilizados em sistemas de gerenciamento de conteúdo, sistemas de gerenciamento de relacionamento com o cliente, sistemas de gerenciamento de conteúdo, entre outros.
+
+<img src="https://miro.medium.com/v2/resize:fit:1400/1*LormzrrrUpAg7p74BRS79A.png" alt="Boot process" style={{ display: 'block', marginLeft: 'auto', maxHeight: '30vh', marginRight: 'auto' }} />
+
+Para trabalharmos com os bancos documentais, vamos utilizar a biblioteca `TinyDB`. O `TinyDB` é um banco de dados documental que é bastante leve e que não requer um servidor. Ele é um banco de dados documental que é bastante rápido e que suporta a maioria das funcionalidades do SQL. Para maiores informações, consulte a [documentação oficial](https://tinydb.readthedocs.io/en/latest/).
+
+Primeiro vamos instalar o `TinyDB` utilizando o `pip`. Para isso, vamos rodar o comando: `pip3 install tinydb`.
+
+Agora vamos trabalhar com o arquivo [tinydb_v1.py](#). Para executar ele vamos rodar o comando: `python3 src/tinydb_v1.py`.
+
+```python
+# tinydb_v1.py
+
+from tinydb import TinyDB, Query
+
+def main():
+    db = TinyDB('usuarios.json')
+    User = Query()
+    db.insert({'name': 'John', 'age': 22})
+    user = db.search(User.name == 'John')
+    print(user)
+
+if __name__ == '__main__':
+    main()
+```
+
+Vamos avaliar o código anterior por partes:
+
+- `from tinydb import TinyDB, Query`: Importa a classe `TinyDB` e a classe `Query` da biblioteca `TinyDB`.
+
+- `db = TinyDB('usuarios.json')`: Cria um banco de dados documental chamado `usuarios.json`.
+
+- `User = Query()`: Cria um objeto `User` para realizar consultas no banco de dados.
+
+- `db.insert({'name': 'John', 'age': 22})`: Insere um documento no banco de dados.
+
+- `user = db.search(User.name == 'John')`: Realiza uma consulta no banco de dados.
+
+- `print(user)`: Imprime o resultado da consulta.
+
+Agora vamos criar um arquivo [tinydb_v2.py](#). Para executar ele vamos rodar o comando: `python3 src/tinydb_v2.py`.
+
+```python
+# tinydb_v2.py
+
+from tinydb import TinyDB, Query
+
+class Ponto:
+    def __init__(self, x, y, z, r):
+        self.x = x
+        self.y = y
+        self.z = z
+        self.r = r
+
+    def __str__(self):
+        return f'({self.x}, {self.y}, {self.z}) - {self.r}'
+    
+def inserir_ponto(db, ponto):
+    db.insert({'x': ponto.x, 'y': ponto.y, 'z': ponto.z, 'r': ponto.r})
+
+def listar_pontos(db):
+    return db.all()
+
+def main():
+    db = TinyDB('pontos.json')
+    buscador = Query()
+    inserir_ponto(db, Ponto(1, 2, 3, 4))
+    inserir_ponto(db, Ponto(5, 6, 7, 8))
+    pontos_inseridos = listar_pontos(db)
+    print(pontos_inseridos)
+
+if __name__ == '__main__':
+    main()
+```
+
+Pessoal agora vamos utilizar o conteúdo para resolver o nosso problema do projeto. Gambatte! 🚀🚀
+
+<img src="https://pbs.twimg.com/media/DLOCUGtXkAEEsob.jpg" alt="Boot process" style={{ display: 'block', marginLeft: 'auto', maxHeight: '30vh', marginRight: 'auto' }} />
