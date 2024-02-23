@@ -169,3 +169,92 @@ Vamos avaliar este código por partes:
 
 Vale destacar que as funções acima foram todas escritas utilizando o recurso de list comprehension. Caso você não esteja familiarizado com esse recurso, sugiro que dê uma olhada no material de autoestudo. Outra recomendação é reescrever esse código fonte utilizando a notação padrão de listas.
 
+> ***Observação Importante***: Repare que quando apenas o nome do arquivo é passado para a função `open`, ele é aberto no mesmo diretório do arquivo que está sendo executado. Caso você queira abrir um arquivo em outro diretório, você deve passar o caminho completo do arquivo.
+
+> ***Mas Murilão, e se eu quiser abrir um arquivo em outro diretório?*** Você pode passar o caminho completo do arquivo. Por exemplo, se você quiser abrir o arquivo `numeros.txt` que está no diretório `dados`, você pode passar o caminho completo do arquivo: `dados/numeros.txt`.
+
+Pessoal vocês viram que para manipular o conteúdo do arquivo, utilizamos a função `open` que é uma função built-in do Python. Ela nos permite abrir arquivos em diferentes modos. Os principais modos são:
+
+- `'r'`: Abre o arquivo para leitura. O arquivo deve existir. Caso o arquivo não exista, um erro será lançado.
+- `'w'`: Abre o arquivo para escrita. Se o arquivo já existir, ele será apagado. Se o arquivo não existir, ele será criado.
+- `'a'`: Abre o arquivo para escrita. Se o arquivo já existir, o conteúdo será mantido e os novos dados serão adicionados ao final do arquivo. Se o arquivo não existir, ele será criado.
+
+Além desses modos, existem outros modos que podem ser utilizados. Para mais informações, consulte a [documentação oficial](https://docs.python.org/3/library/functions.html#open).
+
+Pessoal outra observação importante é que o arquivo é fechado automaticamente ao final do bloco `with`. Isso é muito importante, pois garante que o arquivo será fechado, mesmo que ocorra algum erro durante a execução do bloco. Caso você não utilize o bloco `with`, é importante que você feche o arquivo manualmente utilizando o método `close`.
+
+> ***Mas Murilão, e se eu não fechar o arquivo?*** Se você não fechar o arquivo, ele continuará aberto e ocupando memória. Isso pode causar problemas, como por exemplo, o arquivo não ser acessível para outros programas. Além disso, se você tentar abrir muitos arquivos sem fechá-los, você pode atingir o limite de arquivos abertos pelo sistema operacional.
+
+> ***Mas Murilão, tenho que ler todo o conteúdo do arquivo de forma sequêncial?*** Não necessariamente. Você pode ler o conteúdo do arquivo de forma sequêncial, ou seja, lendo todo o conteúdo de uma vez, ou então, você pode ler o conteúdo do arquivo linha a linha. Para isso, você pode utilizar o método `readline`.
+
+Mas será que não existe uma forma mais interessante de armazenar os dados? Algo que facilite a leitura de um valor específico, como o que foi setado para uma configuração específica? Claro que existe! Podemos trabalhar com arquivos JSON.
+
+### 4.2. Arquivos JSON
+
+O JSON (JavaScript Object Notation) é um formato de arquivo bastante utilizado para armazenar dados. Ele é um formato de texto que é fácil de ler e escrever. Além disso, ele é fácil de ser interpretado e gerado por máquinas. O JSON é um formato de arquivo bastante utilizado para armazenar configurações, dados de usuários, dados de jogos, entre outros.
+
+O JSON veio do JavaScript, mas é um formato de arquivo independente de linguagem. Isso significa que ele pode ser utilizado em qualquer linguagem de programação. No Python, o JSON é suportado pela biblioteca `json`, que é uma biblioteca built-in do Python. O JSON é um formado de arquivo bastante similar a um dicionário. Ele é composto por pares de chave e valor. As chaves são strings e os valores podem ser strings, números, objetos, arrays, booleanos ou nulos. Para saber mais sobre o JSON, consulte a [documentação oficial](https://www.json.org/json-en.html).
+
+Vamos trabalhar com o arquivo [arquivos_json.py](#). Para executar ele vamos rodar o comando: `python3 src/arquivos_json.py`.
+
+```python
+# arquivos_json.py
+
+import json
+
+def escrever_arquivo(nome_arquivo, dados):
+    with open(nome_arquivo, 'w') as arquivo:
+        json.dump(dados, arquivo)
+
+def ler_arquivo(nome_arquivo):
+    with open(nome_arquivo, 'r') as arquivo:
+        return json.load(arquivo)
+
+def main():
+    dados = {
+        'nome': 'Fulano',
+        'idade': 30,
+        'peso': 80.5
+    }
+    escrever_arquivo('dados.json', dados)
+    dados_lidos = ler_arquivo('dados.json')
+    print(dados_lidos)
+    # Para manipular um campo específico do arquivo, basta fazer:
+    dados_lidos['idade'] = 31
+    print(dados_lidos)
+    escrever_arquivo('dados.json', dados_lidos)
+
+if __name__ == '__main__':
+    main()
+```
+
+Vamos avaliar o código anterior por partes:
+
+- `import json`: Importa a biblioteca `json`. Ela é uma biblioteca built-in do Python que nos permite trabalhar com arquivos JSON.
+
+- `escrever_arquivo`: Função para escrever os dados em um arquivo JSON. Ela recebe o nome do arquivo e os dados a serem escritos. O método `dump` escreve os dados no arquivo. ***Importante Destacar***: o método `dump` recebe como parâmetro o objeto a ser escrito e o arquivo onde ele será escrito. Este objeto pode ser um dicionário, uma lista, um número, uma string, um booleano ou um nulo.
+
+- `ler_arquivo`: Função para ler os dados de um arquivo JSON. Ela recebe o nome do arquivo e retorna os dados lidos. O método `load` lê os dados do arquivo. ***Importante Destacar***: o método `load` recebe como parâmetro o arquivo de onde os dados serão lidos. Ele retorna o objeto lido do arquivo.
+
+> ***Mas Murilão, e se for necessário manipular diversas entradas?*** É possível sim, o JSON é um formato de arquivo bastante flexível. Ele suporta objetos, arrays, strings, números, booleanos e nulos. Isso significa que você pode armazenar diversos tipos de dados em um arquivo JSON. Além disso, você pode armazenar objetos dentro de objetos, arrays dentro de objetos, objetos dentro de arrays, entre outras combinações.
+
+Mas pessoal, está ficando complexo a manipulação de arquivos. Será que não existe uma forma mais interessante de armazenar os dados? Algo que facilite a leitura de um valor específico, como o que foi setado para uma configuração específica? Claro que existe! Podemos trabalhar com bancos de dados.
+
+### 4.3. Bancos de Dados Relacionais
+
+Uma das formas mais comuns de armazenar dados é utilizando bancos de dados. Os bancos de dados são sistemas que permitem armazenar, manipular e recuperar dados. Existem diversos tipos de bancos de dados, como por exemplo, os bancos de dados relacionais, os bancos de dados documentais, os bancos de dados de séries temporais, os bancos de dados de grafos, entre outros.
+
+Os bancos de dados relacionais são um dos tipos mais comuns de bancos de dados. Eles são baseados no modelo relacional, que é um modelo de dados que organiza os dados em tabelas. Cada tabela é composta por linhas e colunas. As linhas representam os registros e as colunas representam os campos. Os bancos de dados relacionais são bastante utilizados em sistemas de informação, sistemas de gerenciamento de conteúdo, sistemas de gerenciamento de relacionamento com o cliente, entre outros.
+
+<img src="https://jelvix.com/wp-content/uploads/2020/05/whats-a-relational-database.jpg" alt="Boot process" style={{ display: 'block', marginLeft: 'auto', maxHeight: '30vh', marginRight: 'auto' }} />
+
+Cada linha de uma tabela é um registro. Cada coluna de uma tabela é um campo. Cada tabela tem um nome único. Cada campo tem um nome único. Cada campo tem um tipo de dado. Cada registro tem um valor para cada campo. Cada registro é único. Cada campo pode ser uma chave primária, que é um campo que identifica unicamente um registro. Cada campo pode ser uma chave estrangeira, que é um campo que referencia um registro de outra tabela.
+
+Quando estamos trabalhando com bancos relacionais, precisamos definir o esquema do banco de dados. O esquema é a estrutura do banco de dados. Ele define as tabelas, os campos, os tipos de dados, as chaves primárias, as chaves estrangeiras, as restrições, entre outros. O esquema é definido utilizando uma linguagem de definição de dados, como por exemplo, o SQL (Structured Query Language).
+
+Existem diversos tipos de software que permitem trabalhar com os bancos de dados relacionais. Eles são os responsáveis por garantir a integridade dos dados, a segurança dos dados, a recuperação dos dados, entre outros. Alguns exemplos de software de bancos de dados relacionais são o MySQL, o PostgreSQL, o SQLite, o Oracle, o SQL Server, entre outros.
+
+Vamos trabalhar com o banco de dados relacional SQLite. O SQLite é um banco de dados relacional que é embutido na maioria dos sistemas operacionais. Ele é um banco de dados relacional que é bastante utilizado em sistemas embarcados, sistemas de desktop, sistemas móveis, entre outros. O SQLite é um banco de dados relacional que é bastante leve e que não requer um servidor. Ele é um banco de dados relacional que é bastante rápido e que suporta a maioria das funcionalidades do SQL. Para maiores informações, consulte a [documentação oficial](https://www.sqlite.org/index.html).
+
+De forma build-in, o Python já possui uma biblioteca para trabalhar com o SQLite. Vamos trabalhar com o arquivo [sqlite_v1.py](#). Para executar ele vamos rodar o comando: `python3 src/sqlite_v1.py`.
+
