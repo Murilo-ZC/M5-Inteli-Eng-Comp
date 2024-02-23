@@ -258,3 +258,111 @@ Vamos trabalhar com o banco de dados relacional SQLite. O SQLite é um banco de 
 
 De forma build-in, o Python já possui uma biblioteca para trabalhar com o SQLite. Vamos trabalhar com o arquivo [sqlite_v1.py](#). Para executar ele vamos rodar o comando: `python3 src/sqlite_v1.py`.
 
+```python
+# sqlite_v1.py
+
+import sqlite3
+
+def criar_tabela(conexao):
+    cursor = conexao.cursor()
+    cursor.execute('''
+        CREATE TABLE IF NOT EXISTS pessoa (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            nome TEXT NOT NULL,
+            idade INTEGER NOT NULL
+        )
+    ''')
+    conexao.commit()
+
+def inserir_pessoa(conexao, nome, idade):
+    cursor = conexao.cursor()
+    cursor.execute('''
+        INSERT INTO pessoa (nome, idade) VALUES (?, ?)
+    ''', (nome, idade))
+    conexao.commit()
+
+def listar_pessoas(conexao):
+    cursor = conexao.cursor()
+    cursor.execute('''
+        SELECT id, nome, idade FROM pessoa
+    ''')
+    for pessoa in cursor.fetchall():
+        print(pessoa)
+
+def main():
+    conexao = sqlite3.connect('pessoas.db')
+    criar_tabela(conexao)
+    inserir_pessoa(conexao, 'Fulano', 30)
+    inserir_pessoa(conexao, 'Ciclano', 25)
+    listar_pessoas(conexao)
+    conexao.close()
+
+if __name__ == '__main__':
+    main()
+```
+
+Vamos avaliar o código anterior por partes:
+
+- `import sqlite3`: Importa a biblioteca `sqlite3`. Ela é uma biblioteca built-in do Python que nos permite trabalhar com o SQLite.
+
+- `criar_tabela`: Função para criar a tabela no banco de dados. Ela recebe a conexão com o banco de dados. O método `cursor` cria um cursor para executar comandos SQL. O método `execute` executa o comando SQL para criar a tabela. Dentro do método `execute`, utilizando os comandos SQL para criar a tabela `pessoa`, com os campos: `id`, `nome` e `idade`. O método `commit` confirma a transação.
+
+- `inserir_pessoa`: Função para inserir uma pessoa na tabela do banco de dados. Ela recebe a conexão com o banco de dados, o nome e a idade da pessoa. O método `cursor` cria um cursor para executar comandos SQL. O método `execute` executa o comando SQL para inserir a pessoa na tabela. Dentro do método `execute`, utilizando os comandos SQL para inserir a pessoa na tabela `pessoa`. O método `commit` confirma a transação.
+
+- `listar_pessoas`: Função para listar as pessoas da tabela do banco de dados. Ela recebe a conexão com o banco de dados. O método `cursor` cria um cursor para executar comandos SQL. O método `execute` executa o comando SQL para listar as pessoas da tabela. O método `fetchall` retorna todas as linhas do resultado da consulta. O método `print` imprime as pessoas.
+
+> ***Mas Murilão, e se for necessário manipular diversas entradas?*** É possível sim, o SQLite é um banco de dados relacional que suporta a maioria das funcionalidades do SQL. Isso significa que você pode criar tabelas, inserir registros, listar registros, atualizar registros, deletar registros, entre outras operações.
+
+Podemos observar que o arquivo `pessoas.db` foi criado no mesmo diretório do arquivo que está sendo executado. Caso você queira criar o arquivo em outro diretório, você deve passar o caminho completo do arquivo. Por exemplo, se você quiser criar o arquivo `pessoas.db` no diretório `dados`, você pode passar o caminho completo do arquivo: `dados/pessoas.db`.
+
+Este arquivo pode ser manipulado utilizando editores de banco de dados, como por exemplo, o DBeaver, o DB Browser for SQLite, entre outros. 
+
+Agora vamos trabalhar com o arquivo [sqlite_v2.py](#). Para executar ele vamos rodar o comando: `python3 src/sqlite_v2.py`. Ele vai acessar o banco de dados `faker.db` que está no diretório `src`.
+
+```python
+# sqlite_v2.py
+
+import sqlite3
+
+class Funcionario:
+    def __init__(self, nome, email, idade, salario):
+        self.nome = nome
+        self.idade = idade
+        self.salario = salario
+        self.email = email
+    
+    def __str__(self):
+        return f'{self.nome} - {self.email} - {self.idade} - {self.salario}'
+
+def ler_funcionario(conexao, id):
+    cursor = conexao.cursor()
+    cursor.execute('''
+        SELECT nome, email, idade, salario FROM funcionarios WHERE id = ?
+    ''', (id))
+    pessoa = cursor.fetchone()
+    if pessoa:
+        print(pessoa)
+        return Funcionario(*pessoa)
+    else:
+        print('Pessoa não encontrada')
+        return None
+    
+def listar_funcionarios(conexao):
+    cursor = conexao.cursor()
+    cursor.execute('''
+        SELECT nome, email, idade, salario FROM funcionarios
+    ''')
+    for pessoa in cursor.fetchall():
+        print(pessoa)
+
+def main():
+    conexao = sqlite3.connect('faker.db')
+    listar_funcionarios(conexao)
+    conexao.close()
+
+if __name__ == '__main__':
+    main()
+```
+
+A primeira grande diferença que podemos observar é que não estamos mais criando nosso banco, estamos acessando um banco que já foi criado. Além disso, estamos utilizando uma classe para representar os dados que estamos manipulando. Isso é uma prática bastante comum quando estamos trabalhando com bancos de dados.
+
