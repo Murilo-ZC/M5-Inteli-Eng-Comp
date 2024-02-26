@@ -74,12 +74,49 @@ Esse material NÃO substitui de forma alguma o uso da Adalove. Você DEVE entrar
 
         - https://www.youtube.com/watch?v=6Hmo5XabUro
     </details> 
-    
+    <details> 
+        <summary mdxType="summary">	Organizando nossa Aplicação com Flask Blueprints</summary>
+
+        - https://www.youtube.com/watch?v=EML_F6W_zrU
+    </details> 
+
   </TabItem>
 </Tabs>
 
 <!-- <img src="https://i.redd.it/q0dd3k02unqb1.gif" alt="Boot process" style={{ display: 'block', marginLeft: 'auto', maxHeight: '30vh', marginRight: 'auto' }} /> -->
 
 ## 4. Material de Aula
+
+Pessoal ao longo deste encontro vamos compreender alguns conceitos importantes para o desenvolvimento dos nossos projetos: como construir soluções que possam ser acessadas via web, como criar um servidor e como integrar o robô com a aplicação web. Para isso, vamos passar por alguns conceitos fundamentais para depois iniciarmos a construção da nossa aplicação web, utilizando o microframework Flask.
+
+### 4.1 Conceitos Fundamentais de Aplicações Web
+
+<img src="https://i.redd.it/q0dd3k02unqb1.gif" alt="Boot process" style={{ display: 'block', marginLeft: 'auto', maxHeight: '30vh', marginRight: 'auto' }} />
+
+### 4.2 Python Flask
+
+<img src="https://i.redd.it/q0dd3k02unqb1.gif" alt="Boot process" style={{ display: 'block', marginLeft: 'auto', maxHeight: '30vh', marginRight: 'auto' }} />
+
+### 4.3 Construção de uma API com Flask
+
+<img src="https://i.redd.it/q0dd3k02unqb1.gif" alt="Boot process" style={{ display: 'block', marginLeft: 'auto', maxHeight: '30vh', marginRight: 'auto' }} />
+
+### 4.4 Construção de uma aplicação web com Flask
+
+<img src="https://i.redd.it/q0dd3k02unqb1.gif" alt="Boot process" style={{ display: 'block', marginLeft: 'auto', maxHeight: '30vh', marginRight: 'auto' }} />
+
+### 4.5 Deploy da aplicação web
+
+<img src="https://i.redd.it/q0dd3k02unqb1.gif" alt="Boot process" style={{ display: 'block', marginLeft: 'auto', maxHeight: '30vh', marginRight: 'auto' }} />
+
+### 4.6 Integrando aplicação web com banco de dados
+
+<img src="https://i.redd.it/q0dd3k02unqb1.gif" alt="Boot process" style={{ display: 'block', marginLeft: 'auto', maxHeight: '30vh', marginRight: 'auto' }} />
+
+### 4.7 Utilizando *blueprints* para organizar a aplicação
+
+<img src="https://i.redd.it/q0dd3k02unqb1.gif" alt="Boot process" style={{ display: 'block', marginLeft: 'auto', maxHeight: '30vh', marginRight: 'auto' }} />
+
+### 4.8 Integração com o Robô
 
 <img src="https://i.redd.it/q0dd3k02unqb1.gif" alt="Boot process" style={{ display: 'block', marginLeft: 'auto', maxHeight: '30vh', marginRight: 'auto' }} />
