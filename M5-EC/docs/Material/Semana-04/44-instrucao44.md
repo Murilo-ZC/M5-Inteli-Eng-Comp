@@ -33,33 +33,52 @@ Esse material NÃO substitui de forma alguma o uso da Adalove. Você DEVE entrar
 
 :::
 
-<!-- <Tabs>
+<Tabs>
   <TabItem value="autoestudos-obrigatorios" label="📘 Autoestudos Obrigatórios" default>
      
     <details> 
-        <summary mdxType="summary"> Python TinyDB: base de dados em arquivos JSON</summary>
+        <summary mdxType="summary"> Web Programming with Flask - Intro to Computer Science - Harvard`s CS50 (2018)</summary>
 
-        - https://www.youtube.com/watch?v=99Vm0c9eNOA
+        - https://www.youtube.com/watch?v=zdgYw-3tzfI
     </details> 
     
   </TabItem>
   <TabItem value="autoestudos-opcionais" label="📔 Autoestudos Opcionais">
      
-        <img class="image-intro" src={useBaseUrl("/img/memes/mash_celebrando.gif")} style={{ display: 'block', marginLeft: 'auto', maxHeight: '40vh', marginRight: 'auto' }}/>
+     <details> 
+        <summary mdxType="summary"> Documentação Oficial Flask - Tutorial</summary>
+
+        - https://flask.palletsprojects.com/en/3.0.x/tutorial/
+    </details> 
 
   </TabItem>
   <TabItem value="autoestudos-adicionais" label="📓 Autoestudos Adicionais">
     
     <details> 
-        <summary mdxType="summary">	Lean Inception em 15 Minutos | 📎 Zup Clipes ✂️</summary>
+        <summary mdxType="summary">	API REST - Live de Python #175</summary>
 
-        - https://www.youtube.com/watch?v=8BI6jFwmVPA
+        - https://www.youtube.com/watch?v=1_nQ5A2HcgU
     </details> 
+    <details> 
+        <summary mdxType="summary">	Create A Python API in 12 Minutes</summary>
 
+        - https://www.youtube.com/watch?v=zsYIw6RXjfM
+    </details> 
+    <details> 
+        <summary mdxType="summary">	Build APIs with Flask (the right way)</summary>
+
+        - https://www.youtube.com/watch?v=mt-0F_5KvQw
+    </details> 
+    <details> 
+        <summary mdxType="summary">	Blueprints - Flask Tutorial (Part 12)</summary>
+
+        - https://www.youtube.com/watch?v=6Hmo5XabUro
+    </details> 
+    
   </TabItem>
-</Tabs> -->
+</Tabs>
 
-<img src="https://i.redd.it/q0dd3k02unqb1.gif" alt="Boot process" style={{ display: 'block', marginLeft: 'auto', maxHeight: '30vh', marginRight: 'auto' }} />
+<!-- <img src="https://i.redd.it/q0dd3k02unqb1.gif" alt="Boot process" style={{ display: 'block', marginLeft: 'auto', maxHeight: '30vh', marginRight: 'auto' }} /> -->
 
 ## 4. Material de Aula
 
