@@ -457,4 +457,285 @@ if __name__ == '__main__':
 
 Pessoal agora vamos utilizar o conteúdo para resolver o nosso problema do projeto. Gambatte! 🚀🚀
 
+### 4.5 Um Pouco de Diversão
+
+Pessoal vamos agora construir um software do tipo `TO-DO List`, mas utilizando o banco de dados `TinyDB`. Vamos trabalhar com o arquivo [tinydb_v3.py](#). Para executar ele vamos rodar o comando: `python3 src/tinydb_v3.py`.
+
+```python
+# tinydb_v3.py
+# Construindo um CRUD de notas com o TinyDB
+from tinydb import TinyDB, Query
+from datetime import datetime
+
+class Nota:
+    def __init__(self, titulo, texto):
+        self.titulo = titulo
+        self.texto = texto
+        self.data_modificacao = None
+        # Cria o registro da hora que a nota foi criada
+        self.data_criado = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+
+    def __str__(self):
+        return f'{self.titulo} - {self.texto} - {self.data_criado} - {self.data_modificacao}'
+    
+# CRUD com as notas
+def inserir_nota(db, nota):
+    db.insert({'titulo': nota.titulo, 'texto': nota.texto, 'data_criado': nota.data_criado, 'data_modificacao': nota.data_modificacao})
+
+def listar_notas(db):
+    return db.all()
+
+def buscar_nota(db, titulo):
+    buscador = Query()
+    return db.search(buscador.titulo == titulo)
+
+def atualizar_nota(db, titulo, texto):
+    buscador = Query()
+    db.update({'texto': texto, 'data_modificacao': datetime.now().strftime('%Y-%m-%d %H:%M:%S')}, buscador.titulo == titulo)
+
+def deletar_nota(db, titulo):
+    buscador = Query()
+    db.remove(buscador.titulo == titulo)
+
+# Agora lógica prinicipal do programa
+def main():
+    db = TinyDB('notas.json')
+    continuar = True
+    while continuar:
+        print('1. Inserir nota')
+        print('2. Listar notas')
+        print('3. Buscar nota')
+        print('4. Atualizar nota')
+        print('5. Deletar nota')
+        print('6. Sair')
+        opcao = int(input('Escolha uma opção: '))
+        if opcao == 1:
+            titulo = input('Digite o título da nota: ')
+            texto = input('Digite o texto da nota: ')
+            inserir_nota(db, Nota(titulo, texto))
+        elif opcao == 2:
+            notas = listar_notas(db)
+            for nota in notas:
+                print(f'{nota["titulo"]} - {nota["texto"]} - {nota["data_criado"]} - {nota["data_modificacao"]}')
+        elif opcao == 3:
+            titulo = input('Digite o título da nota: ')
+            nota = buscar_nota(db, titulo)
+            print(nota)
+        elif opcao == 4:
+            titulo = input('Digite o título da nota: ')
+            texto = input('Digite o texto da nota: ')
+            atualizar_nota(db, titulo, texto)
+        elif opcao == 5:
+            titulo = input('Digite o título da nota: ')
+            deletar_nota(db, titulo)
+        elif opcao == 6:
+            continuar = False
+        else:
+            print('Opção inválida')
+
+if __name__ == '__main__':
+    main()
+
+```
+
+Pessoal aqui temos muitas coisas acontecendo. A primeira delas que vale a pena mencionar é que este software ***PODE*** e ***DEVE*** ser melhorado. No entanto, ele já é um bom ponto de partida para entendermos como podemos utilizar o `TinyDB` para construir um software de `TO-DO List`.
+
+Feito está observação, vamos compreender o que este software está realizando e como ele faz isso analisando alguns dos seus blocos de código primeiro. O objetivo de um software de `TO-DO List` é permitir que o usuário possa criar, listar, buscar, atualizar e deletar notas. Isso é realizado exibindo um menu para o usuário para que ele possa interagir com nossa aplicação.
+
+:::tip[Vale melhorar está CLI?]
+
+Pessoal discutimos que o software pode e deve ser melhorado. Uma das formas de melhorar este software é melhorar a CLI. A CLI é a interface de linha de comando. Ela é a forma como o usuário interage com o software. Uma forma de melhorar a CLI é utilizando uma biblioteca para construir interfaces de linha de comando, como as que estudamos ainda está semana. Não deixem de fazer essa modificação.
+
+Pode ser dificil de perceber no início, mas muito do que fazemos com o desenvolvimento de software vem do volume que praticamos para desenvolver! Gambatte!
+
+:::
+
+Legal, agora que sabemos o objetivo do nosso sistema, vamos começar a analisar como ele alcança eles! Primeiro, todas as nossas notas ficam armazenadas em um arquivo chamado `notas.json`. Este arquivo é criado quando o software é executado pela primeira vez. Se o arquivo já existe, ele é utilizado para receber as novas notas e atualização das antigas.
+
+:::danger[CUIDADO COM DADOS SENSÍVEIS]
+
+Quando utilizamos um arquivo `JSON` para armazenar nossas informações, todas elas estão abertas e podem ser lidas sem maiores problemas. Tomar muito cuidado com o conteúdo dessas informações para evitar que informações sensíveis fiquem expostas.
+
+:::
+
+Agora vamos analisar o código fonte do arquivo [tinydb_v3.py](#). Primeiro importamos os módulos `TinyDB` e `Query` para manipular nossos registros. O módulo `datetime` por sua vez é utilizado para armazenar informações de datas. Vamos avaliar a classe `Nota`.
+
+```python
+class Nota:
+    def __init__(self, titulo, texto):
+        self.titulo = titulo
+        self.texto = texto
+        self.data_modificacao = None
+        # Cria o registro da hora que a nota foi criada
+        self.data_criado = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+
+    def __str__(self):
+        return f'{self.titulo} - {self.texto} - {self.data_criado} - {self.data_modificacao}'
+```
+
+A classe `Nota` serve para representar as notas que serão armazenadas no banco de dados. Ela possui um método `__init__` para inicializar os atributos da classe e um método `__str__` para representar a classe como uma string. O método `__init__` recebe o título e o texto da nota. Ele inicializa os atributos `titulo`, `texto`, `data_modificacao` e `data_criado`. O atributo `data_modificacao` é inicializado como `None`. O atributo `data_criado` é inicializado com a data e hora atual. Repare que a data de inicialização não fica por conta do usuário, é uma forma de garantir o funcionamento do sistema. O método `__str__` retorna uma string com o título, o texto, a data de criação e a data de modificação da nota.
+
+Agora vamos analisar as funções que realizam as operações de CRUD.
+
+```python
+# Restante do código omitido
+# CRUD com as notas
+def inserir_nota(db, nota):
+    db.insert({'titulo': nota.titulo, 'texto': nota.texto, 'data_criado': nota.data_criado, 'data_modificacao': nota.data_modificacao})
+
+def listar_notas(db):
+    return db.all()
+
+def buscar_nota(db, titulo):
+    buscador = Query()
+    return db.search(buscador.titulo == titulo)
+
+def atualizar_nota(db, titulo, texto):
+    buscador = Query()
+    db.update({'texto': texto, 'data_modificacao': datetime.now().strftime('%Y-%m-%d %H:%M:%S')}, buscador.titulo == titulo)
+
+def deletar_nota(db, titulo):
+    buscador = Query()
+    db.remove(buscador.titulo == titulo)
+```
+
+Analisando os métodos individualmente:
+
+- `inserir_nota`: Função para inserir uma nota no banco de dados. Ela recebe o banco de dados e a nota a ser inserida. O método `insert` insere a nota no banco de dados. Repare que os campos da nota são enviados como um dicionário.
+
+- `listar_notas`: Função para listar as notas do banco de dados. Ela recebe o banco de dados. O método `all` retorna todas as notas do banco de dados. Volta uma lista de dicionários.
+
+- `buscar_nota`: Função para buscar uma nota no banco de dados. Ela recebe o banco de dados e o título da nota. O método `search` retorna a nota do banco de dados que possui o título informado.
+
+- `atualizar_nota`: Função para atualizar uma nota no banco de dados. Ela recebe o banco de dados, o título da nota e o texto da nota. O método `update` atualiza a nota no banco de dados. Repare que a data de modificação é atualizada para a data e hora atual.
+
+- `deletar_nota`: Função para deletar uma nota no banco de dados. Ela recebe o banco de dados e o título da nota. O método `remove` deleta a nota do banco de dados.
+
+Se observarmos os métodos implementados, eles são bastante simples e diretos. Eles realizam as operações de CRUD de forma bastante eficiente. No entanto, é importante destacar que todos os métodos estão utilizando dicionários, que é o formato esperado pelo `TinyDB`. Isso significa que o `TinyDB` é bastante flexível e suporta a maioria das operações de CRUD.
+
+Agora vamos modificar esse CRUD para que ele trabalhe com representações de objetos da classe `Nota`. Vamos alterar o programa.
+
+```python
+# tinydb_v3.py
+# Construindo um CRUD de notas com o TinyDB
+from tinydb import TinyDB, Query
+from datetime import datetime
+
+class Nota:
+    def __init__(self, titulo = None, texto = None):
+        self.titulo = titulo
+        self.texto = texto
+        self.data_modificacao = None
+        # Cria o registro da hora que a nota foi criada
+        self.data_criado = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+
+    def __str__(self):
+        return f'{self.titulo} - {self.texto} - {self.data_criado} - {self.data_modificacao}'
+    
+    # Funções auxiliares
+    def nota_to_dict(self):
+        return {'titulo': self.titulo, 'texto': self.texto, 'data_criado': self.data_criado, 'data_modificacao': self.data_modificacao}
+    
+    @staticmethod
+    def dict_to_nota( nota_dict):
+        nota = Nota()
+        nota.titulo = nota_dict['titulo']
+        nota.texto = nota_dict['texto']
+        nota.data_criado = nota_dict['data_criado']
+        nota.data_modificacao = nota_dict['data_modificacao']
+        return nota
+    
+    @staticmethod
+    def db_to_nota(nota_db):
+        nota = Nota(nota_db['titulo'], nota_db['texto'])
+        nota.data_criado = nota_db['data_criado']
+        nota.data_modificacao = nota_db['data_modificacao']
+        return nota
+    
+# CRUD com as notas
+def inserir_nota(db, nota):
+    db.insert(nota.nota_to_dict())
+
+def listar_notas(db):
+    return [Nota.db_to_nota(nota) for nota in db.all()]
+
+
+def buscar_nota(db, titulo):
+    buscador = Query()
+    nota = db.search(buscador.titulo == titulo)
+    if nota:
+        return Nota.dict_to_nota(nota[0])
+    else:
+        return None
+
+
+def atualizar_nota(db, titulo, texto):
+    buscador = Query()
+    db.update({'texto': texto, 'data_modificacao': datetime.now().strftime('%Y-%m-%d %H:%M:%S')}, buscador.titulo == titulo)
+
+def deletar_nota(db, titulo):
+    buscador = Query()
+    db.remove(buscador.titulo == titulo)
+
+
+# Agora lógica prinicipal do programa
+def main():
+    db = TinyDB('notas.json')
+    continuar = True
+    while continuar:
+        print('1. Inserir nota')
+        print('2. Listar notas')
+        print('3. Buscar nota')
+        print('4. Atualizar nota')
+        print('5. Deletar nota')
+        print('6. Sair')
+        opcao = int(input('Escolha uma opção: '))
+        if opcao == 1:
+            titulo = input('Digite o título da nota: ')
+            texto = input('Digite o texto da nota: ')
+            inserir_nota(db, Nota(titulo, texto))
+        elif opcao == 2:
+            notas = listar_notas(db)
+            for nota in notas:
+                print(nota)
+        elif opcao == 3:
+            titulo = input('Digite o título da nota: ')
+            nota = buscar_nota(db, titulo)
+            print(nota)
+        elif opcao == 4:
+            titulo = input('Digite o título da nota: ')
+            texto = input('Digite o texto da nota: ')
+            atualizar_nota(db, titulo, texto)
+        elif opcao == 5:
+            titulo = input('Digite o título da nota: ')
+            deletar_nota(db, titulo)
+        elif opcao == 6:
+            continuar = False
+        else:
+            print('Opção inválida')
+
+if __name__ == '__main__':
+    main()
+```
+
+Vamos observar as modificações realizadas no código:
+
+- Classe `Nota`: Foram adicionados os métodos `nota_to_dict`, `dict_to_nota` e `db_to_nota`. O método `nota_to_dict` retorna um dicionário com os atributos da nota. O método `dict_to_nota` recebe um dicionário e retorna uma nota. O método `db_to_nota` recebe um dicionário e retorna uma nota. Reparar que os métodos `dict_to_nota` e `db_to_nota` são métodos estáticos. Isso significa que eles podem ser chamados sem a necessidade de instanciar um objeto da classe `Nota`.
+
+- Função `inserir_nota`: Foi modificada para receber um objeto da classe `Nota`. O método `insert` recebe um dicionário com os atributos da nota.
+
+- Função `listar_notas`: Foi modificada para retornar uma lista de objetos da classe `Nota`. O método `all` retorna uma lista de dicionários. O método `listar_notas` retorna uma lista de objetos da classe `Nota`.
+
+- Função `buscar_nota`: Foi modificada para retornar um objeto da classe `Nota`. O método `search` retorna uma lista de dicionários. O método `buscar_nota` retorna um objeto da classe `Nota`.
+
+
+Pessoal, o que acharam das modificações realizadas? Elas tornaram o código mais legível e mais fácil de ser mantido. Além disso, elas tornaram o código mais flexível e mais reutilizável. Isso significa que as modificações realizadas tornaram o código mais eficiente e mais eficaz.
+
+
+:::tip[O que aprendemos?]
+
+Pessoal avaliem o software desenvolvido até aqui. Verifiquem se tem algum ponto que vocês ficaram com dúvidas ou que gostariam de melhorar. Isso é muito importante para o desenvolvimento de software. A prática leva a perfeição. Gambatte!
+
+:::
+
 <img src="https://pbs.twimg.com/media/DLOCUGtXkAEEsob.jpg" alt="Boot process" style={{ display: 'block', marginLeft: 'auto', maxHeight: '30vh', marginRight: 'auto' }} />
