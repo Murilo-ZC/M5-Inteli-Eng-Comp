@@ -91,7 +91,40 @@ Pessoal ao longo deste encontro vamos compreender alguns conceitos importantes p
 
 ### 4.1 Conceitos Fundamentais de Aplicações Web
 
-<img src="https://i.redd.it/q0dd3k02unqb1.gif" alt="Boot process" style={{ display: 'block', marginLeft: 'auto', maxHeight: '30vh', marginRight: 'auto' }} />
+Antes de qualquer outro avanço, vamos fazer um nivelamento sobre aplicações web, o que são, o que comem, como vivem e como podemos construir uma. Primeiro precisamos entender quais são as partes de uma aplicação e sua importância.
+
+Existem diversos tipos de aplicação Web, um dos tipos mais conhecidos são os websites, que são acessados por meio de um navegador. Outros tipos de aplicações web são as APIs, que são acessadas por meio de requisições HTTP e retornam dados em formato JSON ou XML. As aplicações Web são programas que podem ser acessados através de um navegador da web, como o Google Chrome, Mozilla Firefox ou Microsoft Edge. Elas são compostas por diversos elementos que trabalham juntos para fornecer uma experiência interativa ao usuário.
+
+<img src="https://www.appventurez.com/wp-content/uploads/2020/07/web-application-architecture-infographic.jpg" alt="Arquitetura de uma aplicação web simplificada" style={{ display: 'block', marginLeft: 'auto', maxHeight: '60vh', marginRight: 'auto' }} />
+
+Avaliando alguns destes elementos, podemos destacar:
+
+- `Cliente`: O navegador do usuário.
+- `Servidor`: O computador que armazena os arquivos da aplicação e processa os pedidos.
+- `HTTP`: O protocolo usado para comunicação entre o cliente e o servidor.
+- `HTML, CSS e JavaScript`: Linguagens usadas para desenvolver a interface da aplicação, a lógica da aplicação e a interatividade.
+- `Banco de dados`: Armazena informações sobre produtos, usuários, pedidos, para citar algumas aplicações.
+- `Interface do usuário`: Páginas da aplicação que o usuário visualiza, como a página inicial, a página de produtos e a página de checkout.
+- `Lógica da aplicação`: Código que define como a aplicação responde às ações do usuário, como adicionar um produto ao carrinho ou realizar um pedido.
+- `Camada de acesso a dados`: Código que interage com o banco de dados para armazenar, recuperar e atualizar informações sobre produtos, usuários e pedidos.
+
+Diferentes aplicações podem ter diferentes arquiteturas, mas a maioria das aplicações web modernas segue uma arquitetura de três camadas, que divide a aplicação em três partes principais: a interface do usuário, a lógica da aplicação e a camada de acesso a dados. Um exemplo de aplicação mais completa pode ser vista na imagem abaixo. Uma explicação mais detalhada sobre a arquitetura de três camadas pode ser vista [aqui](https://www.aalpha.net/blog/web-application-architecture/).
+
+<img src="https://cdn-cjmik.nitrocdn.com/UjszoEMIGzQLBmRYICliaPmdTnvQlovN/assets/images/optimized/rev-22ebbc4/www.aalpha.net/wp-content/uploads/2023/01/Components-of-Web-Application-Architecture.webp" alt="Arquitetura de uma aplicação Web mais completa" style={{ display: 'block', marginLeft: 'auto', maxHeight: '60vh', marginRight: 'auto' }} />
+
+E um resumo sobre a aplicação pode ser vista em:
+
+<iframe width="560" height="315" max-width="724" max-height="600" src="https://www.youtube.com/embed/Sfzo4xm5eX8?si=OHnK6KcQ5OKR6UqP" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style={{ display: 'block', marginLeft: 'auto', marginRight: 'auto', marginBottom: '24px'}}></iframe>
+
+:::tip[Diferentes Arquiteturas]
+
+Para conhecer mais sobre diferentes arquiteturas de aplicações:
+
+<iframe width="560" height="315" max-width="724" max-height="600" src="https://www.youtube.com/embed/i53Gi_K3o7I?si=JHwYo3FC_G0gf903" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style={{ display: 'block', marginLeft: 'auto', marginRight: 'auto', marginBottom: '24px'}}></iframe>
+
+:::
+
+Frente a esses conceitos, vamos entender como podemos construir uma aplicação web com Flask, um microframework para Python.
 
 ### 4.2 Python Flask
 
