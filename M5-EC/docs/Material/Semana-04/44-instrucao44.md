@@ -199,6 +199,58 @@ Agora vamos ajustar nossa aplicação para que ela se comporte como uma API, ou 
 
 ### 4.3 Construção de uma API com Flask
 
+Uma API Web, ou API RESTful, é um conjunto de definições e protocolos que permitem a comunicação entre diferentes sistemas através da web. Ela funciona como um intermediário, possibilitando que um sistema (cliente) solicite dados ou execute ações em outro sistema (servidor) de forma padronizada e segura.
+
+1. `O cliente faz uma requisição`: O cliente envia uma requisição para a API, geralmente através do protocolo HTTP. A requisição especifica o método desejado (GET, POST, PUT, DELETE), o endpoint da API e os dados da requisição.
+2. `A API processa a requisição`: A API recebe a requisição e a processa de acordo com o método especificado. Ela pode acessar um banco de dados, executar um script ou realizar qualquer outra operação necessária.
+3. `A API retorna uma resposta`: A API retorna uma resposta para o cliente, geralmente em formato JSON ou XML. A resposta pode conter dados, mensagens de erro ou outros resultados da operação.
+
+Agora vamos ajustar nossa aplicação para que ela se comporte como uma API. Para isso, vamos criar um novo arquivo chamado `src/encontro-4-computacao/ola-flask-api.py` e adicionar o seguinte código:
+
+```python
+# ola-flask-api.py
+from flask import Flask, jsonify, request
+
+app = Flask(__name__)
+
+@app.route("/ping")
+def ping():
+    return "pong"
+
+@app.route('/echo', methods=['POST'])
+def echo():
+   return jsonify(request.json)
+
+@app.route("/soma/<int:a>/<int:b>")
+def soma(a, b):
+    return jsonify({"resultado": a + b})
+
+@app.route("/subtracao/<int:a>/<int:b>")
+def subtracao(a, b):
+    return jsonify({"resultado": a - b})
+
+@app.route("/multiplicacao")
+def multiplicacao():
+    a = int(request.args.get("a"))
+    b = int(request.args.get("b"))
+    return jsonify({"resultado": a * b})
+
+@app.route("/divisao", methods=["POST"])
+def divisao():
+    dados = request.json
+    a = int(dados.get("a"))
+    b = int(dados.get("b"))
+    return jsonify({"resultado": a / b})
+
+```
+
+Nesse ponto, podemos executar nossa aplicação com o comando: `python3 -m flask --app ola-flask-api run --host 0.0.0.0 --port 8000`. Um ponto diferente aqui é que nossa aplicação agora possui rotas que podem receber requisições e retornar respostas. Ele não é uma aplicação web tradicional, mas sim uma API, que pode ser acessada por outros sistemas através de requisições HTTP.
+
+> ***IMPORTANTE:*** Uma aplicação pode possuir rotas de API e rotas de aplicação web. As rotas de API são utilizadas para fornecer dados e funcionalidades para outros sistemas, enquanto as rotas de aplicação web são utilizadas para fornecer uma interface interativa para o usuário.
+
+Para testar a nossa aplicação, vamos utilizar o Thunder Client, uma extensão do Visual Studio Code que nos permite fazer requisições HTTP. Para instalar o Thunder Client, acesse [aqui](https://marketplace.visualstudio.com/items?itemName=rangav.vscode-thunder-client).
+
+Agora vamos fazer algumas requisições para a nossa aplicação. Primeiro, vamos fazer uma requisição GET para a rota `/ping`. Em seguida, vamos fazer uma requisição POST para a rota `/echo` com o corpo `{"mensagem": "Ola Mundo!!"}`. Por fim, vamos fazer requisições para as rotas `/soma`, `/subtracao`, `/multiplicacao` e `/divisao` com os parâmetros e corpo especificados.
 
 
 <img src="https://i.redd.it/q0dd3k02unqb1.gif" alt="Boot process" style={{ display: 'block', marginLeft: 'auto', maxHeight: '30vh', marginRight: 'auto' }} />
