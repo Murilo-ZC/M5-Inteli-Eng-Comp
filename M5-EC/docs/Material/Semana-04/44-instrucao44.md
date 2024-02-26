@@ -128,9 +128,78 @@ Frente a esses conceitos, vamos entender como podemos construir uma aplicação 
 
 ### 4.2 Python Flask
 
-<img src="https://i.redd.it/q0dd3k02unqb1.gif" alt="Boot process" style={{ display: 'block', marginLeft: 'auto', maxHeight: '30vh', marginRight: 'auto' }} />
+Para construir uma aplicação web, precisamos de um servidor que possa receber requisições e retornar respostas. O Flask é um microframework para Python que nos permite construir aplicações web de forma rápida e fácil. Ele é um dos frameworks mais populares para construção de aplicações web em Python, e é utilizado por empresas como Netflix, Reddit, Lyft, entre outras.
+
+O Python em conjunto com nossa aplicação Flask é executada no servidor, que é um computador que armazena os arquivos da aplicação e processa os pedidos. O servidor é responsável por receber as requisições dos clientes, processar essas requisições e retornar respostas. O servidor é um programa que executa continuamente, aguardando por requisições e respondendo a elas.
+
+O Flask é um microframework, o que significa que ele é um framework minimalista que fornece apenas o essencial para construir uma aplicação web. Ele é fácil de aprender e usar, e é uma ótima opção para construir aplicações web pequenas e médias. O Flask é extensível, o que significa que podemos adicionar funcionalidades adicionais através de extensões, que são pacotes de código que estendem as funcionalidades do Flask. Para conhecer mais sobre o Flask, acesse a [documentação oficial](https://flask.palletsprojects.com/en/latest/).
+
+Para utilizarmos o Flask, vamos primeiro criar um ambiente virtual para nossa aplicação. Os arquivos de uma aplicação Flask são organizados de forma que possamos separar a lógica da aplicação em diferentes arquivos. Todo nosso código será desenvolvido em [`src/encontro-4-computacao`](#).
+
+Primeiro vamos instalar o Flask em nosso ambiente virtual. Para isso, vamos utilizar o comando `pip install flask`. Após a instalação, vamos criar um arquivo chamado `src/encontro-4-computacao/ola-flask.py` e adicionar o seguinte código:
+
+```python
+# ola-flask.py
+from flask import Flask
+
+app = Flask(__name__)
+
+@app.route("/")
+def hello_world():
+    return "<p>Ola Mundo!!</p>"
+```
+
+Agora com nossa aplicação salva, vamos executar nossa aplicação: `python3 -m flask --app ola-flask run`. Vamos obter a seguinte saída no terminal:
+
+```bash
+ * Serving Flask app 'ola-flask'
+ * Debug mode: off
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on http://127.0.0.1:5000
+Press CTRL+C to quit
+```
+
+Ao acessar o endereço apresentado no terminal, vamos conseguir ver a imagem "Ola Mundo!!" no navegador. Com isso, conseguimos criar nossa primeira aplicação web com Flask.
+
+:::danger[Atenção]
+
+Até aqui pessoal, fizemos bastante coisa, mas vamos passar por cada um dos passos para compreender o que aconteceu. Se você está com dúvidas, não se preocupe, vamos passar por cada um dos passos para compreender o que aconteceu.
+
+<img src="https://media1.tenor.com/m/WgoifA87r5AAAAAC/mashle-mash-burnedead.gif" alt="Mashle Confused" style={{ display: 'block', marginLeft: 'auto', maxHeight: '30vh', marginRight: 'auto', marginBottom: '24px'}} />
+
+:::
+
+Agora vamos compreender o que aconteceu aqui!
+
+Primeiro, nosso arquivo fonte. O arquivo `ola-flask.py` é um arquivo Python que contém o código da nossa aplicação. Neste arquivo, importamos a classe `Flask` do módulo `flask` e criamos uma instância da classe `Flask` chamada `app`. A instância da classe `Flask` representa a nossa aplicação web. Em seguida, utilizamos o decorador `@app.route("/")` para associar a função `hello_world` com a rota `/`. O decorador `@app.route("/")` é uma forma de associar uma função com uma rota. Quando um cliente acessa a rota `/`, a função `hello_world` é executada e retorna a string "Ola Mundo!!".
+
+O objeto `app` é um objeto especial nas aplicações Python. Ele é responsável por configurar a aplicação e gerenciar as requisições e respostas. O objeto `app` possui diversos métodos e atributos que nos permitem configurar a aplicação e adicionar funcionalidades adicionais. O método `app.run()` é utilizado para executar a aplicação. Ele inicia um servidor de desenvolvimento que aguarda por requisições e responde a elas. Outra características bastante importante é que o `app` de Flask é um singleton, ou seja, ele é único e compartilhado por toda a aplicação. Para conhecer mais sobre o padrão Singleton, acesse [aqui](https://refactoring.guru/pt-br/design-patterns/singleton).
+
+Agora para executar nossa aplicação, utilizamos o comando `python3 -m flask --app ola-flask run`. O comando `python3 -m flask` é utilizado para executar o Flask. O argumento `--app ola-flask` é utilizado para especificar o nome do arquivo que contém a aplicação. O argumento `run` é utilizado para iniciar o servidor de desenvolvimento. O servidor de desenvolvimento é um servidor que aguarda por requisições e responde a elas. Ele é utilizado para testar a aplicação durante o desenvolvimento. O servidor de desenvolvimento é executado no endereço `http://120.0.0.0:5000`.
+
+:::tip[Modo de Desenvolvimento]
+
+Podemos alterar a porta onde o servidor de desenvolvimento é executado utilizando o argumento `--port`. Por exemplo, para executar o servidor de desenvolvimento na porta 8000, utilizamos o comando `python3 -m flask --app ola-flask run --port 8000`.
+
+Podemos também expor a aplicação para os outros elementos da rede, utilizando o argumento `--host`. Por exemplo, para expor a aplicação para os outros elementos da rede, utilizamos o comando `python3 -m flask --app ola-flask run --host 0.0.0.0`.
+
+:::
+
+Quando nosso servidor recebeu a requisição, ele executou a função `hello_world` e retornou a string "Ola Mundo!!". O servidor de desenvolvimento é um servidor que aguarda por requisições e responde a elas. 
+
+:::danger[APENAS PARA DESENVOLVIMENTO]
+
+Cuidado pessoal, o servidor de desenvolvimento é utilizado apenas para testar a aplicação durante o desenvolvimento. Ele não é adequado para uso em produção. Para implantar a aplicação em produção, utilizamos um servidor WSGI, como o Gunicorn ou o uWSGI. Para conhecer mais sobre o Gunicorn, acesse [aqui](https://gunicorn.org/).
+
+Dizemos que uma aplicação vai para `produção`, quando ela está pronta para ser utilizada por usuários finais. A aplicação em produção é executada em um servidor de produção, que é um servidor que está configurado para executar a aplicação de forma segura e eficiente. O servidor de produção é utilizado para atender as requisições dos usuários finais e fornecer uma experiência interativa ao usuário.
+
+:::
+
+Agora vamos ajustar nossa aplicação para que ela se comporte como uma API, ou seja, que ela possa receber requisições e retornar respostas em formato padronizado.
 
 ### 4.3 Construção de uma API com Flask
+
+
 
 <img src="https://i.redd.it/q0dd3k02unqb1.gif" alt="Boot process" style={{ display: 'block', marginLeft: 'auto', maxHeight: '30vh', marginRight: 'auto' }} />
 
