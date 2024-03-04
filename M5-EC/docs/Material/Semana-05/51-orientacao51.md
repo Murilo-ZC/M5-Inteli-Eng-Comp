@@ -20,7 +20,7 @@ Planning da Sprint 3
 
 <!-- <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vSG6q7EZA2isyGW3V_1pXMM7IJquzznhrFYcQA0ygtI8Nfv7v7SvdBN_jbO2XuOBN3kg1zpmRzti5Om/embed?start=false&loop=false&delayms=3000" frameborder="0" width="75%" height="400" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true" style={{ display: 'block', marginLeft: 'auto', marginRight: 'auto' }}></iframe> -->
 
-<img src="https://i.redd.it/q0dd3k02unqb1.gif" alt="Boot process" style={{ display: 'block', marginLeft: 'auto', maxHeight: '30vh', marginRight: 'auto' }} />
+<img class="image-intro" src={useBaseUrl("/img/memes/mash_celebrando.gif")} style={{ display: 'block', marginLeft: 'auto', maxHeight: '40vh', marginRight: 'auto' }}/>
 
 ## 3. Material de Autoestudo
 
@@ -65,13 +65,14 @@ Esse material NÃO substitui de forma alguma o uso da Adalove. Você DEVE entrar
   </TabItem>
 </Tabs> 
 
-<img src="https://i.redd.it/q0dd3k02unqb1.gif" alt="Boot process" style={{ display: 'block', marginLeft: 'auto', maxHeight: '30vh', marginRight: 'auto' }} />
 
 ## 4. Material de Aula
 
 ### 4.1 Eletricidade Básica	
 
-<img src="https://i.redd.it/q0dd3k02unqb1.gif" alt="Boot process" style={{ display: 'block', marginLeft: 'auto', maxHeight: '30vh', marginRight: 'auto' }} />
+Verificar o material da apresentação abaixo!
+
+<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vSxJxdvsNZeaYokR2zn7fwcIuhimxn1L75T5BK8GJlKmntCeU0opZPlKSEl-6zwn_yA9Ergtc_wM-Dq/embed?start=false&loop=false&delayms=3000" frameborder="0" width="75%" height="400" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true" style={{ display: 'block', marginLeft: 'auto', marginRight: 'auto' }}></iframe>
 
 ### 4.2 Leitura de QrCode com Python
 
