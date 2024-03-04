@@ -31,15 +31,20 @@ Esse material NÃO substitui de forma alguma o uso da Adalove. Você DEVE entrar
 
 :::
 
-<!-- <Tabs>
+<Tabs>
   <TabItem value="autoestudos-obrigatorios" label="📘 Autoestudos Obrigatórios" default>
      
     <details> 
-        <summary mdxType="summary"> Python TinyDB: base de dados em arquivos JSON</summary>
+        <summary mdxType="summary"> Arduino Course for Beginners - Open-Source Electronics Platform - Seção 2 - Fundamentos de Eletrônica</summary>
 
-        - https://www.youtube.com/watch?v=99Vm0c9eNOA
+        - https://youtu.be/zJ-LqeX_fLU?si=CpTMczJxrdBgDSZY&t=81
     </details> 
-    
+    <details> 
+        <summary mdxType="summary"> Arduino Course for Beginners - Open-Source Electronics Platform - Seção 5 - Como utilizar protoboards</summary>
+
+        - https://youtu.be/zJ-LqeX_fLU?si=Dt_dK0tO9jopPN7z&t=2794
+    </details> 
+
   </TabItem>
   <TabItem value="autoestudos-opcionais" label="📔 Autoestudos Opcionais">
      
@@ -47,15 +52,17 @@ Esse material NÃO substitui de forma alguma o uso da Adalove. Você DEVE entrar
 
   </TabItem>
   <TabItem value="autoestudos-adicionais" label="📓 Autoestudos Adicionais">
-    
-    <details> 
+
+    <img class="image-intro" src={useBaseUrl("/img/memes/mash_celebrando.gif")} style={{ display: 'block', marginLeft: 'auto', maxHeight: '40vh', marginRight: 'auto' }}/>
+
+    <!-- <details> 
         <summary mdxType="summary">	Lean Inception em 15 Minutos | 📎 Zup Clipes ✂️</summary>
 
         - https://www.youtube.com/watch?v=8BI6jFwmVPA
-    </details> 
+    </details>  -->
 
   </TabItem>
-</Tabs> -->
+</Tabs> 
 
 <img src="https://i.redd.it/q0dd3k02unqb1.gif" alt="Boot process" style={{ display: 'block', marginLeft: 'auto', maxHeight: '30vh', marginRight: 'auto' }} />
 
