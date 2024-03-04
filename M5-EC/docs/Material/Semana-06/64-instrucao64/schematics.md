@@ -13,13 +13,9 @@ Esse é um autoestudo **obrigatório**
 
 :::
 
-import Admonition from '@theme/Admonition';
-
 # Criando esquemáticos de qualidade
 
-<Admonition 
-    type="info" 
-    title="Autoestudo">
+<Admonition type="info" title="Autoestudo">
 
 <div style={{ textAlign: 'center' }}>
     <iframe 
