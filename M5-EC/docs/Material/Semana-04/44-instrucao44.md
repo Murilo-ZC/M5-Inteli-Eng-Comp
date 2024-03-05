@@ -311,6 +311,166 @@ Pessoal, desta forma abordamos diferentes aspectos de uma aplicação web, como 
 
 ### 4.4 Construção de uma aplicação web com Flask
 
+Agora, vamos construir nossa aplicação Web utilizando um outro recurso do Flask, os *templates*. Os *templates* são arquivos HTML que contém o código HTML da interface da aplicação. Elas são utilizadas para criar páginas da aplicação que o usuário visualiza, como a página inicial, a página de produtos e a página de checkout. Os *templates* permitem que possamos criar páginas dinâmicas, que podem exibir diferentes conteúdos com base nos dados da aplicação.
+
+Agora, vamos criar o projeto em `src/encontro-4-computacao/projeto-web`. Dentro dele, vamos criar o diretório `templates` e o arquivo `app.py`. Em seguida, vamos adicionar o seguinte código ao arquivo `app.py`:
+
+```python
+# app.py
+from flask import Flask, render_template
+
+app = Flask(__name__)
+
+@app.route("/")
+def index():
+    return render_template("index.html")
+
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=8000)
+```
+
+Dentro do diretório `templates`, vamos criar o arquivo `index.html` e adicionar o seguinte código:
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Minha Aplicação Web</title>
+</head>
+<body>
+    <h1>Ola Mundo!!</h1>
+</body>
+</html>
+```
+
+Como modificamos nosso arquivo `app.py`, vamos executar nossa aplicação com o comando: `python projeto-web/app.py`, considerando que o terminal está no repositório `encontro-4-computacao`. Agora, ao acessar a rota `http://localhost:8000`, vamos ver a página `index.html` sendo exibida no navegador.
+
+Mais arquivos e outras rotas podem ser adicionados a aplicação. Vamos adicionar mais uma rota e um arquivo HTML para ela. Vamos criar o arquivo `sobre.html` e adicionar o seguinte código:
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sobre</title>
+</head>
+<body>
+    <h1>Sobre</h1>
+    <p>Esta é a página sobre a minha aplicação web.</p>
+</body>
+</html>
+```
+
+E adicionar a rota para a página `sobre.html` no arquivo `app.py`:
+
+```python
+# app.py
+from flask import Flask, render_template
+
+app = Flask(__name__)
+
+@app.route("/")
+def index():
+    return render_template("index.html")
+
+@app.route("/sobre")
+def sobre():
+    return render_template("sobre.html")
+
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=8000)
+```
+
+Agora, ao acessar a rota `http://localhost:8000/sobre`, vamos ver a página `sobre.html` sendo exibida no navegador.
+
+> "Mas Murilão, e se eu quisar passar informações para a página, como eu faço?". Podemos preparar nossa aplicação para receber informações e passar elas para a página. Vamos adicionar um parâmetro para a rota `sobre` e passar ele para a página `sobre.html`. Vamos adicionar o seguinte código ao arquivo `app.py`:
+
+```python
+# app.py
+from flask import Flask, render_template
+
+app = Flask(__name__)
+
+@app.route("/")
+def index():
+    return render_template("index.html")
+
+@app.route("/sobre/<nome>")
+def sobre(nome):
+    return render_template("sobre.html", nome=nome)
+
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=8000)	
+```
+
+Aqui estamos passando um parâmetro para a rota `sobre` e passando ele para a página `sobre.html`. Agora, ao acessar a rota `http://localhost:8000/sobre/Murilão`, vamos ver a página `sobre.html` sendo exibida no navegador com as mensagens: 
+
+> Esta é a página sobre a minha aplicação web.
+> Ola Murilão!!
+
+Para isso, é necessário editar o arquivo `sobre.html`. Vamos adicionar o seguinte código:
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sobre</title>
+</head>
+<body>
+    <h1>Sobre</h1>
+    <p>Esta é a página sobre a minha aplicação web.</p>
+    <p>Ola {{ nome }}!!</p>
+</body>
+</html>
+```
+
+> "Calma lá Murilão! Que aconteceu aqui? Tem umas coisas nesse código que não são HTML!" Isso mesmo pessoal, o código que está entre `{{` e `}}` é um código Python que é executado pelo Flask. Esse código é utilizado para passar informações da aplicação para a página. O código `{{ nome }}` é utilizado para exibir o valor da variável `nome` na página. O Flask substitui o código `{{ nome }}` pelo valor da variável `nome` antes de enviar a página para o navegador. Esse tipo de código é chamado de *template tag* e é utilizado para criar páginas dinâmicas com o Flask. Quem quiser saber mais sobre *template tags*, acesse [aqui](https://flask.palletsprojects.com/en/latest/templating/). A biblioteca utilizada para isso é a Jinja2, que é uma biblioteca de *template* para Python. Para conhecer mais sobre a Jinja2, acesse [aqui](https://jinja.palletsprojects.com/en/latest/).
+
+Legal, agora conseguimos ajustar nossa aplicação para que ela possa enviar informações de uma página para outra. Vamos utilizar um `form` para enviar informações da página para a aplicação. Na rota `\`, vamos adicionar um formulário que envia informações para a rota `/sobre`. Vamos adicionar o seguinte código ao arquivo `index.html`:
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Minha Aplicação Web</title>
+</head>
+<body>
+    <h1>Ola Mundo!!</h1>
+    <form action="/sobre" method="post">
+        <input type="text" name="nome" placeholder="Digite o seu nome">
+        <button type="submit">Enviar</button>
+    </form>
+</body>
+</html>
+```
+Se apenas fizermos está modificação, não vamos conseguir enviar as informações para a rota `/sobre`. Isso porque a rota `/sobre` está configurada para receber apenas requisições do tipo `GET`. Vamos ajustar a rota `/sobre` para que ela possa receber requisições do tipo `POST` também. Não vamos deixar de receber requisições do tipo `GET`, mas vamos adicionar a possibilidade de receber requisições do tipo `POST`. Vamos adicionar o seguinte código ao arquivo `app.py`:
+
+```python
+# app.py
+from flask import Flask, render_template, request
+
+app = Flask(__name__)
+
+@app.route("/")
+def index():
+    return render_template("index.html")
+
+@app.route("/sobre", methods=["GET", "POST"])
+def sobre(nome=None):
+    if request.method == "POST":
+        nome = request.form.get("nome")
+    return render_template("sobre.html", nome=nome)
+
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=8000)
+```
+
+Aqui tem algumas coisas que valem a pena observar:
+- A função `sobre` agora recebe um parâmetro `nome` com o valor padrão `None`. Isso é feito para que a função possa ser chamada com ou sem o parâmetro `nome`.
+- A função `sobre` verifica o método da requisição utilizando `request.method`. Se o método da requisição for `POST`, a função obtém o valor do campo `nome` do formulário utilizando `request.form.get("nome")`. Se o método da requisição for `GET`, a função utiliza o valor padrão `None` para o parâmetro `nome`.
+- Quando a função `sobre` recebe uma requisição do tipo `GET` apenas, ela retorna a página `sobre.html` com o valor padrão `None` para o parâmetro `nome`.
+
+
+
 <img src="https://i.redd.it/q0dd3k02unqb1.gif" alt="Boot process" style={{ display: 'block', marginLeft: 'auto', maxHeight: '30vh', marginRight: 'auto' }} />
 
 ### 4.5 Deploy da aplicação web
