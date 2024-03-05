@@ -14,6 +14,7 @@ Eletrônica Analógica com Raspberry Pi Pico
 
 - Apresentação dos principais elementos de eletrônica analógica, utilizando o Raspberry Pi Pico como dispositivo auxiliar para desenvolver e validar seus funcionamentos.
 - Condicionadores de sinal e drivers de potência mais utilizados para acionamento de cargas com sistemas microcontrolados são abordados neste encontro.
+- [***NOVO***] Apresentar como programar o Raspberry Pi Pico em Python.
 
 ## 2. Slides do Encontro
 
@@ -60,5 +61,48 @@ Esse material NÃO substitui de forma alguma o uso da Adalove. Você DEVE entrar
 <img src="https://i.redd.it/q0dd3k02unqb1.gif" alt="Boot process" style={{ display: 'block', marginLeft: 'auto', maxHeight: '30vh', marginRight: 'auto' }} />
 
 ## 4. Material de Aula
+
+O material do encontro será dividido em algumas partes:
+- Apresentação da forma de programar o Raspberry Pi Pico em Python;
+- Apresentação dos principais elementos de eletrônica analógica;
+- Apresentação dos sensores e atuadores mais utilizados em sistemas microcontrolados;
+- [***EM BREVE***] Comunicação com o Raspberry Pi Pico via Wifi.
+
+Os elementos que compoem o kit individual de vocês são os seguintes:
+
+<table class="customTable">
+  <thead>
+    <tr>
+      <th>Quantidade</th>
+      <th>Descrição</th>
+    </tr>
+  </thead>
+        <tbody>
+            <tr>
+                <td>Conteúdo da célula 1</td>
+                <td>Conteúdo da célula 2</td>
+            </tr>
+            <tr>
+                <td>Outro conteúdo da célula 1</td>
+                <td>Outro conteúdo da célula 2</td>
+            </tr>
+        </tbody>
+</table>
+
+### 4.1 Apresentação da forma de programar o Raspberry Pi Pico em Python
+
+
+
+<img src="https://i.redd.it/q0dd3k02unqb1.gif" alt="Boot process" style={{ display: 'block', marginLeft: 'auto', maxHeight: '30vh', marginRight: 'auto' }} />
+
+### 4.2 Apresentação dos principais elementos de eletrônica analógica
+
+<img src="https://i.redd.it/q0dd3k02unqb1.gif" alt="Boot process" style={{ display: 'block', marginLeft: 'auto', maxHeight: '30vh', marginRight: 'auto' }} />
+
+### 4.3 Apresentação dos sensores e atuadores mais utilizados em sistemas microcontrolados
+
+<img src="https://i.redd.it/q0dd3k02unqb1.gif" alt="Boot process" style={{ display: 'block', marginLeft: 'auto', maxHeight: '30vh', marginRight: 'auto' }} />
+
+### 4.4 Comunicação com o Raspberry Pi Pico via Wifi
 
 <img src="https://i.redd.it/q0dd3k02unqb1.gif" alt="Boot process" style={{ display: 'block', marginLeft: 'auto', maxHeight: '30vh', marginRight: 'auto' }} />

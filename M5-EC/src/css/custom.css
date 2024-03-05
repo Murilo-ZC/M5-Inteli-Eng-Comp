@@ -201,3 +201,22 @@
   flex-wrap: wrap;
   justify-content: space-between;
 }
+
+table.customTable {
+  display: block;
+  margin: 0 auto;
+  width: 90vw;
+  background-color: #fefefe;
+  color: #000000;
+}
+
+table.customTable td, table.customTable th {
+  border-width: 2px;
+  border-color: #7EA8F8;
+  border-style: solid;
+  padding: 5px;
+}
+
+table.customTable thead {
+  background-color: #7EA8F8;
+}
