@@ -95,7 +95,7 @@ Antes de qualquer outro avanço, vamos fazer um nivelamento sobre aplicações w
 
 Existem diversos tipos de aplicação Web, um dos tipos mais conhecidos são os websites, que são acessados por meio de um navegador. Outros tipos de aplicações web são as APIs, que são acessadas por meio de requisições HTTP e retornam dados em formato JSON ou XML. As aplicações Web são programas que podem ser acessados através de um navegador da web, como o Google Chrome, Mozilla Firefox ou Microsoft Edge. Elas são compostas por diversos elementos que trabalham juntos para fornecer uma experiência interativa ao usuário.
 
-<img src="https://www.appventurez.com/wp-content/uploads/2020/07/web-application-architecture-infographic.jpg" alt="Arquitetura de uma aplicação web simplificada" style={{ display: 'block', marginLeft: 'auto', maxHeight: '60vh', marginRight: 'auto' }} />
+<img src="https://www.appventurez.com/wp-content/uploads/2020/07/web-application-architecture-infographic.jpg" alt="Arquitetura de uma aplicação web simplificada" style={{ display: 'block', marginLeft: 'auto', maxHeight: '60vh', marginRight: 'auto' , marginBottom: '16px'}} />
 
 Avaliando alguns destes elementos, podemos destacar:
 
@@ -110,7 +110,7 @@ Avaliando alguns destes elementos, podemos destacar:
 
 Diferentes aplicações podem ter diferentes arquiteturas, mas a maioria das aplicações web modernas segue uma arquitetura de três camadas, que divide a aplicação em três partes principais: a interface do usuário, a lógica da aplicação e a camada de acesso a dados. Um exemplo de aplicação mais completa pode ser vista na imagem abaixo. Uma explicação mais detalhada sobre a arquitetura de três camadas pode ser vista [aqui](https://www.aalpha.net/blog/web-application-architecture/).
 
-<img src="https://cdn-cjmik.nitrocdn.com/UjszoEMIGzQLBmRYICliaPmdTnvQlovN/assets/images/optimized/rev-22ebbc4/www.aalpha.net/wp-content/uploads/2023/01/Components-of-Web-Application-Architecture.webp" alt="Arquitetura de uma aplicação Web mais completa" style={{ display: 'block', marginLeft: 'auto', maxHeight: '60vh', marginRight: 'auto' }} />
+<img src="https://cdn-cjmik.nitrocdn.com/UjszoEMIGzQLBmRYICliaPmdTnvQlovN/assets/images/optimized/rev-22ebbc4/www.aalpha.net/wp-content/uploads/2023/01/Components-of-Web-Application-Architecture.webp" alt="Arquitetura de uma aplicação Web mais completa" style={{ display: 'block', marginLeft: 'auto', maxHeight: '60vh', marginRight: 'auto', marginBottom: '16px' }} />
 
 E um resumo sobre a aplicação pode ser vista em:
 
@@ -254,7 +254,7 @@ Agora vamos fazer algumas requisições para a nossa aplicação. Primeiro, vamo
 
 Agora vamos verificar como realizar essas requisições utilizando o `Thunder Client`. Primeiro, vamos instalar a extensão no Visual Studio Code. Em seguida, iniciar nossas requisições. Com a a extensão aberta no Visual Studio Code, vamos selecionar a opção `Nova Requisição`.
 
-<img src={useBaseUrl("img/thunder-client/inicio.png")} alt="Iniciando uma requisição no Thunder Client" style={{ display: 'block', marginLeft: 'auto', maxHeight: '80vh', marginRight: 'auto' }} />
+<img src={useBaseUrl("img/thunder-client/inicio.png")} alt="Iniciando uma requisição no Thunder Client" style={{ display: 'block', marginLeft: 'auto', maxHeight: '80vh', marginRight: 'auto', marginBottom: '16px' }} />
 
 Agora devemos configurar nossa requisição, em especial para qual rota vamos fazer ela. Além da , vale destacar que também devemos configurar outros parâmetros para nossa requisição, como o método HTTP que vamos utilizar, se algum cabeçalho ou corpo da mensagem serão enviados. Vamos testar primeiro a rota `/ping`.
 
@@ -529,7 +529,73 @@ Agora vamos editar que o nosso projeto para que ele possa receber textos de uma 
 
 ### 4.5 Integrando aplicação web com banco de dados
 
-<img src="https://i.redd.it/q0dd3k02unqb1.gif" alt="Boot process" style={{ display: 'block', marginLeft: 'auto', maxHeight: '30vh', marginRight: 'auto' }} />
+Para realizar a integração da aplicação web com o banco de dados, vamos utilizar o TinyDB, que é um banco de dados NoSQL que armazena os dados em arquivos JSON. Primeiro precisamos adicionar o TinyDB ao nosso ambiente virtual. Para isso, vamos utilizar o comando `pip install tinydb`. Agora vamos criar um arquivo chamado `posts.json` e adicionar o seguinte código:
+
+```json
+{
+    "posts": []
+}
+```
+
+Vamos editar nossa aplicação para que a rota `/sobre` possa receber textos de uma página e salve esses dados no banco de dados. Vamos adicionar o seguinte código ao arquivo `app.py`:
+
+```python
+# app.py
+from flask import Flask, render_template, request, redirect, url_for
+from tinydb import TinyDB
+
+app = Flask(__name__)
+
+db = TinyDB("posts.json")
+
+@app.route("/")
+def index():
+    return render_template("index.html")
+
+@app.route("/sobre", methods=["GET", "POST"])
+def sobre(nome=None):
+    if request.method == "POST":
+        nome = request.form.get("nome")
+        db.insert({"nome": nome})
+    posts = db.all()
+    return render_template("sobre.html", nome=nome, posts=posts)
+
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=8000)
+```
+
+Antes de analisarmos as mudanças que vamos fazer no arquivo `sobre.html`, vamos entender o que aconteceu no arquivo `app.py`. 
+
+- Primeiro, importamos a classe `TinyDB` do módulo `tinydb` e criamos uma instância da classe `TinyDB` chamada `db`. A instância da classe `TinyDB` representa o nosso banco de dados. 
+- Em seguida, utilizamos o método `db.insert()` para inserir um documento no banco de dados. O método `db.insert()` é utilizado para inserir um documento no banco de dados. O documento é um dicionário que contém os dados que queremos inserir no banco de dados. O método `db.all()` é utilizado para obter todos os documentos do banco de dados. Ele retorna uma lista de dicionários que contém os dados do banco de dados.
+
+Agora vamos editar o nosso arquivo `sobre.html` para que ele possa exibir os dados do banco de dados. Vamos adicionar o seguinte código ao arquivo `sobre.html`:
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sobre</title>
+    <link rel="icon" href="{{ url_for('static', filename='logo.png') }}" sizes="16x16 32x32 48x48">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Sobre</h1>
+    <p>Esta é a página sobre a minha aplicação web.</p>
+    <p>Ola {{ nome }}!!</p>
+    <h2>Posts</h2>
+    <ul>
+        {% for post in posts %}
+            <li>{{ post.nome }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
+```
+
+Vamos compreender o que aconteceu aqui. O código `{% for post in posts %}` é utilizado para iterar sobre a lista `posts`. O código `{% endfor %}` é utilizado para indicar o fim do bloco de código `{% for post in posts %}`. O código `{{ post.nome }}` é utilizado para exibir o valor da chave `nome` do dicionário `post`. O código `{% for post in posts %}` é utilizado para criar uma lista de itens que contém os valores da chave `nome` dos dicionários `post`.
+
+Repare que desta forma, conseguimos criar uma aplicação web que pode receber informações de uma página e salvar esses dados no banco de dados. Agora vamos ajustar nossa aplicação para que ela possa utilizar *blueprints* para organizar a aplicação.
 
 ### 4.6 Utilizando *blueprints* para organizar a aplicação
 
