@@ -595,13 +595,60 @@ Agora vamos editar o nosso arquivo `sobre.html` para que ele possa exibir os dad
 
 Vamos compreender o que aconteceu aqui. O código `{% for post in posts %}` é utilizado para iterar sobre a lista `posts`. O código `{% endfor %}` é utilizado para indicar o fim do bloco de código `{% for post in posts %}`. O código `{{ post.nome }}` é utilizado para exibir o valor da chave `nome` do dicionário `post`. O código `{% for post in posts %}` é utilizado para criar uma lista de itens que contém os valores da chave `nome` dos dicionários `post`.
 
-Repare que desta forma, conseguimos criar uma aplicação web que pode receber informações de uma página e salvar esses dados no banco de dados. Agora vamos ajustar nossa aplicação para que ela possa utilizar *blueprints* para organizar a aplicação.
+Repare que desta forma, conseguimos criar uma aplicação web que pode receber informações de uma página e salvar esses dados no banco de dados. Agora vamos compreender o que são *blueprints* e como eles podem ser utilizados para organizar a aplicação. 
 
 ### 4.6 Utilizando *blueprints* para organizar a aplicação
 
-<img src="https://i.redd.it/q0dd3k02unqb1.gif" alt="Boot process" style={{ display: 'block', marginLeft: 'auto', maxHeight: '30vh', marginRight: 'auto' }} />
+Antes de iniciar a nossa aplicação com *blueprints*, vamos compreender o que eles são. À medida que sua aplicação Flask cresce, fica difícil manter todo o código (rotas, templates, funções de visualização, etc.) em um único arquivo. Blueprints permitem dividir a aplicação em seções menores e mais gerenciáveis. Imagine-os como plantas (blueprints) de diferentes cômodos em uma casa. Os blueprints podem ser facilmente reutilizados em outras aplicações. Se você desenvolve um módulo para gerenciar usuários, por exemplo, pode embalá-lo em um Blueprint e reutilizá-lo em diferentes projetos.Eles permitem dividir o código em Blueprints torna a aplicação mais escalável. Equipes diferentes podem trabalhar em diferentes Blueprints de forma mais independente.
+
+Para conhecer mais sobre Blueprints:
+- [Documentação oficial Flask - Blueprints](https://flask.palletsprojects.com/blueprints/)
+- [Tutorial Real Python](https://realpython.com/flask-blueprint/)
+- [Tutorial FreeCodeCamp](https://www.freecodecamp.org/news/how-to-use-blueprints-to-organize-flask-apps/)
+
+Para o contexto da nossa aplicação, vamos manter ela sem a utilização dos *blueprints*. Agora vamos estudar o processo de deploy da nossa aplicação web.
 
 ### 4.7 Deploy da aplicação web
+
+Primeiro vamos compreender o que é o processo de deploy. O deploy é o processo de implantar a aplicação em um servidor de produção. O servidor de produção é um servidor que está configurado para executar a aplicação de forma segura e eficiente. O servidor de produção é utilizado para atender as requisições dos usuários finais e fornecer uma experiência interativa ao usuário. O deploy é um processo crítico que requer planejamento e execução cuidadosa. O deploy é uma parte importante do ciclo de vida da aplicação e deve ser realizado com cuidado e atenção.
+
+> "Nossa Murilão, que monte de palavras bonitas, mas o que elas significam?" Quando temos nossa aplicação, ela está funcionando no nosso computador apenas. Quando vamos colocar a aplicação em produção, nosso objetivo é deixar ela disponível para que outras pessoas possam utilizar nosso sistema.
+
+Primeiro precisamos instalar um servidor WSGI, como o Gunicorn ou o uWSGI. O servidor WSGI é um servidor que executa a aplicação de forma segura e eficiente. Ele é utilizado para atender as requisições dos usuários finais e fornecer uma experiência interativa ao usuário. para saber mais sobre o Gunicorn, acesse [aqui](https://gunicorn.org/). Em seguida, vamos instalar o Gunicorn com o comando `pip install gunicorn`. 
+
+Vamos executar nossa aplicação com o comando `gunicorn projeto-web.app:app`. O comando `gunicorn projeto-web.app:app` é utilizado para executar a aplicação com o Gunicorn. O argumento `projeto-web.app:app` é utilizado para especificar o nome do arquivo que contém a aplicação e o nome da instância da classe `Flask`.
+
+:::danger[Não Compatível com Windows]
+
+O Gunicorn não é compatível com o Windows. Como o processo de deploy, em geral, ocorre em sistemas operacionais Linux, não é um problema para a maioria dos casos. No entanto, se você estiver utilizando o Windows, pode ser necessário utilizar uma máquina virtual ou um contêiner para executar o Gunicorn.
+
+:::
+
+Agora vamos realizar o freeze da nossa aplicação para que possamos criar um arquivo `requirements.txt` com as dependências da nossa aplicação. Para isso, vamos utilizar o comando `pip freeze > requirements.txt`. O comando `pip freeze` é utilizado para listar todas as dependências da aplicação. O operador `>` é utilizado para redirecionar a saída do comando `pip freeze` para o arquivo `requirements.txt`.
+
+Agora vamos criar um arquivo chamado `Procfile` e adicionar o seguinte código:
+
+```txt
+web: gunicorn projeto-web.app:app
+```
+
+O arquivo `Procfile` é utilizado para especificar os comandos que devem ser executados para iniciar a aplicação. O comando `web: gunicorn projeto-web.app:app` é utilizado para iniciar a aplicação com o Gunicorn.
+
+Agora vamos acessar o site [render.com](https://render.com/). Ele vai permitir realizar o deploy da nossa aplicação utilizando o plano gratuito. Vamos criar uma conta no site e seguir as instruções para realizar o deploy da nossa aplicação. Na [página](https://dashboard.render.com/register?next=%2F), escolher uma das formas para realizar o login na plataforma. Uma vez logado na plataforma, vamos escolher a opção `New` e em seguida `Web Service`.
+
+<img src={useBaseUrl("img/deploy-render/inicio-render.png")} alt="Requisição para a rota /echo" style={{ display: 'block', marginLeft: 'auto', maxHeight: '80vh', marginRight: 'auto', marginBottom: '16px' }} />
+
+Agora vamos selecionar que desejamos realizar o deploy de um repositório do Github. Aqui cabe destacar que pode ser utilizada outra plataforma de versionamento, mas por hora vamos focar no Github.
+
+<img src={useBaseUrl("img/deploy-render/escolhendo-fonte.png")} alt="Requisição para a rota /echo" style={{ display: 'block', marginLeft: 'auto', maxHeight: '80vh', marginRight: 'auto', marginBottom: '16px' }} />
+
+Agora devemos realizar a escolha do repositório que vamos fazer o deploy. Para este exemplo, vou utilizar o repositório da disciplina.
+
+<img src={useBaseUrl("img/deploy-render/escolha-repositorio.png")} alt="Requisição para a rota /echo" style={{ display: 'block', marginLeft: 'auto', maxHeight: '80vh', marginRight: 'auto', marginBottom: '16px' }} />
+
+
+
+
 
 <img src="https://i.redd.it/q0dd3k02unqb1.gif" alt="Boot process" style={{ display: 'block', marginLeft: 'auto', maxHeight: '30vh', marginRight: 'auto' }} />
 
