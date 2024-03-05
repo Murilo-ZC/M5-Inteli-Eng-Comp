@@ -469,10 +469,63 @@ Aqui tem algumas coisas que valem a pena observar:
 - A função `sobre` verifica o método da requisição utilizando `request.method`. Se o método da requisição for `POST`, a função obtém o valor do campo `nome` do formulário utilizando `request.form.get("nome")`. Se o método da requisição for `GET`, a função utiliza o valor padrão `None` para o parâmetro `nome`.
 - Quando a função `sobre` recebe uma requisição do tipo `GET` apenas, ela retorna a página `sobre.html` com o valor padrão `None` para o parâmetro `nome`.
 
+Agora que já estamos conseguindo enviar informações entre as páginas, vamos adicionar algumas imagens e estilos para a nossa aplicação. Vamos criar o diretório `static` dentro do diretório `projeto-web` e adicionar o arquivo `style.css` e as imagens `logo.png` e `background.png`. Em seguida, vamos adicionar o seguinte código ao arquivo `style.css`:
 
+```css
+/* style.css */
+body {
+    background-image: url("/static/background.png");
+    background-size: cover;
+    color: white;
+    font-family: Arial, sans-serif;
+}
 
-<img src="https://i.redd.it/q0dd3k02unqb1.gif" alt="Boot process" style={{ display: 'block', marginLeft: 'auto', maxHeight: '30vh', marginRight: 'auto' }} />
+h1 {
+    text-align: center;
+    margin-top: 100px;
+    font-size: 3em;
+    color: #313131;
+}
 
+form {
+    text-align: center;
+    margin-top: 50px;
+}
+
+input {
+    padding: 10px;
+    font-size: 1.5em;
+}
+
+button {
+    padding: 10px;
+    font-size: 1.5em;
+}
+```
+
+E adicionar o seguinte código ao arquivo `index.html`:
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Minha Aplicação Web</title>
+    <link rel="icon" href="{{ url_for('static', filename='logo.png') }}" sizes="16x16 32x32 48x48">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Ola Mundo!!</h1>
+    <form action="/sobre" method="post">
+        <input type="text" name="nome" placeholder="Digite o seu nome">
+        <button type="submit">Enviar</button>
+    </form>
+</body>
+</html>
+```
+
+Repare que mudamos a aplicação para que ela possa carregar o arquivo `style.css` e as imagens `logo.png` e `background.png`. Para isso, utilizamos a função `url_for` para gerar os URLs dos arquivos estáticos. A função `url_for` é utilizada para gerar URLs para as rotas da aplicação e para os arquivos estáticos. Para conhecer mais sobre a função `url_for`, acesse [aqui](https://flask.palletsprojects.com/en/latest/api/#flask.url_for).
+
+Agora vamos editar que o nosso projeto para que ele possa receber textos de uma página e salve esses dados no banco de dados.
 
 ### 4.5 Integrando aplicação web com banco de dados
 
