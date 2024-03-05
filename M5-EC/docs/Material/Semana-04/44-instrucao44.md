@@ -473,15 +473,16 @@ Aqui tem algumas coisas que valem a pena observar:
 
 <img src="https://i.redd.it/q0dd3k02unqb1.gif" alt="Boot process" style={{ display: 'block', marginLeft: 'auto', maxHeight: '30vh', marginRight: 'auto' }} />
 
-### 4.5 Deploy da aplicação web
+
+### 4.5 Integrando aplicação web com banco de dados
 
 <img src="https://i.redd.it/q0dd3k02unqb1.gif" alt="Boot process" style={{ display: 'block', marginLeft: 'auto', maxHeight: '30vh', marginRight: 'auto' }} />
 
-### 4.6 Integrando aplicação web com banco de dados
+### 4.6 Utilizando *blueprints* para organizar a aplicação
 
 <img src="https://i.redd.it/q0dd3k02unqb1.gif" alt="Boot process" style={{ display: 'block', marginLeft: 'auto', maxHeight: '30vh', marginRight: 'auto' }} />
 
-### 4.7 Utilizando *blueprints* para organizar a aplicação
+### 4.7 Deploy da aplicação web
 
 <img src="https://i.redd.it/q0dd3k02unqb1.gif" alt="Boot process" style={{ display: 'block', marginLeft: 'auto', maxHeight: '30vh', marginRight: 'auto' }} />
 
