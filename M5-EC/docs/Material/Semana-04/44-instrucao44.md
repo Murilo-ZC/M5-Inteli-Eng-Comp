@@ -252,8 +252,62 @@ Para testar a nossa aplicação, vamos utilizar o Thunder Client, uma extensão 
 
 Agora vamos fazer algumas requisições para a nossa aplicação. Primeiro, vamos fazer uma requisição GET para a rota `/ping`. Em seguida, vamos fazer uma requisição POST para a rota `/echo` com o corpo `{"mensagem": "Ola Mundo!!"}`. Por fim, vamos fazer requisições para as rotas `/soma`, `/subtracao`, `/multiplicacao` e `/divisao` com os parâmetros e corpo especificados.
 
+Agora vamos verificar como realizar essas requisições utilizando o `Thunder Client`. Primeiro, vamos instalar a extensão no Visual Studio Code. Em seguida, iniciar nossas requisições. Com a a extensão aberta no Visual Studio Code, vamos selecionar a opção `Nova Requisição`.
 
-<img src="https://i.redd.it/q0dd3k02unqb1.gif" alt="Boot process" style={{ display: 'block', marginLeft: 'auto', maxHeight: '30vh', marginRight: 'auto' }} />
+<img src={useBaseUrl("img/thunder-client/inicio.png")} alt="Iniciando uma requisição no Thunder Client" style={{ display: 'block', marginLeft: 'auto', maxHeight: '80vh', marginRight: 'auto' }} />
+
+Agora devemos configurar nossa requisição, em especial para qual rota vamos fazer ela. Além da , vale destacar que também devemos configurar outros parâmetros para nossa requisição, como o método HTTP que vamos utilizar, se algum cabeçalho ou corpo da mensagem serão enviados. Vamos testar primeiro a rota `/ping`.
+
+<img src={useBaseUrl("img/thunder-client/requisicao-ping.png")} alt="Requisição para a rota /ping" style={{ display: 'block', marginLeft: 'auto', maxHeight: '80vh', marginRight: 'auto', marginBottom: '16px' }} />
+
+Vale observar aqui alguns pontos importantes:
+
+- As requisições realizadas ficam listadas no menu da esquerda, sendo possível repetir alguma delas e at;e mesmo realizar elas novamente com diferentes parâmetros;
+- O método HTTP que foi utilizado foi o `GET`, a requisição foi realizada para a rota `http://localhost:8000/ping`.
+- O servidor respondeu essa requisição com o a mensagem `pong` e com **status code** 200, indicando que ela foi bem sucedida. Para mais mensagens de status do protocolo HTTP, verificar este [link😺](https://http.cat/), ou este [link🐶](https://http.dog/) ou este último por fim [link🛜](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status).
+
+Se modificarmos está requisição para tentar acessar a rota `/echo`, vamos obter o seguinte comportamento:
+
+<img src={useBaseUrl("img/thunder-client/erro-metodo-echo.png")} alt="Requisição para a rota /echo - erro de método" style={{ display: 'block', marginLeft: 'auto', maxHeight: '80vh', marginRight: 'auto', marginBottom: '16px' }} />
+
+Este erro indica para nós que a rota `/echo` não aceita requisições com o método que nós fizemos, neste caso, ela não trabalha com requisições do tipo `GET`. Ao trocar o tipo da requisição para `POST`, vamos ter o seguinte comportamento:
+
+<img src={useBaseUrl("img/thunder-client/erro-corpo-echo.png")} alt="Requisição para a rota /echo - erro de conteúdo" style={{ display: 'block', marginLeft: 'auto', maxHeight: '80vh', marginRight: 'auto', marginBottom: '16px' }} />
+
+O método chato 🌋!! Na verdade ele está apenas indicando para nós que nossa requisição não tem os parâmetros que ele precisa para conseguir ser realizado com sucesso. Vamos ajustar nossa requisição para que ela possa trazer em seu corpo um mensagem como a rota espera. Para isso, vamos adicionar um `Body` a requisição. O corpo das requisições `POST` não é enviado como os argumentos passados como parâmetros de uma requisição `GET`, por exemplo.
+
+<img src={useBaseUrl("img/thunder-client/echo-correto.png")} alt="Requisição para a rota /echo" style={{ display: 'block', marginLeft: 'auto', maxHeight: '80vh', marginRight: 'auto', marginBottom: '16px' }} />
+
+:::danger[Corpo da Requisição]
+
+Mesmo que o conteúdo da requisição seja um JSON, ele não é enviado como um parâmetro da requisição, mas sim como um corpo da requisição. Isso é importante para que o servidor consiga interpretar corretamente a requisição e retornar a resposta esperada. Devemos configurar o `Content-Type` da requisição para `application/json` e o corpo da requisição deve ser um JSON válido.
+
+Ainda assim, isso não faz com que os dados enviados na requisição estejam protegidos por algum tipo de criptográfia, por exemplo. Para isso, devemos utilizar o protocolo HTTPS, que é uma versão segura do protocolo HTTP. Mesmo assim, diversas aplicações ainda utilizando algum algoritmo de criptografia para proteger os dados enviados e recebidos.
+
+Para estudar mais sobre o protocolo HTTP:
+
+<iframe width="600" height="480" max-width="80vw" src="https://www.youtube.com/embed/aumDleTg_UQ?si=S_8iCnSvNKEqwAcD" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style={{display: 'block', marginLeft: 'auto', maxHeight: '80vh', marginRight: 'auto', marginBottom: '16px'}}></iframe>
+
+<iframe width="600" height="480" max-width="80vw" src="https://www.youtube.com/embed/iYM2zFP3Zn0?si=-2uDhm_PhEKsB0Wk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style={{display: 'block', marginLeft: 'auto', maxHeight: '80vh', marginRight: 'auto', marginBottom: '16px'}}></iframe>
+
+:::
+
+
+Continuando com os testes das nossas rotas, os métodos `soma` e `subtracao` são rotas que recebem parâmetros na URL. Já os métodos `multiplicacao` e `divisao` recebem parâmetros no corpo da requisição. Vamos testar cada uma delas. Primeiro os métodos `soma` e `subtracao`:
+
+<img src={useBaseUrl("img/thunder-client/soma-subtracao.png")} alt="Requisição para a rota /echo" style={{ display: 'block', marginLeft: 'auto', maxHeight: '80vh', marginRight: 'auto', marginBottom: '16px' }} />
+
+Podemos observar que os parâmetros para essas rotas são passados diretamente na URL. Já para a rota `multiplicacao`, os parâmetros devem ser passados como `Query String`, ou seja, como parâmetros passados na URL, mas que não fazem parte da rota. Vamos passar a `Query String` para a rota `multiplicacao`, enviando eles depois da rota, separados por `?` e `&`.
+Vale destacar que o Thunder Client nos permite configurar esses parâmetros de forma mais fácil, mas é importante entender como eles são passados para a aplicação.
+
+<img src={useBaseUrl("img/thunder-client/multiplicacao.png")} alt="Requisição para a rota /echo" style={{ display: 'block', marginLeft: 'auto', maxHeight: '80vh', marginRight: 'auto', marginBottom: '16px' }} />
+
+Por fim, a rota `divisao` recebe os parâmetros no corpo da requisição, como um JSON. Vamos configurar a requisição para que ela possa ser realizada com sucesso.
+
+<img src={useBaseUrl("img/thunder-client/divisao.png")} alt="Requisição para a rota /echo" style={{ display: 'block', marginLeft: 'auto', maxHeight: '80vh', marginRight: 'auto', marginBottom: '16px' }} />
+
+
+Pessoal, desta forma abordamos diferentes aspectos de uma aplicação web, como ela pode ser construída e como podemos testar ela. Vamos continuar com a construção da nossa aplicação, mas antes, vamos fazer uma pausa para o café ☕☕. Na sequencia, vamos continuar com a construção da nossa aplicação web.
 
 ### 4.4 Construção de uma aplicação web com Flask
 
