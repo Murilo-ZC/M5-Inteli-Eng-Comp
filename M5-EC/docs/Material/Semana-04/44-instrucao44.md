@@ -646,6 +646,15 @@ Agora devemos realizar a escolha do repositório que vamos fazer o deploy. Para 
 
 <img src={useBaseUrl("img/deploy-render/escolha-repositorio.png")} alt="Requisição para a rota /echo" style={{ display: 'block', marginLeft: 'auto', maxHeight: '80vh', marginRight: 'auto', marginBottom: '16px' }} />
 
+<img src={useBaseUrl("img/deploy-render/configurando-deploy.png")} alt="Requisição para a rota /echo" style={{ display: 'block', marginLeft: 'auto', maxHeight: '80vh', marginRight: 'auto', marginBottom: '16px' }} />
+
+<img src={useBaseUrl("img/deploy-render/selecionando-instancia.png")} alt="Requisição para a rota /echo" style={{ display: 'block', marginLeft: 'auto', maxHeight: '80vh', marginRight: 'auto', marginBottom: '16px' }} />
+
+:::danger[Sem Disco de Persistência]
+
+Na versão gratuíta da plataforma, não é possível utilizar um disco de persistência. Isso significa que os dados que são salvos na aplicação não são mantidos entre as execuções da aplicação. Isso é importante e relevante para nossa validação. No formato que estamos trabalhando, atualmente, isso significa que depois de um tempo de execução, nossa aplicação ficará sem seus registros.
+
+:::
 
 
 
