@@ -152,6 +152,13 @@ Além disso, pode ser necessário reinstalar o firmware da Raspberry Pi Pico. O 
 
 Ok, agora temos nossa Raspberry Pi Pico conectada no nosso computador, podemos iniciar o processo de testar e utilizar o dispositivo 🤖🐶☕!
 
+Na figura abaixo, temos o diagrama chamado de `pinout` da Raspberry Pi Pico regular, modelo sem Wifi.
+
+<img src={useBaseUrl("img/diagramas/pico-regular-pinout.svg")} alt="Raspberry Pi Pico Regular Pinout" style={{ display: 'block', marginLeft: 'auto', maxHeight: '80vh', marginRight: 'auto', marginBottom: '16px' }} />
+
+Já na figura abaixo podemos ver o `pinout` da Raspberry Pi Pico com Wifi, ***Raspberry Pi Pico W***. Este é o modelo que temos no laboratório.
+
+<img src={useBaseUrl("img/diagramas/picow-pinout.svg")} alt="Raspberry Pi Pico Regular Pinout" style={{ display: 'block', marginLeft: 'auto', maxHeight: '80vh', marginRight: 'auto', marginBottom: '16px' }} />
 
 <img src="https://i.redd.it/q0dd3k02unqb1.gif" alt="Boot process" style={{ display: 'block', marginLeft: 'auto', maxHeight: '30vh', marginRight: 'auto' }} />
 
