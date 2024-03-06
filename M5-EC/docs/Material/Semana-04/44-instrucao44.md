@@ -646,7 +646,11 @@ Agora devemos realizar a escolha do repositório que vamos fazer o deploy. Para 
 
 <img src={useBaseUrl("img/deploy-render/escolha-repositorio.png")} alt="Requisição para a rota /echo" style={{ display: 'block', marginLeft: 'auto', maxHeight: '80vh', marginRight: 'auto', marginBottom: '16px' }} />
 
+Depois do repositório selecionado, devemos escolher e configurar a *branch* que vamos utilizar para o deploy. Aqui, vamos utilizar a *branch* `main` e vamos configurar a plataforma para realizar o deploy sempre que houver uma alteração na *branch*. Outro ponto importante para se configurar é de onde a aplicação está sendo construída para o deploy. Como nosso repositório não possui apenas a aplicação que queremos fazer o deploy, vamos configurar a plataforma para que ela saiba onde está a aplicação que queremos fazer o deploy.
+
 <img src={useBaseUrl("img/deploy-render/configurando-deploy.png")} alt="Requisição para a rota /echo" style={{ display: 'block', marginLeft: 'auto', maxHeight: '80vh', marginRight: 'auto', marginBottom: '16px' }} />
+
+Agora vamos configurar para utilizar a instância gratuita da plataforma. Para isso, vamos escolher a opção `Free` e em seguida `Create Web Service`.
 
 <img src={useBaseUrl("img/deploy-render/selecionando-instancia.png")} alt="Requisição para a rota /echo" style={{ display: 'block', marginLeft: 'auto', maxHeight: '80vh', marginRight: 'auto', marginBottom: '16px' }} />
 
@@ -656,11 +660,16 @@ Na versão gratuíta da plataforma, não é possível utilizar um disco de persi
 
 :::
 
-
-
-
-<img src="https://i.redd.it/q0dd3k02unqb1.gif" alt="Boot process" style={{ display: 'block', marginLeft: 'auto', maxHeight: '30vh', marginRight: 'auto' }} />
+Pessoal, desta forma conseguimos realizar o deploy da nossa aplicação. Ela ainda pode ser melhorada com implementação de responsividade, melhoria na interface e na experiência do usuário. A seguir vamos realizar algumas comparações para utilizar a plataforma em conjunto com o robô 🤖.
 
 ### 4.8 Integração com o Robô
 
-<img src="https://i.redd.it/q0dd3k02unqb1.gif" alt="Boot process" style={{ display: 'block', marginLeft: 'auto', maxHeight: '30vh', marginRight: 'auto' }} />
+Antes de seguir com nossa aplicação, vamos fazer uma análise de cenário aqui. O robô está ligado a um servidor que está rodando a aplicação. O robô está enviando informações para a aplicação e a aplicação está salvando essas informações no banco de dados. O servidor está configurado para executar a aplicação de forma segura e eficiente. O servidor está atendendo as requisições dos usuários finais e fornecendo uma experiência interativa ao usuário. O servidor está implantado em um servidor de produção e está disponível para que outras pessoas possam utilizar o sistema.
+
+Está linha de pensamento está correta para o deploy da aplicação. Contudo, gostaria que fizessemos uma análise quanto a forma como o robô está ligado ao nosso sistema. Atualmente, o nosso robô está ligado ao sistema utilizando comunicação serial (no meio físico da porta USB). Diante deste cenário, a aplicação estar exclusivamente na nuvem pode ser um problema para a comunicação entre ela e o robô.
+
+Isso não impede que partes da aplicação fiquem disponíveis online, como o banco de dados e uma interface para consulta. Para a aplicação deste módulo, minha forte sugestão para vocês é para trabalhar com a aplicação sendo executada localmente.
+
+No entando, para praticar o que desenvolvemos até aqui, sugiro a construção de uma outra aplicação Web que faça um controle básico de login de usuários. A aplicação deve permitir que o usuário faça login e logout, e que mostre uma mensagem de boas-vindas para o usuário logado. A aplicação deve ser implantada em um servidor de produção e estar disponível para que outras pessoas possam utilizá-la. Mesmo no plano *free* e sem a persistência dos dados, a aplicação vai permitir que vocês possam praticar o que foi desenvolvido até aqui.
+
+Gambatte🤖👾🐶!
