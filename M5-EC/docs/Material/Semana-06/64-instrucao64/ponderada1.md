@@ -1,5 +1,5 @@
 ---
-title: Dicas p/ esquemáticos
+title: Fabricação de PCB
 sidebar_position: 5
 sidebar_class_name: ponderada
 slug: /ponderada1
