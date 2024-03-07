@@ -1,6 +1,6 @@
 ---
-title: "7 - Encontro de Computação"
-slug: e7
+title: "8 - Encontro de Computação"
+slug: e8
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
