@@ -187,4 +187,3 @@ princípios subjacentes à comunicação de dados.
 </div>
 
 </Admonition>
-import Admonition from '@theme/Admonition';
