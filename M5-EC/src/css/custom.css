@@ -220,3 +220,44 @@ table.customTable td, table.customTable th {
 table.customTable thead {
   background-color: #7EA8F8;
 }
+
+/* Override non-category links to be horizonally compact */
+li > a.menu__link {
+  justify-content: flex-start;
+}
+
+.autoestudo a::before {
+  padding-right: 0.5rem;
+  content: url(../icons/autoestudo.svg);
+}
+
+.ponderada a::before {
+  padding-right: 0.5rem;
+  content: url(../icons/ponderada.svg);
+}
+
+.instrucao a::before {
+  padding-right: 0.5rem;
+  content: url(../icons/instrucao.svg);
+}
+
+.opcional a::before {
+  padding-right: 0.5rem;
+  content: url(../icons/opcional.svg);
+}
+
+.orientacao a::before {
+  padding-right: 0.5rem;
+  content: url(../icons/orientacao.svg);
+}
+
+.artefato a::before {
+  padding-right: 0.5rem;
+  content: url(../icons/artefato.svg);
+}
+
+.superpond a::before {
+  padding-right: 0.5rem;
+  height: 0.3 vh;
+  content: url(../icons/superpond.svg);
+}
