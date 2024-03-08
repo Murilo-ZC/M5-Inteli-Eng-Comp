@@ -92,12 +92,64 @@ Os elementos que compoem o kit individual de vocês são os seguintes:
   </thead>
         <tbody>
             <tr>
-                <td>Conteúdo da célula 1</td>
-                <td>Conteúdo da célula 2</td>
+                <td>1x</td>
+                <td>Mini Protoboard</td>
             </tr>
             <tr>
-                <td>Outro conteúdo da célula 1</td>
-                <td>Outro conteúdo da célula 2</td>
+                <td>1x</td>
+                <td>Cabo Micro USB</td>
+            </tr>
+            <tr>
+                <td>1x</td>
+                <td>Raspberry Pi Pico W</td>
+            </tr>
+            <tr>
+                <td>1x</td>
+                <td>Sensor Ultrassônico</td>
+            </tr>
+            <tr>
+                <td>2x</td>
+                <td>TCRT5000</td>
+            </tr>
+            <tr>
+                <td>4x</td>
+                <td>Botões tipo Microswitch</td>
+            </tr>
+            <tr>
+                <td>4x</td>
+                <td>LEDs (Vermelho, Azul, Verde e Amarelo)</td>
+            </tr>
+            <tr>
+                <td>1x</td>
+                <td>Módulo Relé</td>
+            </tr>
+            <tr>
+                <td>1x</td>
+                <td>Buzzer</td>
+            </tr>
+            <tr>
+                <td>1x</td>
+                <td>LDR</td>
+            </tr>
+            <tr>
+                <td>1x</td>
+                <td>Transistor BC558</td>
+            </tr>
+            <tr>
+                <td>1x</td>
+                <td>Potênciometro</td>
+            </tr>
+            <tr>
+                <td>1x</td>
+                <td>LED RGB</td>
+            </tr>
+            <tr>
+                <td>8x</td>
+                <td>Resistores de 10k Ohms</td>
+            </tr>
+            <tr>
+                <td>8x</td>
+                <td>Resistores de 330 Ohms</td>
             </tr>
         </tbody>
 </table>
@@ -152,6 +204,15 @@ Além disso, pode ser necessário reinstalar o firmware da Raspberry Pi Pico. O 
 
 Ok, agora temos nossa Raspberry Pi Pico conectada no nosso computador, podemos iniciar o processo de testar e utilizar o dispositivo 🤖🐶☕!
 
+
+:::tip[MicroPython]
+
+Pessoal alguns Raspberry Pi Pico vem sem o MicroPython instalado. Se vocês tiverem problemas para rodar o código, vocês podem instalar o MicroPython na Raspberry Pi Pico. O processo de instalação do MicroPython na Raspberry Pi Pico pode ser encontrado [aqui](https://www.raspberrypi.com/documentation/microcontrollers/micropython.html#what-is-micropython).
+<img src="https://www.raspberrypi.com/documentation/microcontrollers/images/MicroPython-640x360-v2.gif" alt="processo de reset e gravacao micropython" style={{ display: 'block', marginLeft: 'auto', maxHeight: '80vh', marginRight: 'auto', marginBottom: '16px' }} />
+<p align="center"> Fonte: https://www.raspberrypi.com/</p>
+
+:::
+
 Na figura abaixo, temos o diagrama chamado de `pinout` da Raspberry Pi Pico regular, modelo sem Wifi.
 
 <img src={useBaseUrl("img/diagramas/pico-regular-pinout.svg")} alt="Raspberry Pi Pico Regular Pinout" style={{ display: 'block', marginLeft: 'auto', maxHeight: '80vh', marginRight: 'auto', marginBottom: '16px' }} />
@@ -160,7 +221,36 @@ Já na figura abaixo podemos ver o `pinout` da Raspberry Pi Pico com Wifi, ***Ra
 
 <img src={useBaseUrl("img/diagramas/picow-pinout.svg")} alt="Raspberry Pi Pico Regular Pinout" style={{ display: 'block', marginLeft: 'auto', maxHeight: '80vh', marginRight: 'auto', marginBottom: '16px' }} />
 
-<img src="https://i.redd.it/q0dd3k02unqb1.gif" alt="Boot process" style={{ display: 'block', marginLeft: 'auto', maxHeight: '30vh', marginRight: 'auto' }} />
+Pronto, agora que temos a Pico conectada e o Thonny configurado, podemos começar a programar a Raspberry Pi Pico em Python. Vamos começar com um exemplo simples, acender um LED. Para isso, conecte um LED no pino 25 da Raspberry Pi Pico. Abra o Thonny e digite o código abaixo:
+
+```python
+from machine import Pin
+import time
+
+led = Pin(25, Pin.OUT)
+
+led.value(1)
+time.sleep(1)
+led.value(0)
+time.sleep(1)
+```
+
+Após digitar o código, clique em "Executar" e veja o LED acender e apagar. Parabéns, você acabou de programar a Raspberry Pi Pico em Python 🎉🎉🎉!
+
+Vamos avaliar algumas coisas no nosso código:
+
+- `from machine import Pin`: Importa a classe `Pin` do módulo `machine`. A classe `Pin` é utilizada para controlar os pinos da Raspberry Pi Pico. ***IMPORTANTE***: Utilizar o pino informado é do `GP` e não o número do pino!
+- `led = Pin(25, Pin.OUT)`: Cria um objeto `led` que representa o GP25 da Raspberry Pi Pico. O segundo argumento `Pin.OUT` informa que o pino será utilizado como saída.
+- `led.value(1)`: Define o valor do GP25 como 1, ou seja, liga o LED.
+- `time.sleep(1)`: Espera 1 segundo.
+- `led.value(0)`: Define o valor do GP25 como 0, ou seja, desliga o LED.
+- `time.sleep(1)`: Espera 1 segundo.
+
+Agora que vocês já sabem como programar a Raspberry Pi Pico em Python, vamos para alguns pontos de avaliação:
+
+- Como vocês podem alterar o código para que ele fique rodando de forma indefinida?
+- Como corrigir o erro que aparece quando o código é interrompido?
+- Como controlar um outro LED externo?
 
 ### 4.2 Apresentação dos principais elementos de eletrônica analógica
 
@@ -170,6 +260,10 @@ Já na figura abaixo podemos ver o `pinout` da Raspberry Pi Pico com Wifi, ***Ra
 
 <img src="https://i.redd.it/q0dd3k02unqb1.gif" alt="Boot process" style={{ display: 'block', marginLeft: 'auto', maxHeight: '30vh', marginRight: 'auto' }} />
 
-### 4.4 Comunicação com o Raspberry Pi Pico via Wifi
+### 4.4 Hardware Adicional
+
+<img src="https://i.redd.it/q0dd3k02unqb1.gif" alt="Boot process" style={{ display: 'block', marginLeft: 'auto', maxHeight: '30vh', marginRight: 'auto' }} />
+
+### 4.5 Comunicação com o Raspberry Pi Pico via Wifi
 
 <img src="https://i.redd.it/q0dd3k02unqb1.gif" alt="Boot process" style={{ display: 'block', marginLeft: 'auto', maxHeight: '30vh', marginRight: 'auto' }} />
