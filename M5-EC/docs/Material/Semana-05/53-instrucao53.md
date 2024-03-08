@@ -252,18 +252,97 @@ Agora que vocês já sabem como programar a Raspberry Pi Pico em Python, vamos p
 - Como corrigir o erro que aparece quando o código é interrompido?
 - Como controlar um outro LED externo?
 
+Esses são alguns problemas iniciais ineressantes para iniciar o processo de desenvolvimento com a Pico.
+Agora vamos avaliar alguns conceitos sobre eletrônica e eletricidade.
+
 ### 4.2 Apresentação dos principais elementos de eletrônica analógica
 
-<img src="https://i.redd.it/q0dd3k02unqb1.gif" alt="Boot process" style={{ display: 'block', marginLeft: 'auto', maxHeight: '30vh', marginRight: 'auto' }} />
+Enquanto estamos 
 
 ### 4.3 Apresentação dos sensores e atuadores mais utilizados em sistemas microcontrolados
 
 <img src="https://i.redd.it/q0dd3k02unqb1.gif" alt="Boot process" style={{ display: 'block', marginLeft: 'auto', maxHeight: '30vh', marginRight: 'auto' }} />
 
-### 4.4 Hardware Adicional
+### 4.4 Comunicação com o Raspberry Pi Pico via Wifi
 
-<img src="https://i.redd.it/q0dd3k02unqb1.gif" alt="Boot process" style={{ display: 'block', marginLeft: 'auto', maxHeight: '30vh', marginRight: 'auto' }} />
+Vamos trabalhar com nossa Pico se conectando em uma rede específica e depois consultando algumas API's para buscar informações.
+Primeiro, vamos conectar a Pico na rede Wifi. Para isso, vamos utilizar o código abaixo:
 
-### 4.5 Comunicação com o Raspberry Pi Pico via Wifi
+```python
+import network
+import time
+wlan = network.WLAN(network.STA_IF)
+wlan.active(True)
+wlan.connect('NOME_DA_REDE', 'SENHA_DA_REDE')
+while not wlan.isconnected() and wlan.status() >= 0:
+    print("Waiting to connect:")
+    time.sleep(1)
+
+print(wlan.ifconfig())
+
+```
+
+Este primeiro programa tem por objetivo conectar a Pico em uma rede Wifi conhecida. Para isso, utilizamos a biblioteca `network` e a classe `WLAN`. A classe `WLAN` possui um método chamado `connect` que recebe como argumento o nome da rede e a senha. Após a conexão, o método `ifconfig` retorna o IP da Pico na rede.
+Desta forma, já temos nossa Pico conectada na rede Wifi. Agora podemos fazer requisições HTTP para buscar informações.
+
+```python
+import urequests
+import network
+import time
+
+wlan = network.WLAN(network.STA_IF)
+wlan.active(True)
+wlan.connect('NOME_DA_REDE', 'SENHA_DA_REDE')
+while not wlan.isconnected() and wlan.status() >= 0:
+    print("Waiting to connect:")
+    time.sleep(1)
+  
+response = urequests.get('https://api.coindesk.com/v1/bpi/currentprice.json')
+print(response.json())
+```
+
+Nessa versão do nosso código, primeiro conectamos a Pico na rede Wifi. Após a conexão, utilizamos a biblioteca `urequests` para fazer uma requisição HTTP para a API do Coindesk. A API do Coindesk retorna o preço do Bitcoin em dólares. O método `get` da classe `urequests` recebe como argumento a URL da API. O método `json` retorna o JSON retornado pela API.
+Podemos utilizar uma integração da requisição em conjunto com uma ação do usuário, como o acionamento de um sensor, por exemplo. 
+
+```python
+import network
+import urequests
+import time
+from machine import Pin
+
+wlan = network.WLAN(network.STA_IF)
+wlan.active(True)
+wlan.connect('NOME_DA_REDE', 'SENHA_DA_REDE')
+while not wlan.isconnected() and wlan.status() >= 0:
+    print("Waiting to connect:")
+    time.sleep(1)
+
+entrada = Pin(25,Pin.IN, Pin.PULL_UP)
+
+try:
+    if entrada.value() == 0:
+        response = urequests.get('https://api.open-meteo.com/v1/forecast?latitude=52.52&longitude=13.41&current=temperature')
+        print(response.json())
+        time.sleep(4)
+except:
+    print("Programa Encerrado")
+
+```
+
+Vamos avaliar os pontos de atenção do código:
+
+- Primeiro fazemos que nosso código se conecte na rede Wifi;
+- Depois, definimos que a variável `entrada` é o GP25 da Pico, que será utilizado como entrada. ***IMPORTANTE***: essa entrada é configurada como `PULL_UP`, ou seja, ela está configurada para receber um sinal de 0V quando acionada;
+- A estrutura `try-except` é utilizada para que se algum erro acontecer ou ainda se o programa for interrompido, o programa não pare de funcionar;
+- Dentro do bloco `try`, verificamos se o GP25 está com o valor 0. Se sim, fazemos uma requisição para a API do Open Meteo para buscar a temperatura atual em Berlim.
+
+Desta forma já conseguimos realizar requisições HTTP com a Pico. Agora, vamos avaliar algumas coisas:
+
+- Como fazer a Pico se conectar em uma rede Wifi desconhecida?
+- Como fazer a Pico enviar dados em uma rede local?
+- É possível realizar requisições HTTPS com a Pico?
+- É possível realizar requisições POST com a Pico?
+
+### 4.5 Hardware Adicional para Instrução de Eletrônica Digital
 
 <img src="https://i.redd.it/q0dd3k02unqb1.gif" alt="Boot process" style={{ display: 'block', marginLeft: 'auto', maxHeight: '30vh', marginRight: 'auto' }} />
