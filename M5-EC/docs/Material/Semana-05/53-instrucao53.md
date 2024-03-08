@@ -257,11 +257,144 @@ Agora vamos avaliar alguns conceitos sobre eletrônica e eletricidade.
 
 ### 4.2 Apresentação dos principais elementos de eletrônica analógica
 
-Enquanto estamos 
+Enquanto estamos trabalhando com alguns conceitos importantes da eletrônica analógica, vamos primeiro definir o que é eletrônica analógica.
+A eletrônica analógica é um ramo da eletrônica que lida com a manipulação e processamento de sinais analógicos. Os sinais analógicos são contínuos por natureza, o que significa que podem assumir infinitos valores dentro de um determinado intervalo. A eletrônica analógica utiliza componentes eletrônicos básicos, como resistores, capacitores, indutores, diodos e transistores, para projetar e construir circuitos que possam processar, amplificar, filtrar ou converter esses sinais.
+
+O diodo é um componente eletrônico que permite a passagem de corrente elétrica em apenas um sentido. O diodo é um componente que possui dois terminais, chamados de ânodo e cátodo. O ânodo é o terminal positivo e o cátodo é o terminal negativo. A figura abaixo mostra o símbolo do diodo. Ele é utilizado para retificar sinais, ou seja, converter sinais alternados em sinais contínuos. Também pode ser utilizado como um componente de proteção contra inversão de polaridade.
+Para que o diodo possa conduzir corrente, a tensão no ânodo deve ser maior que a tensão no cátodo. A tensão necessária para que o diodo comece a conduzir corrente é chamada de tensão de condução. A tensão de condução de um diodo de silício é de aproximadamente 0.7V.
+
+<img src="https://dam-assets.fluke.com/s3fs-public/6004284b-dmm-how-to-diode-715x360-2.jpg" alt="Diodo" style={{ display: 'block', marginLeft: 'auto', maxHeight: '40vh', marginRight: 'auto' }} />
+<p align="center"> Fonte: https://dam-assets.fluke.com/s3fs-public/6004284b-dmm-how-to-diode-715x360-2.jpg</p>
+
+:::tip[Diodos]
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/-SSkjWuUri4?si=OqKHbWRTCzDLKizC" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+:::
+
+O LED é um tipo de diodo que emite luz quando conduz corrente. O LED é um componente que possui dois terminais, chamados de ânodo e cátodo. O ânodo é o terminal positivo e o cátodo é o terminal negativo. A figura abaixo mostra o símbolo do LED. O LED é utilizado para indicar o estado de um circuito, como por exemplo, se um circuito está ligado ou desligado.
+Para emiti luz, a tensão no ânodo deve ser maior que a tensão no cátodo. A tensão necessária para que o LED comece a emitir luz é chamada de tensão de condução. A tensão de condução de um LED de silício é de aproximadamente 1.7V. Em geral, para LED's pequenos de 5mm, a corrente necessária para que ele conduza é de 10 mA.
+
+<img src="https://lh3.googleusercontent.com/proxy/GLhp3kzclprKBOJmbBn6xRYy5POMLa-OKHeTGXzrTYTjuGYIvEjUBA5Uif4rg2wVWiln-y6luK02M5cVgfO2bHlfEQ2r_p7bq9U" alt="Diodo" style={{ display: 'block', marginLeft: 'auto', maxHeight: '40vh', marginRight: 'auto' }} />
+<p align="center"> Fonte: https://lh3.googleusercontent.com/proxy/GLhp3kzclprKBOJmbBn6xRYy5POMLa-OKHeTGXzrTYTjuGYIvEjUBA5Uif4rg2wVWiln-y6luK02M5cVgfO2bHlfEQ2r_p7bq9U</p>
+
+:::tip[LED]
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/otyFC5sJI-E?si=F7jYBrDAv8pOEhWv" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+:::
+
+O transistor é um componente eletrônico que pode ser utilizado para amplificar sinais ou para controlar a passagem de corrente. O transistor é um componente que possui três terminais, chamados de emissor, base e coletor. A figura abaixo mostra o símbolo do transistor. O transistor é utilizado para amplificar sinais, ou seja, aumentar a amplitude de um sinal. O transistor também pode ser utilizado para controlar a passagem de corrente, ou seja, ligar ou desligar um circuito.
+Em geral, existem dois tipos de transistores: o transistor bipolar de junção (BJT) e o transistor de efeito de campo (FET). O transistor BJT é um tipo de transistor que é controlado pela corrente que passa pela base. O transistor FET é um tipo de transistor que é controlado pela tensão aplicada no gate.
+Para os BJT, a corrente que passa pela base controla a corrente que passa pelo coletor. A corrente que passa pela base é multiplicada por um fator chamado de ganho de corrente. O ganho de corrente é um valor que varia de acordo com o transistor e com a corrente que passa pela base. Em geral, o ganho de corrente de um transistor BJT é da ordem de 100.
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/f/f8/Transistor-photo.JPG" alt="Diodo" style={{ display: 'block', marginLeft: 'auto', maxHeight: '40vh', marginRight: 'auto' }} />
+<p align="center"> Fonte: https://upload.wikimedia.org/wikipedia/commons/f/f8/Transistor-photo.JPG</p>
+
+Os transistores BJT podem ser do tipo NPN ou PNP. O transistor BJT NPN é um tipo de transistor que é formado por duas junções PN, sendo que a junção do meio é do tipo P e as junções das extremidades são do tipo N. O transistor BJT PNP é um tipo de transistor que é formado por duas junções PN, sendo que a junção do meio é do tipo N e as junções das extremidades são do tipo P. A figura abaixo mostra o símbolo do transistor BJT NPN e do transistor BJT PNP.
+
+<img src="https://i0.wp.com/eltgeral.com.br/wp-content/uploads/2021/09/Transistor_Junction.png?resize=575%2C335&ssl=1" alt="Diodo" style={{ display: 'block', marginLeft: 'auto', maxHeight: '40vh', marginRight: 'auto' }} />
+<p align="center"> Fonte: https://i0.wp.com/eltgeral.com.br/wp-content/uploads/2021/09/Transistor_Junction.png?resize=575%2C335&ssl=1</p>
+
+:::tip[Transistores]
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/R0Uy4EL4xWs?si=xvjpzdQ_ywAeKWpC" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/wNiXUZIHQLw?si=LIuqKy_to24wfDfs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+:::
+
+O amplificador operacional é um componente eletrônico que pode ser utilizado para amplificar sinais ou para realizar operações matemáticas. O amplificador operacional é um componente que possui dois terminais de entrada, chamados de terminal inversor e terminal não inversor, e um terminal de saída. A figura abaixo mostra o símbolo do amplificador operacional. O amplificador operacional é utilizado para amplificar sinais, ou seja, aumentar a amplitude de um sinal. O amplificador operacional também pode ser utilizado para realizar operações matemáticas, como por exemplo, somar, subtrair, multiplicar e dividir sinais.
+
+<img src="https://www.manualdaeletronica.com.br/y/432/Amplificador-operacional.jpg" alt="Diodo" style={{ display: 'block', marginLeft: 'auto', maxHeight: '40vh', marginRight: 'auto' }} />
+<p align="center"> Fonte: https://www.manualdaeletronica.com.br/y/432/Amplificador-operacional.jpg</p>
+
+:::tip[Amplificador Operacional]
+
+Para saber mais sobre amplificadores operacionais:
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/kbVqTMy8HMg?si=PsMKpRHzoTuppQUg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+:::
 
 ### 4.3 Apresentação dos sensores e atuadores mais utilizados em sistemas microcontrolados
 
-<img src="https://i.redd.it/q0dd3k02unqb1.gif" alt="Boot process" style={{ display: 'block', marginLeft: 'auto', maxHeight: '30vh', marginRight: 'auto' }} />
+Nesta seção vamos discultir os principais sensores que podem ser utilizados em sistemas microcontrolados e como alguns deles podem ser ligados junto da Pico. Vale destacar que os códigos aqui apresentados tem por objetivo auxiliar no processo de criação e desenvolvimento de sistemas embarcados. Eles podem e devem ser melhorados para atender as necessidades do projeto.
+
+#### 4.3.1 Chave de Botão
+
+A chave de botão é um dos componentes mais simples e mais utilizados em sistemas microcontrolados. Ela é utilizada para acionar um sinal digital quando pressionada. A chave de botão é um componente que possui 4 terminais, sendo que dois deles são conectados internamente. Quando a chave é pressionada, os terminais que estão conectados internamente são conectados com os terminais que estão soltos. A figura abaixo mostra o símbolo da chave de botão.
+Vamos avaliar o código abaixo:
+
+```python
+from machine import Pin
+import time
+
+botao = Pin(25, Pin.IN, Pin.PULL_UP)
+
+while True:
+    if botao.value() == 0:
+        print("Botão pressionado")
+    else:
+        print("Botão solto")
+    time.sleep(1)
+```
+
+Vamos analisar o código anterior:
+- `from machine import Pin`: Importa a classe `Pin` do módulo `machine`. A classe `Pin` é utilizada para controlar os pinos da Raspberry Pi Pico.
+- `botao = Pin(25, Pin.IN, Pin.PULL_UP)`: Cria um objeto `botao` que representa o GP25 da Raspberry Pi Pico. O segundo argumento `Pin.IN` informa que o pino será utilizado como entrada. O terceiro argumento `Pin.PULL_UP` informa que o pino está configurado como `PULL_UP`, ou seja, ele está configurado para receber um sinal de 0V quando acionado.
+- `while True:`: Loop infinito.
+- `if botao.value() == 0:`: Verifica se o GP25 está com o valor 0. Se sim, imprime "Botão pressionado". Se não, imprime "Botão solto".
+- `time.sleep(1)`: Espera 1 segundo.
+
+#### 4.3.2 Sensor de Luz - LDR
+
+O LDR (Light Dependent Resistor) é um sensor que varia sua resistência de acordo com a luz que incide sobre ele. Quanto mais luz incide sobre o LDR, menor é a sua resistência. O LDR é um componente que possui 2 terminais.
+Em geral, para ler os sinais de um LDR, nós devemos construir um divisor de tensão com um resistor, em geral de 10k Ohms. A figura abaixo mostra o símbolo do LDR e o circuito que deve ser montado para ler o sinal do LDR.
+
+<img src="https://www.facom.ufu.br/~jamil/eletronica/divisores_tensao/15_05_04.gif" alt="Divisor de Tensão com LDR" style={{ display: 'block', marginLeft: 'auto', maxHeight: '40vh', marginRight: 'auto' }} />
+<p align="center"> Fonte: https://www.facom.ufu.br/~jamil/eletronica/divisores_tensao/15_05_04.gif</p>
+
+O divisor de tensão é um circuito que é utilizado para dividir a tensão de um sinal. O circuito é composto por dois resistores, um deles é o LDR. A tensão de saída do divisor de tensão é dada pela fórmula:
+
+V_out = V_in * (R_2)/(R_1 + R_2)
+
+:::tip[Divisor de Tensão]
+
+Para saber mais sobre divisores de tensão, acesse o link [aqui](https://embarcados.com.br/divisor-de-tensao/).
+
+:::
+
+Vamos avaliar o código abaixo:
+
+```python
+from machine import Pin, ADC
+import time
+
+ldr = ADC(Pin(26))
+
+while True:
+    print(ldr.read_u16())
+    time.sleep(1)
+```
+
+Vamos analisar o código anterior:
+
+- `from machine import Pin, ADC`: Importa as classes `Pin` e `ADC` do módulo `machine`. A classe `Pin` é utilizada para controlar os pinos da Raspberry Pi Pico. A classe `ADC` é utilizada para ler sinais analógicos.
+- `ldr = ADC(Pin(26))`: Cria um objeto `ldr` que representa o GP26 da Raspberry Pi Pico. O objeto `ldr` é um objeto da classe `ADC` que é utilizado para ler sinais analógicos.
+- `while True:`: Loop infinito.
+- `print(ldr.read_u16())`: Lê o sinal analógico do GP26 e imprime o valor lido.
+- `time.sleep(1)`: Espera 1 segundo.
+
+Entrada analógica é uma entrada especial que pode ler sinais de tensão entre 0V e 3.3V. A entrada analógica da Raspberry Pi Pico é de 12 bits, ou seja, ela pode ler sinais de tensão entre 0V e 3.3V e converter esses sinais em valores entre 0 e 4095.
+Cada bit a mais em um conversor analógico-digital dobra a resolução do conversor. A resolução é a menor diferença de tensão que o conversor pode detectar. A resolução de um conversor analógico-digital de 12 bits é de 3.3V/4096 = 0.0008V = 0.8mV.
+
+:::tip[Conversor ADC]
+
+Para saber mais sobre os conversores ADC, acesse o link [aqui](https://embarcados.com.br/conversor-a-d/).
+
+:::
+
 
 ### 4.4 Comunicação com o Raspberry Pi Pico via Wifi
 
