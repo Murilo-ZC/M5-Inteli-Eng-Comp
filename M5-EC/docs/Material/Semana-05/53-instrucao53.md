@@ -345,4 +345,15 @@ Desta forma já conseguimos realizar requisições HTTP com a Pico. Agora, vamos
 
 ### 4.5 Hardware Adicional para Instrução de Eletrônica Digital
 
-<img src="https://i.redd.it/q0dd3k02unqb1.gif" alt="Boot process" style={{ display: 'block', marginLeft: 'auto', maxHeight: '30vh', marginRight: 'auto' }} />
+Para a instrução de eletrônica digital, vamos utilizar o seguinte hardware adicional:
+
+<img src={useBaseUrl("/img/diagrama-montagem-digital.png")} alt="ACESSE A ADALOVE" style={{ display: 'block', marginLeft: 'auto', maxHeight: '40vh', marginRight: 'auto' }} />
+
+O que temos montado aqui:
+
+- 4 entradas digitais, que serão ligadas utilizando o GP18 à GP21;
+- 4 saídas digitais, que serão ligadas utilizando o GP10 à GP13.
+
+Esse é o hardware mínimo para nosso encontro de eletrônica digital. Tentem trazer todos os componentes montados para o encontro!
+
+Quem tiver alguma dificuldade, pode entrar em contato comigo para que possamos resolver o problema durante o autoestudo.
