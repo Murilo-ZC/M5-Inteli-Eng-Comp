@@ -339,4 +339,150 @@ while True:
   saida.value(comportamento(a,b,c,d))
 ```
 
+Podemos fazer o processo inverso, ou seja, a partir de uma expressão booleana, podemos criar um circuito combinacional. Vamos analisar a expressão a seguir:
+
+> S = (!A . B) . (C + D)
+
+Qual será o circuito que implementa essa expressão e o código para ela?
+
+<details> 
+  <summary mdxType="summary"> Proposta de Solução - Circuito [NÃO ABRIR ANTES DE TENTAR!!]</summary>
+<img src={useBaseUrl("/img/diagramas/circuito-combinacional-2-material.png")} alt="Simbologia porta AND" style={{ display: 'block', marginLeft: 'auto', maxHeight: '40vh', marginRight: 'auto', marginBottom:'16px' }} />
+</details> 
+
+<details> 
+  <summary mdxType="summary"> Proposta de Solução - Código [NÃO ABRIR ANTES DE TENTAR!!]</summary>
+
+```py
+from machine import Pin
+
+VERDADERO = 0
+
+# Configuração dos pinos
+pinoA = Pin(21, Pin.IN, Pin.PULL_UP)
+pinoB = Pin(20, Pin.IN, Pin.PULL_UP)
+pinoC = Pin(19, Pin.IN, Pin.PULL_UP)
+pinoD = Pin(18, Pin.IN, Pin.PULL_UP)
+pinoSaida = Pin(10, Pin.OUT)
+
+# Função lógica que desejamos implementar
+def comportamento(a,b,c,d):
+    return ((not a) and b) and (c or d)
+
+while True:
+  a = pinoA.value() == VERDADERO
+  b = pinoB.value() == VERDADERO
+  c = pinoC.value() == VERDADERO
+  d = pinoD.value() == VERDADERO
+
+  saida.value(comportamento(a,b,c,d))
+```
+
+</details> 
+
+Existem outras funções lógicas que valem a pena ser descritas:
+- `NAND`: A função `NAND` retorna 0 quando todas as entradas são 1.
+- `NOR`: A função `NOR` retorna 0 quando pelo menos uma das entradas é 1.
+- `XOR`: A função `XOR` retorna 1 quando as entradas são diferentes. 
+- `XNOR`: A função `XNOR` retorna 1 quando as entradas são iguais.
+
+:::tip[Simplificação de Circuitos e Mapas de Karnaugh]
+
+Quando os circuitos eram construídos apenas com componentes discretos, era necessário simplificar as expressões booleanas para que o circuito fosse mais eficiente. Para isso, era utilizado o mapa de Karnaugh. O mapa de Karnaugh é uma ferramenta que permite simplificar expressões booleanas de forma visual.
+
+Para saber mais sobre mapas de Karnough, assista o vídeo a seguir:
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/RO5alU6PpSU?si=Iujpjs99j6z54c1x" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+:::
+
+
+### 4.3 Lógica Sequencial
+
+Até esse momento, avaliamos circuitos que realizam operações lógicas com base nas entradas e retornam um resultado. Esses circuitos são chamados de circuitos combinacionais. Agora, vamos avaliar circuitos que possuem memória, ou seja, circuitos que armazenam informações. Esses circuitos são chamados de circuitos sequenciais.
+
+Diferente dos circuitos combinacionais, os circuitos sequenciais possuem um estado interno que é alterado com base nas entradas e no estado atual. Vamos implementar um circuito sequencial utilizando o Raspberry Pi Pico.
+
+Os flip-flops são os elementos básicos dos circuitos sequenciais. Eles são circuitos que possuem dois estados: 0 e 1. Eles possuem uma entrada chamada de `clock` que é responsável por alterar o estado do flip-flop. Existem vários tipos de flip-flops, mas os mais comuns são o flip-flop RS, o flip-flop D, o flip-flop JK e o flip-flop T.
+
+:::tip[Resumo do Funcionamento dos Flip-Flop]
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Hi7rK0hZnfc?si=_jRayjt83IrkrtOP" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+:::
+
+O Flip-Flop do tipo RS é o elemento mais simples. Ele possui duas entradas: `R` e `S`. Quando `R` é 1 e `S` é 0, o flip-flop é resetado. Quando `R` é 0 e `S` é 1, o flip-flop é setado. Quando `R` e `S` são 0, o flip-flop mantém o seu estado. Vamos implementar um flip-flop RS utilizando o Raspberry Pi Pico.
+
+<img src="https://www.newtoncbraga.com.br/images/stories/artigo2019/cur5006_0005.gif" alt="Simbologia porta AND" style={{ display: 'block', marginLeft: 'auto', maxHeight: '40vh', marginRight: 'auto', marginBottom:'16px' }} />
+<p align="center">Retirado de https://www.newtoncbraga.com.br/images/stories/artigo2019/cur5006_0005.gif</p>
+
+```py
+from machine import Pin
+
+VERDADERO = 0
+
+# Configuração dos pinos
+pinoR = Pin(20, Pin.IN, Pin.PULL_UP)
+pinoS = Pin(21, Pin.IN, Pin.PULL_UP)
+pinoQ = Pin(10, Pin.OUT)
+pinoQ_ = Pin(11, Pin.OUT)
+
+# Função lógica que desejamos implementar
+def flipflop_rs(r,s):
+    if r and not s:
+        return 0, 1
+    elif not r and s:
+        return 1, 0
+    else:
+        return 0, 0
+
+while True:
+  r = pinoR.value() == VERDADERO
+  s = pinoS.value() == VERDADERO
+
+  q, q_ = flipflop_rs(r,s)
+  pinoQ.value(q)
+  pinoQ_.value(q_)
+
+```
+
+Agora vamos adicionar o comportamento de um sinal de `CLOCK` no nosso sistema. O `CLOCK` tem como objetivo alterar o estado do flip-flop. Vamos implementar um flip-flop RS com `CLOCK` utilizando o Raspberry Pi Pico.
+
+```py
+from machine import Pin
+
+VERDADERO = 0
+
+# Configuração dos pinos
+pinoR = Pin(20, Pin.IN, Pin.PULL_UP)
+pinoS = Pin(21, Pin.IN, Pin.PULL_UP)
+pinoClock = Pin(19, Pin.IN, Pin.PULL_UP)
+pinoQ = Pin(10, Pin.OUT)
+pinoQ_ = Pin(11, Pin.OUT)
+
+# Função lógica que desejamos implementar
+def flipflop_rs(r,s,clk):
+    if clk:
+        if r and not s:
+            return 0, 1
+        elif not r and s:
+            return 1, 0
+        else:
+            return 0, 0
+    else:
+        return q, q_
+
+while True:
+  r = pinoR.value() == VERDADERO
+  s = pinoS.value() == VERDADERO
+  clk = pinoClock.value() == VERDADERO
+
+  q, q_ = flipflop_rs(r,s,clk)
+  pinoQ.value(q)
+  pinoQ_.value(q_)
+
+```
+
+
+
 <img src="https://i.redd.it/q0dd3k02unqb1.gif" alt="Boot process" style={{ display: 'block', marginLeft: 'auto', maxHeight: '30vh', marginRight: 'auto' }} />
