@@ -150,7 +150,7 @@ VERDADERO = 0
 # Configuração dos pinos
 pinoA = Pin(20, Pin.IN, Pin.PULL_UP)
 pinoB = Pin(21, Pin.IN, Pin.PULL_UP)
-pinoC = Pin(22, Pin.IN, Pin.PULL_UP)
+pinoC = Pin(19, Pin.IN, Pin.PULL_UP)
 pinoSaida = Pin(10, Pin.OUT)
 
 # Função lógica AND
@@ -224,7 +224,7 @@ VERDADERO = 0
 # Configuração dos pinos
 pinoA = Pin(20, Pin.IN, Pin.PULL_UP)
 pinoB = Pin(21, Pin.IN, Pin.PULL_UP)
-pinoC = Pin(22, Pin.IN, Pin.PULL_UP)
+pinoC = Pin(19, Pin.IN, Pin.PULL_UP)
 pinoSaida = Pin(10, Pin.OUT)
 
 # Função lógica AND
@@ -297,6 +297,46 @@ Quando eles vão ser comprados no mercado, eles são identificados por um códig
 Podemos utilizar os circuitos de forma combinada. Esses circuitos são chamados de circuitos combinacionais. Eles são circuitos que realizam operações lógicas com base nas entradas e retornam um resultado. Vamos implementar um circuito combinacional utilizando o Raspberry Pi Pico.
 Analise o circuito a seguir:
 
+<img src={useBaseUrl("/img/diagramas/circuito-material-combinacional.png")} alt="Simbologia porta AND" style={{ display: 'block', marginLeft: 'auto', maxHeight: '40vh', marginRight: 'auto', marginBottom:'16px' }} />
 
+Avaliando o circuito acima, podemos descrever o seu comportamento utilizando uma expressão booleana. A saída do circuito é dada por:
+
+> S = ((A AND B) OR C) AND (NOT D)
+
+Essa mesma expressão pode ser reescrita utilizando uma notação matemática:
+
+> S = ((A . B) + C) . (!D)
+
+Portanto, podemos verificar o seguinte:
+- `Operação AND`: Utilizar o operador `.`
+- `Operação OR`: Utilizar o operador `+`
+- `Operação NOT`: Utilizar o operador `!`
+
+Agora, para descrever o comportamento deste circuito com a Pico:
+
+```py
+from machine import Pin
+
+VERDADERO = 0
+
+# Configuração dos pinos
+pinoA = Pin(21, Pin.IN, Pin.PULL_UP)
+pinoB = Pin(20, Pin.IN, Pin.PULL_UP)
+pinoC = Pin(19, Pin.IN, Pin.PULL_UP)
+pinoD = Pin(18, Pin.IN, Pin.PULL_UP)
+pinoSaida = Pin(10, Pin.OUT)
+
+# Função lógica que desejamos implementar
+def comportamento(a,b,c,d):
+    return ((a and b) or c) and (not d)
+
+while True:
+  a = pinoA.value() == VERDADERO
+  b = pinoB.value() == VERDADERO
+  c = pinoC.value() == VERDADERO
+  d = pinoD.value() == VERDADERO
+
+  saida.value(comportamento(a,b,c,d))
+```
 
 <img src="https://i.redd.it/q0dd3k02unqb1.gif" alt="Boot process" style={{ display: 'block', marginLeft: 'auto', maxHeight: '30vh', marginRight: 'auto' }} />
