@@ -508,7 +508,7 @@ saida4 = Pin(13, Pin.OUT)
 
 while True:
     saida1.value(not entrada1.value())
-    saida2.value(not entrada1.value())
-    saida3.value(not entrada1.value())
-    saida4.value(not entrada1.value())
+    saida2.value(not entrada2.value())
+    saida3.value(not entrada3.value())
+    saida4.value(not entrada4.value())
 ```
