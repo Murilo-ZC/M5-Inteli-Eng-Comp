@@ -2,7 +2,7 @@
 title: Semana 05
 ---
 
-# Apresentação da Sprint 5
+# Apresentação da Semana 5
 
 Nesta seção vocês poderão encontrar todo o material do módulo de Orientação e Computação da `Semana`.
 As apresentações, por motivos de confidencialidade, serão disponibilizadas apenas como link para versão do Google Apresentações.
