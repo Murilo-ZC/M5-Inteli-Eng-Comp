@@ -490,3 +490,25 @@ O que temos montado aqui:
 Esse é o hardware mínimo para nosso encontro de eletrônica digital. Tentem trazer todos os componentes montados para o encontro!
 
 Quem tiver alguma dificuldade, pode entrar em contato comigo para que possamos resolver o problema durante o autoestudo.
+
+Para testar se todo o hardware está funcionando corretamente, vamos utilizar o código abaixo:
+
+```python
+from machine import Pin
+
+entrada1 = Pin(18, Pin.IN, Pin.PULL_UP)
+entrada2 = Pin(19, Pin.IN, Pin.PULL_UP)
+entrada3 = Pin(20, Pin.IN, Pin.PULL_UP)
+entrada4 = Pin(21, Pin.IN, Pin.PULL_UP)
+
+saida1 = Pin(10, Pin.OUT)
+saida2 = Pin(11, Pin.OUT)
+saida3 = Pin(12, Pin.OUT)
+saida4 = Pin(13, Pin.OUT)
+
+while True:
+    saida1.value(not entrada1.value())
+    saida2.value(not entrada1.value())
+    saida3.value(not entrada1.value())
+    saida4.value(not entrada1.value())
+```
