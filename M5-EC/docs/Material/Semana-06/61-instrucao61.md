@@ -294,4 +294,9 @@ Quando eles vão ser comprados no mercado, eles são identificados por um códig
 
 :::
 
+Podemos utilizar os circuitos de forma combinada. Esses circuitos são chamados de circuitos combinacionais. Eles são circuitos que realizam operações lógicas com base nas entradas e retornam um resultado. Vamos implementar um circuito combinacional utilizando o Raspberry Pi Pico.
+Analise o circuito a seguir:
+
+
+
 <img src="https://i.redd.it/q0dd3k02unqb1.gif" alt="Boot process" style={{ display: 'block', marginLeft: 'auto', maxHeight: '30vh', marginRight: 'auto' }} />
