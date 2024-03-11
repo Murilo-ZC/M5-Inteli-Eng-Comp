@@ -18,9 +18,8 @@ Eletrônica Digital com Raspberry Pi Pico
 
 ## 2. Slides do Encontro
 
-<!-- <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vSG6q7EZA2isyGW3V_1pXMM7IJquzznhrFYcQA0ygtI8Nfv7v7SvdBN_jbO2XuOBN3kg1zpmRzti5Om/embed?start=false&loop=false&delayms=3000" frameborder="0" width="75%" height="400" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true" style={{ display: 'block', marginLeft: 'auto', marginRight: 'auto' }}></iframe> -->
+<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vQ7QzRtfMVdi-wrkWaq9PZ4Y3oGru0cpbvgBsrnknn_vCZuVsFOC5hwQ-5a55L42Jni79Z7chUSYp4E/embed?start=false&loop=false&delayms=3000" frameborder="0" width="75%" height="400" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true" style={{ display: 'block', marginLeft: 'auto', marginRight: 'auto' }}></iframe>
 
-<img src="https://i.redd.it/q0dd3k02unqb1.gif" alt="Boot process" style={{ display: 'block', marginLeft: 'auto', maxHeight: '30vh', marginRight: 'auto' }} />
 
 ## 3. Material de Autoestudo
 
