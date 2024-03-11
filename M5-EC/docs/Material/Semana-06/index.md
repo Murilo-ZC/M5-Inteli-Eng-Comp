@@ -14,5 +14,5 @@ Encontrou algum erro ou alguma coisa que possa melhorar no material? `bug🐞`? 
 Está semana teremos os seguintes encontros:
 
 - [Encontro de Computação](/docs/Material/Semana-06/61-instrucao61.md): Sexto encontro de computação.
-- [Encontro de Computação](/docs/Material/Semana-06/64-instrucao66/): Sétimo encontro de computação.
+- [Encontro de Computação](#): Sétimo encontro de computação.
 - [Encontro de Orientação](/docs/Material/Semana-06/65-orientacao65.md): Oitavo encontro de orientação.
