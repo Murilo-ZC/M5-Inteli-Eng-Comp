@@ -560,6 +560,53 @@ Vamos compreender esse código:
 - `adc = ADC(Pin(26))`: Configura o pino 26 como um pino de entrada analógica.
 - `valor = adc.read_u16()`: Realiza a leitura do valor do sensor. Considerando que o sensor é um potenciômetro, o valor lido será um número entre 0 e 65535. Onde o valor 0 representa 0V e o valor 65535 representa 3.3V.
 
-Agora vamos configurar o nosso servidor para fazer a recepção desses dados e armazenar eles no TinyDB.
+Agora vamos configurar o nosso servidor para fazer a recepção desses dados e armazenar eles no TinyDB. Primeiro vamos criar o ambiente virtual e instalar as bibliotecas necessárias.
+
+```sh
+python3 -m venv venv
+source venv/bin/activate
+pip install flask tinydb
+```
+
+```py
+from flask import Flask, render_template, request, redirect, json
+from tinydb import TinyDB, Query
+import time
+
+app = Flask(__name__)
+db_data = TinyDB('db.json')
+
+@app.route('/ping', methods=['GET'])
+def ping():
+    return 'pong'
+
+@app.route('/', methods=['GET', 'POST'])
+def index():
+    dados = db_data.all()
+    return (dados)
+
+@app.route('/add', methods=['POST'])
+def add():
+    dados = json.loads(request.json)
+    dado = dados['dado']
+    ip_send = dados['ip_send']
+    timestamp = time.time()
+    db_data.insert({'dado': dado, 'ip_send': ip_send, 'timestamp': timestamp})
+    return {"status": "ok"}
 
 
+if __name__ == '__main__':
+    app.run(debug=False, host='0.0.0.0', port=8000)
+```
+
+Explicando esse código:
+
+- `app = Flask(__name__)`: Cria uma instância do servidor.
+- `db_data = TinyDB('db.json')`: Cria um banco de dados para armazenar os dados do sensor.
+- `@app.route('/ping', methods=['GET'])`: Cria uma rota para verificar se o servidor está ativo.
+- `@app.route('/', methods=['GET', 'POST'])`: Cria uma rota para visualizar os dados do sensor.
+- `@app.route('/add', methods=['POST'])`: Cria uma rota para adicionar os dados do sensor no banco de dados.
+- `dados = json.loads(request.json)`: Lê os dados enviados pelo sensor.
+- `db_data.insert({'dado': dado, 'ip_send': ip_send, 'timestamp': timestamp})`: Armazena os dados no banco de dados.
+
+Vamos explorar esse código durante nossa interação!
