@@ -485,3 +485,81 @@ while True:
 
 
 <img src="https://i.redd.it/q0dd3k02unqb1.gif" alt="Boot process" style={{ display: 'block', marginLeft: 'auto', maxHeight: '30vh', marginRight: 'auto' }} />
+
+### 4.4 Material Adicional
+
+Pessoal vamos analisar algumas coisas aqui:
+
+- Como construir diagramas elétricos/eletrônicos utilizando o KiCad
+- Como integrar um sensor da Pico com um banco de dados
+
+:::tip[Utilizando o KiCAD]
+
+Pessoal assistam até o minoto 14:00 do vídeo a seguir, para entender como utilizar o KiCAD para criar diagramas elétricos e eletrônicos:
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/2DAExiW40qM?si=OmpZfE4un_7RcJ5i" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+:::
+
+Vamos utilizar o KiCAD para criar um diagrama elétrico para o nosso projeto. O diagrama elétrico é uma representação gráfica dos componentes e das conexões do circuito. Ele é utilizado para documentar o projeto e para facilitar a montagem do circuito.
+
+Utilizando o KiCAD, vamos criar um diagrama elétrico para ligar as saídas em nosso projeto. Vamos desenvolver um diagrama elétrico para o circuito a seguir:
+
+<img src={useBaseUrl("/img/diagramas/criando-projeto-kicad.png")} alt="Simbologia porta AND" style={{ display: 'block', marginLeft: 'auto', maxHeight: '40vh', marginRight: 'auto', marginBottom:'16px' }} />
+
+Ao selecionar um novo projeto, podemos editar o esquemático. Vamos adicionar os componentes e as conexões do circuito.
+
+<img src={useBaseUrl("/img/diagramas/tela-inicial-kicad.png")} alt="Simbologia porta AND" style={{ display: 'block', marginLeft: 'auto', maxHeight: '40vh', marginRight: 'auto', marginBottom:'16px' }} />
+
+Para adicionar os componentes, vamos selecionar a opção `Adicionar Símbolo`. Vamos adicionar os componentes do nosso circuito. A princípio vamos adicionar um resistor e um LED.
+
+<img src={useBaseUrl("/img/diagramas/adicionar-componentes.png")} alt="Simbologia porta AND" style={{ display: 'block', marginLeft: 'auto', maxHeight: '40vh', marginRight: 'auto', marginBottom:'16px' }} />
+
+Após adicionar os componentes, vamos adicionar as conexões. Para isso, vamos selecionar a opção `Adicionar Fio` e vamos conectar os componentes.
+
+<img src={useBaseUrl("/img/diagramas/circuito-montado.png")} alt="Simbologia porta AND" style={{ display: 'block', marginLeft: 'auto', maxHeight: '40vh', marginRight: 'auto', marginBottom:'16px' }} />
+
+Beleza, agora vamos verificar um outro comportamento do nosso sistema. Vamos integrar um sensor com o nosso banco de dados. Vamos utilizar o TinyDB para armazenar as informações do sensor.
+
+<img src={useBaseUrl("/img/diagramas/pico-adc.png")} alt="Simbologia porta AND" style={{ display: 'block', marginLeft: 'auto', maxHeight: '40vh', marginRight: 'auto', marginBottom:'16px' }} />
+
+Nosso programa vai utilizar o conversor ADC da Pico. Ele é responsável por converter um sinal analógico em um sinal digital. Vamos utilizar o ADC para ler a tensão de um sensor e vamos armazenar essa informação no TinyDB. Nosso sensor vai ser simulado por um potenciômetro.
+
+:::tip[Conversor ADC Raspberry Pi Pico]
+
+Para conhecer mais sobre o conversor ADC.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/4XPDyKujcxI?si=cmhnAeSq9FRBP9Pk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+:::
+
+Agora vamos analisar o código para a leitura do sensor.
+
+```py
+
+from machine import ADC, Pin
+import time
+
+# Configuração do ADC
+adc = ADC(Pin(26))
+
+# Loop principal
+while True:
+    # Leitura do ADC
+    valor = adc.read_u16()
+
+    # Armazenamento do valor no banco de dados
+    print({'valor': valor, 'data': time.time()})
+
+    # Aguarda 1 segundo
+    time.sleep(1)
+
+```
+
+Vamos compreender esse código:
+- `adc = ADC(Pin(26))`: Configura o pino 26 como um pino de entrada analógica.
+- `valor = adc.read_u16()`: Realiza a leitura do valor do sensor. Considerando que o sensor é um potenciômetro, o valor lido será um número entre 0 e 65535. Onde o valor 0 representa 0V e o valor 65535 representa 3.3V.
+
+Agora vamos configurar o nosso servidor para fazer a recepção desses dados e armazenar eles no TinyDB.
+
+
