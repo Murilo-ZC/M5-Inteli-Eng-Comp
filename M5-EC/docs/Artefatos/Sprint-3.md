@@ -4,12 +4,17 @@ Os entregaveis esperados para está Sprint estão descritos abaixo.
 
 ## 1. Hardware periférico integrado com o sistema do robô
 
-Os sistemas periféricos ao robô devem ser desenvolvidos nesta sprint. 
+Os sistemas periféricos ao robô devem ser desenvolvidos nesta sprint. O objetivo deste artefato é que a equipe possa desenvolver elementos periféricos que possam ser integrados ao sistema do robô. Estes dispositivos vão adicionar funcionalidades ao sistema robótico desenvolvido, tais como: capacidade para realizar a leitura de QrCodes, confirmação que objetos foram coletados, apenas para citar alguns exemplos.
+
+Espera-se neste artefato que os estudantes possam desenvolver os esquemáticos para a construção de cada um dos periféricos propostos. Esses dispositivos ***PODEM*** ser fabricados utilizando os recursos disponíveis no Maker Inteli, como máquina para usinagem de placas de circuito impresso. Contudo, essa não é uma obrigatoriedade.
+
+Vale destacar também que esses periféricos devem estar integrados com o sistema de controle do sistema robótico desenvolvido. Eles devem estar acessíveis na interface de controle do sistema, se for pertinente este tipo de controle. Espera-se que esses artefatos possam estar conectados ao sistema utilizando requisições HTTP, mas não limitado a este tipo de comunicação.
+
+Não deixar de projetar um diagrama de blocos que possa representar a forma como estes periféricos estão conectados ao sistema. Este diagrama pode ser iniciado nesta sprint, mas ele deve estar representado na documentação do projeto.
 
 ### 1.1 Padrão de entrega
 
-Elementos acessórios, como microcontroladores, sensores e outros atuadores devem ser desenvolvidos e integrados no sistema do robô ao longo desta sprint.
-Espera-se que a equipe possa desenvolver os esquemáticos para a construção de cada um dos periféricos propostos. Esses dispositivos devem ser fabricados utilizando os recursos disponíveis no Maker Inteli, como máquina para usinagem de placas de circuito impresso.
+Elementos acessórios, como microcontroladores, sensores e outros atuadores devem ser desenvolvidos e integrados no sistema do robô ao longo desta sprint. Espera-se que a equipe possa desenvolver os esquemáticos para a construção de cada um dos periféricos propostos. Esses dispositivos ***PODEM*** ser fabricados utilizando os recursos disponíveis no Maker Inteli, como máquina para usinagem de placas de circuito impresso.
 Vale destacar também que esses periféricos devem estar integrados com o sistema de controle do sistema robótico desenvolvido. Eles devem estar acessíveis na interface de controle do sistema, se for pertinente este tipo de controle.
 Por fim, espera-se ver uma evolução no armazenamento das informações e requisições realizadas para o robô nesta fase do projeto. O formato como os dados serão armazenados, estruturado em tabelas ou semi-estruturado, fica por conta da escolha que o grupo achar mais pertinente, desde que esteja justificado no projeto. 
 
@@ -23,7 +28,11 @@ Por fim, espera-se ver uma evolução no armazenamento das informações e requi
 
 ## 2. Documentação
 
-Este artefato deve ser responsável por apresentar toda a documentação realizada ao longo da Sprint. 
+Este artefato deve ser responsável por apresentar toda a documentação realizada ao longo da Sprint. Nas sprints depois da primeira, espera-se que a documentação esteja mais robusta e que ela possa refletir as mudanças e aprimoramentos que foram realizados no projeto.
+
+A documentação também deve apresentar as evidências que os requisitos funcionais e não funcionais foram atendidos. Além disso, espera-se que eventuais demandas para executar o projeto ou partes dele, como programas em Python ou a própria documentação localmente, também constem na documentação e no *README* do repositório.
+
+É muito importante que a documentação também apresente as mídias do projeto. Vídeos de demonstração e as apresentações das sprints devem estar refletidos nela.
 
 ### 2.1 Padrão de entrega
 
