@@ -13,6 +13,6 @@ Encontrou algum erro ou alguma coisa que possa melhorar no material? `bug🐞`? 
 
 Está semana teremos os seguintes encontros:
 
-- [Encontro de Computação](/docs/Material/Semana-07/71-instrucao71.md): Nono encontro de computação.
+- [Encontro de Computação](/docs/Material/Semana-07/71-orientacao71.md): Décimo encontro de computação.
 - [Encontro de Computação](#): Oitavo encontro de computação.
-- [Encontro de Orientação](/docs/Material/Semana-07/75-orientacao75.md): Décimo encontro de orientação.
+- [Encontro de Orientação](/docs/Material/Semana-07/75-orientacao75.md): Décimo-primeiro encontro de orientação.
