@@ -31,13 +31,13 @@ Esse material NÃO substitui de forma alguma o uso da Adalove. Você DEVE entrar
 
 :::
 
-<!-- <Tabs>
+<Tabs>
   <TabItem value="autoestudos-obrigatorios" label="📘 Autoestudos Obrigatórios" default>
      
     <details> 
-        <summary mdxType="summary"> Python TinyDB: base de dados em arquivos JSON</summary>
+        <summary mdxType="summary"> Desenvolvimento de Backend, API e Templates de Frontend com Python</summary>
 
-        - https://www.youtube.com/watch?v=99Vm0c9eNOA
+        - https://www.youtube.com/watch?v=-qWySnuoaTM
     </details> 
     
   </TabItem>
@@ -48,17 +48,18 @@ Esse material NÃO substitui de forma alguma o uso da Adalove. Você DEVE entrar
   </TabItem>
   <TabItem value="autoestudos-adicionais" label="📓 Autoestudos Adicionais">
     
-    <details> 
-        <summary mdxType="summary">	Lean Inception em 15 Minutos | 📎 Zup Clipes ✂️</summary>
-
-        - https://www.youtube.com/watch?v=8BI6jFwmVPA
-    </details> 
-
+        <img class="image-intro" src={useBaseUrl("/img/memes/mash_celebrando.gif")} style={{ display: 'block', marginLeft: 'auto', maxHeight: '40vh', marginRight: 'auto' }}/>
+    
   </TabItem>
-</Tabs> -->
+</Tabs>
 
-<img src="https://i.redd.it/q0dd3k02unqb1.gif" alt="Boot process" style={{ display: 'block', marginLeft: 'auto', maxHeight: '30vh', marginRight: 'auto' }} />
 
 ## 4. Material de Aula
 
-<img src="https://i.redd.it/q0dd3k02unqb1.gif" alt="Boot process" style={{ display: 'block', marginLeft: 'auto', maxHeight: '30vh', marginRight: 'auto' }} />
+:::danger[CUIDADO COM O TEMPO DE DESENVOLVIMENTO]
+
+Pessoal cuidado com a quantidade de tarefas que devem ser desenvolvidas ao longo desta sprint.
+Vocês tem bastante coisa para desenvolver e o tempo é curto.
+Façam um balanceamento muito fino das tarefas que devem ser desenvolvidas ao longo desta sprint e façam este acompanhamento ao longo das dailys.
+
+:::
