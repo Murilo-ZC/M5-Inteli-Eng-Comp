@@ -8,7 +8,7 @@ Para esta entrega é esperada a apresentação de um protótipo em alta fidelida
 
 ### 1.1 Padrão de entrega
 
-Para informações detalhadas das requisições deste artefato, acesse: [link][https://drive.google.com/file/d/10v1eyResfv_89G39XV8kjJA25ZtnLyW9/view?usp=sharing] 
+Para informações detalhadas das requisições deste artefato, acesse: [link](https://drive.google.com/file/d/10v1eyResfv_89G39XV8kjJA25ZtnLyW9/view?usp=sharing)
 
 ### 1.2 Padrão de qualidade
 
