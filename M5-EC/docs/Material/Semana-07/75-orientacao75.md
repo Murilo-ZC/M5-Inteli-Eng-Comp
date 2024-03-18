@@ -32,15 +32,21 @@ Esse material NÃO substitui de forma alguma o uso da Adalove. Você DEVE entrar
 
 :::
 
-<!-- <Tabs>
+<Tabs>
   <TabItem value="autoestudos-obrigatorios" label="📘 Autoestudos Obrigatórios" default>
      
     <details> 
-        <summary mdxType="summary"> Python TinyDB: base de dados em arquivos JSON</summary>
+        <summary mdxType="summary"> How to Create an Instant Search Bar With Flask and HTMX</summary>
 
-        - https://www.youtube.com/watch?v=99Vm0c9eNOA
+        - https://www.youtube.com/watch?v=PWEl1ysbPAY
     </details> 
     
+    <details> 
+        <summary mdxType="summary"> HTMX - Clean, Dynamic HTML Pages - Talk Python to Me Ep.321</summary>
+
+        - https://www.youtube.com/watch?v=4wjqsPtj2QY
+    </details> 
+
   </TabItem>
   <TabItem value="autoestudos-opcionais" label="📔 Autoestudos Opcionais">
      
@@ -50,15 +56,30 @@ Esse material NÃO substitui de forma alguma o uso da Adalove. Você DEVE entrar
   <TabItem value="autoestudos-adicionais" label="📓 Autoestudos Adicionais">
     
     <details> 
-        <summary mdxType="summary">	Lean Inception em 15 Minutos | 📎 Zup Clipes ✂️</summary>
-
-        - https://www.youtube.com/watch?v=8BI6jFwmVPA
+        <summary mdxType="summary">	FULL Introduction To HTMX Using Golang</summary>
+        Foquem na etapa da HTMX, não no Golang. Ele pode ser substituído pelo Flask.
+        - https://www.youtube.com/watch?v=x7v6SNIgJpE
+    </details> 
+    <details> 
+        <summary mdxType="summary">	htmx in 100 seconds</summary>
+        - https://www.youtube.com/watch?v=r-GSGH2RxJs
+    </details> 
+    <details> 
+        <summary mdxType="summary">	HTMX for Impatient Devs</summary>
+        - https://www.youtube.com/watch?v=TT7SV-bAZyA
+    </details> 
+    <details> 
+        <summary mdxType="summary">	HTMX Crash Course | Dynamic Pages Without Writing Any JavaScript</summary>
+        - https://www.youtube.com/watch?v=0UvA7zvwsmg
+    </details> 
+    <details> 
+        <summary mdxType="summary">	The Most Important Lesson From HTMX</summary>
+        - https://www.youtube.com/watch?v=f2wYvIVWR6M
     </details> 
 
   </TabItem>
-</Tabs> -->
+</Tabs>
 
-<img src="https://i.redd.it/q0dd3k02unqb1.gif" alt="Boot process" style={{ display: 'block', marginLeft: 'auto', maxHeight: '30vh', marginRight: 'auto' }} />
 
 ## 4. Material de Aula
 
