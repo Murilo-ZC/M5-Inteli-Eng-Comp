@@ -61,5 +61,8 @@ Esse material NÃO substitui de forma alguma o uso da Adalove. Você DEVE entrar
 Pessoal cuidado com a quantidade de tarefas que devem ser desenvolvidas ao longo desta sprint.
 Vocês tem bastante coisa para desenvolver e o tempo é curto.
 Façam um balanceamento muito fino das tarefas que devem ser desenvolvidas ao longo desta sprint e façam este acompanhamento ao longo das dailys.
+O vídeo a seguir traz o processo de planejamento de um freelancer para o desenvolvimento de um sistema de gerenciamento de tarefas. Acho que ele pode ser útil para vocês, em especial para o planejamento de tarefas.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/7ApK93G2kSI?si=RI337vc2kPmBkpFu" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 :::
