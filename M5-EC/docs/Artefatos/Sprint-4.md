@@ -63,7 +63,7 @@ Ela deve conter a descrição e documentação dos demais artefatos, bem como ap
 
 Ela deve estar disponível no GitHub Pages da equipe e deve seguir os padrões definidos na orientação. Espera-se também neste artefato que os estudantes construam o pipeline de automação do GitHub para que a documentação construída com o Docusaurus possa ser visualizada no GitHub Pages do repositório da equipe. 
 
-### Padrão de qualidade:
+### 3.2 Padrão de qualidade
 
 1. A documentação traz os passos necessários para executar a versão atual da sprint (até 3.0 pontos);
 2. A documentação contém todos os arquivos de mídia utilizados pela equipe (apresentações e vídeos) (até 2.0 pontos);
