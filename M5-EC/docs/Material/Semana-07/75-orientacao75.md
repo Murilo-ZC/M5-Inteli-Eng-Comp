@@ -110,6 +110,10 @@ Pessoal aqui vou deixar algum material de apoio que eu recomendo ***FORTEMENTE**
         - https://www.youtube.com/watch?v=LBzZLzu2GKo
 </details> 
 
+Pessoal esse vídeo aqui é bem longo, mas ele traz uma abordagem bem interessante desde o Figma, implementação do HTML e o desenvolvimento do CSS 💻.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Lx_YsoMgP40?si=0DblQixY7pvYPOsm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
 :::
 
 <img src="https://i.redd.it/q0dd3k02unqb1.gif" alt="Boot process" style={{ display: 'block', marginLeft: 'auto', maxHeight: '30vh', marginRight: 'auto' }} />
