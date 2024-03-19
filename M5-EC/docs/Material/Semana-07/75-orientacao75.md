@@ -83,4 +83,33 @@ Esse material NÃO substitui de forma alguma o uso da Adalove. Você DEVE entrar
 
 ## 4. Material de Aula
 
+Vamos trabalhar com o desenvolvimento de interfaces com o usuário utilizando HTMX e Flask. 
+
+:::tip[Material de Apoio]
+
+Pessoal aqui vou deixar algum material de apoio que eu recomendo ***FORTEMENTE*** que vocês leiam, em especial se vocês tiverem alguma dificuldade com o conteúdo de HTML e CSS.
+
+<details> 
+    <summary mdxType="summary">	HTML and CSS for Python Developers</summary>
+        - https://realpython.com/html-css-python/
+</details> 
+<details> 
+    <summary mdxType="summary">	Getting started with CSS</summary>
+        - https://developer.mozilla.org/en-US/docs/Learn/CSS/First_steps/Getting_started
+</details> 
+<details> 
+    <summary mdxType="summary">	Learn CSS in 5 minutes - A tutorial for beginners</summary>
+        - https://www.freecodecamp.org/news/get-started-with-css-in-5-minutes-e0804813fc3e/
+</details> 
+<details> 
+    <summary mdxType="summary">	Bulma: the modern CSS framework that just works.</summary>
+        - https://bulma.io
+</details> 
+<details> 
+    <summary mdxType="summary">	Bulma CSS Framework - complete tutorial</summary>
+        - https://www.youtube.com/watch?v=LBzZLzu2GKo
+</details> 
+
+:::
+
 <img src="https://i.redd.it/q0dd3k02unqb1.gif" alt="Boot process" style={{ display: 'block', marginLeft: 'auto', maxHeight: '30vh', marginRight: 'auto' }} />
