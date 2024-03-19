@@ -19,7 +19,7 @@ Criar esquemáticos de qualidade é similar à criação de um bom código: sign
 criar esquemáticos que outras pessoas conseguem ler e compreender com
 facilidade. Também significa que é algo completamente opcional (se você for uma
 péssima pessoa) e, muitas vezes, mais difícil de fazer do que criar um código
-ou esquemático puramente funcional. Para essa finalidade, separei algumas dicas
-que podem ser úteis quando estiver criando os seus esquemáticos.
+ou esquemático puramente funcional. Para essa finalidade, separei um material
+que entra em detalhes sobre como fazer um bom esquemático:
 
-## 1. 
+[Creating nice schematics](https://www.reddit.com/r/PrintedCircuitBoard/wiki/schematic_review_tips/)
