@@ -26,6 +26,7 @@ Pessoal vou adicionar algumas informaçoes sobre a atividade ponderada: `Ativida
 Pessoal a atividade fica com prazo de entrega até o dia 31/03/2024, as 23h59.
 A entrega deve toda ser realizada pelo Github, logo, o link para o repositório do projeto deve ser enviado para no card do Adalove.
 Commits fora do prazo nao serao considerados.
+No README do repositório, DEVE EXISTIR O LINK PARA UM VÍDEO de demonstraçao do projeto funcionando. Esse video pode ser carregado em plataformas como o Youtube, deixar ele como nao listado, se preferir.
 
 :::danger[Faltam `ã`]
 
