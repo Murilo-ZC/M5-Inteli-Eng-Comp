@@ -46,41 +46,41 @@ O banco de dados utilizado deve ser o TinyDB. Entende-se aqui por log do sistema
 
 Como barema, espera-se encontrar: 
 
-1. Backend construído em Flask conectado ao banco de dados TinyDB (até 2.0 pontos); 
+> 1. Backend construído em Flask conectado ao banco de dados TinyDB (até 2.0 pontos); 
 
 Onde:
 
-[0.0 até 1.0] - Foi construído um backend em Flask, mas não está conectado ao banco de dados TinyDB. 
-[1.0 até 1.5] - Foi construído um backend em Flask e está conectado ao banco de dados TinyDB, mas nao implementa o CRUD complemente, mesmo que todas as rotas do CRUD nao sejam utilizadas.
-[1.5 até 2.0] - Foi construído um backend em Flask e está conectado ao banco de dados TinyDB, além disso, o CRUD está complementamente implementado.
+- [0.0 até 1.0] - Foi construído um backend em Flask, mas não está conectado ao banco de dados TinyDB. 
+- [1.0 até 1.5] - Foi construído um backend em Flask e está conectado ao banco de dados TinyDB, mas nao implementa o CRUD complemente, mesmo que todas as rotas do CRUD nao sejam utilizadas.
+- [1.5 até 2.0] - Foi construído um backend em Flask e está conectado ao banco de dados TinyDB, além disso, o CRUD está complementamente implementado.
 
 
-2. Frontend construído com HTMX (até 2.0 pontos); 
-
-Onde:
-
-[0.0 até 1.0] - Foi construído um frontend com HTMX, mas não está conectado ao backend. 
-[1.0 até 1.5] - Foi construído um frontend com HTMX e está conectado ao backend, mas não implementa as funcionalidades corretamente. 
-[1.5 até 2.0] - Foi construído um frontend com HTMX e está conectado ao backend, além disso, implementa as funcionalidades corretamente.
-
-3. O sistema verifica se o robô está conectado e exibe as interfaces corretamente (até 2.0 pontos); 
+> 2. Frontend construído com HTMX (até 2.0 pontos); 
 
 Onde:
-    
-[0.0 até 1.0] - O sistema não verifica se o robô está conectado e não exibe as interfaces corretamente. 
-[1.0 até 1.5] - O sistema verifica se o robô está conectado, mas não exibe as interfaces corretamente. 
-[1.5 até 2.0] - O sistema verifica se o robô está conectado e exibe as interfaces corretamente.
 
-4. Existe uma página funcional de controle do robô (até 2.0 pontos); 
+- [0.0 até 1.0] - Foi construído um frontend com HTMX, mas não está conectado ao backend. 
+- [1.0 até 1.5] - Foi construído um frontend com HTMX e está conectado ao backend, mas não implementa as funcionalidades corretamente. 
+- [1.5 até 2.0] - Foi construído um frontend com HTMX e está conectado ao backend, além disso, implementa as funcionalidades corretamente.
+
+> 3. O sistema verifica se o robô está conectado e exibe as interfaces corretamente (até 2.0 pontos); 
 
 Onde:
     
-[0.0 até 1.5] - Existe uma página de controle do robô, mas ela não é totalmente funcional. 
-[1.5 até 2.0] - Existe uma página de controle do robô e ela é funcional.
+- [0.0 até 1.0] - O sistema não verifica se o robô está conectado e não exibe as interfaces corretamente. 
+- [1.0 até 1.5] - O sistema verifica se o robô está conectado, mas não exibe as interfaces corretamente. 
+- [1.5 até 2.0] - O sistema verifica se o robô está conectado e exibe as interfaces corretamente.
 
-5. Existe uma página funcional de exibição de logs do sistema (até 2.0 pontos).
+> 4. Existe uma página funcional de controle do robô (até 2.0 pontos); 
+
+Onde:
+    
+- [0.0 até 1.5] - Existe uma página de controle do robô, mas ela não é totalmente funcional. 
+- [1.5 até 2.0] - Existe uma página de controle do robô e ela é funcional.
+
+> 5. Existe uma página funcional de exibição de logs do sistema (até 2.0 pontos).
 
 Onde:
 
-[0.0 até 1.5] - Existe uma página de exibição de logs do sistema, mas ela não é está integrada corretamente ao sistema. 
-[1.5 até 2.0] - Existe uma página de exibição de logs do sistema e ela é funcional.
+- [0.0 até 1.5] - Existe uma página de exibição de logs do sistema, mas ela não é está integrada corretamente ao sistema. 
+- [1.5 até 2.0] - Existe uma página de exibição de logs do sistema e ela é funcional.
