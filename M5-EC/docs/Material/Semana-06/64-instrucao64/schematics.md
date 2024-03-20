@@ -15,20 +15,11 @@ Esse é um autoestudo **obrigatório**
 
 # Criando esquemáticos de qualidade
 
-<Admonition type="info" title="Autoestudo">
+Criar esquemáticos de qualidade é similar à criação de um bom código: significa
+criar esquemáticos que outras pessoas conseguem ler e compreender com
+facilidade. Também significa que é algo completamente opcional (se você for uma
+péssima pessoa) e, muitas vezes, mais difícil de fazer do que criar um código
+ou esquemático puramente funcional. Para essa finalidade, separei um material
+que entra em detalhes sobre como fazer um bom esquemático:
 
-<div style={{ textAlign: 'center' }}>
-    <iframe 
-        style={{
-            display: 'block',
-            margin: 'auto',
-            width: '100%',
-            height: '50vh',
-        }}
-        src="https://www.youtube.com/embed/3FGNw28xBr0" 
-        frameborder="0" 
-        allowFullScreen>
-    </iframe>
-</div>
-
-</Admonition>
+[Creating nice schematics](https://www.reddit.com/r/PrintedCircuitBoard/wiki/schematic_review_tips/)
