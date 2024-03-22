@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/htmx.org@1.9.11" integrity="sha384-0gxUXCCR8yv9FM2b+U3FDbsKthCI66oH5IA9fHppQq9DDMHuMauqq1ZHBpJxQ0J0" crossorigin="anonymous"></script>
+    <title>Requisições HTTP</title>
+</head>
+<body>
+    <!-- O comportamento default é realizar requisições quando um elemento for clicado -->
+    <button type="button" hx-get="http://localhost:8000/">
+        Fazendo Requisição GET
+    </button>
+
+    <!-- Configurando o atributo hx-trigger, é possível determinar o evento que será ouvido. São os mesmos de JS em lowercase. -->
+    <!-- CUIDADO: Desta forma, diversas requisição serão realizadas quando o mouse entrar na região da div -->
+    <div hx-get="http://localhost:8000/" hx-trigger="mouseenter">
+        Realizando a requisição quando o mouse entrar!
+    </div>
+
+    <!-- Podemos aplicar modificadores no trigger de um elemento -->
+    <!-- Os modificadores de trigger auxiliam no controle do evento, alterando seu comportamento -->
+    <!-- O modificador once faz com que a requisição seja realizada apenas uma vez -->
+    <!-- Mesmo que o evento ocorra novamente, ele não vai ser lançado novamente -->
+    <div hx-get="http://localhost:8000/" hx-trigger="mouseenter once">
+        Modificador de Trigger
+    </div>
+
+    <!-- Modifica o evento de mudança de um input -->
+    <input type="text" hx-get="http://localhost:8000/" hx-trigger="change delay:3s">
+
+    <!-- O Delay pode ser utilizado em outros elementos também -->
+    <div hx-get="http://localhost:8000/" hx-trigger="click delay:3s from:#requestTrigger">Teste com delay</div>
+
+    <!-- É possível configurar outro elemento para realizar o disparo de um trigger -->
+    <!-- Por exemplo, o botão a seguir dispara o request do elemento anterior -->
+    <!-- Para esse comportamento utilizando o modificador from do HTMX -->
+    <button type="button" id="requestTrigger">
+        Disparar requisição de outro elemento na página
+    </button>
+    
+</body>
+</html>

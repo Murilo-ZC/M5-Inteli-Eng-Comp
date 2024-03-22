@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Polling de Dados</title>
+    <script src="https://unpkg.com/htmx.org@1.9.11" integrity="sha384-0gxUXCCR8yv9FM2b+U3FDbsKthCI66oH5IA9fHppQq9DDMHuMauqq1ZHBpJxQ0J0" crossorigin="anonymous"></script>
+</head>
+<body>
+    <!-- Vamos buscar conteúdo do servidor a cada 2 segundos -->
+    <!-- O conteúdo buscado no servidor será adicionado -->
+    <div hx-get="http://localhost:8000/numero"
+         hx-target="#resposta"
+         hx-trigger="every 2s"
+         hx-swap="beforeend">
+        Recebendo dados do servidor a cada 2 segundos:
+    </div>
+
+    <div id="resposta">
+
+    </div>
+</body>
+</html>

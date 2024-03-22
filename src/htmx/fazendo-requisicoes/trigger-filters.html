@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/htmx.org@1.9.11" integrity="sha384-0gxUXCCR8yv9FM2b+U3FDbsKthCI66oH5IA9fHppQq9DDMHuMauqq1ZHBpJxQ0J0" crossorigin="anonymous"></script>
+    <title>Filtros de Trigger</title>
+</head>
+<body>
+    <!-- Os filtros colocam um comportamento condicional para que um evento possa ser realizado -->
+    <!-- Esse comportamento é realizado adicionando [] na frente do evento de trigger sendo configurado. -->
+    <!-- Essa condição precisa ser verdadeira para que o evento possa acontecer. -->
+    <!-- Quando a condição é verdade, o evento é realizado quando o trigger é disparado -->
+    <!-- Pode ser utilizado com uma função também -->
+    <div hx-post="http://localhost:8000/ola" hx-trigger="click[3+1==4]">
+        Trigger Condicional
+    </div>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enviando Dados</title>
+    <script src="https://unpkg.com/htmx.org@1.9.11" integrity="sha384-0gxUXCCR8yv9FM2b+U3FDbsKthCI66oH5IA9fHppQq9DDMHuMauqq1ZHBpJxQ0J0" crossorigin="anonymous"></script>
+    <!-- Adiciona a extensão para enviar JSON -->
+    <script src="https://unpkg.com/htmx.org@1.9.11/dist/ext/json-enc.js"></script>
+</head>
+<body>
+    <!-- Enviando dados com uma requisição GET e com uma requisição POST -->
+    <!-- Cria um formulário para realizar o envio dos dados com POST -->
+    <!-- Na implementação abaixo, os dados são enviados como form-data -->
+    <form>
+        <input type="text" name="nome" placeholder="Nome">
+        <input type="email" name="email" placeholder="Email">
+        <button type="button" hx-post="http://localhost:8000/recebe-dados"
+            hx-trigger="click" 
+            hx-target="#resultado-post"
+            hx-swap="beforeend">
+            Enviar
+        </button>
+    </form>
+
+    <div id="resultado-post">
+        Dados Recebido:
+    </div>
+
+    <!-- É possível enviar os dados sem estar em um form. -->
+    <!-- Vamos utilizar um pouco de JS para pegar os valores -->
+    <!-- Diversos valores podem ser enviador utilizando o hx-include -->
+    <input type="text" name="nome" placeholder="Nome" id="meuNome">
+    <input type="email" name="email" placeholder="Email" id="meuEmail">
+    <button type="button" hx-post="http://localhost:8000/recebe-dados"
+        hx-trigger="click" 
+        hx-target="#resultado-post"
+        hx-swap="beforeend"
+        hx-include="#meuNome, #meuEmail">
+        Enviar 2
+    </button>
+
+    <!-- Apenas para separar os elementos -->
+    <br>
+
+    <!-- É possível também enviar os dados como um JSON. -->
+    <!-- É possível enviar os dados utilizando o hx-vals -->
+    <input type="text" name="nome" placeholder="Nome" id="meuNome2">
+    <input type="email" name="email" placeholder="Email" id="meuEmail2">
+    <button type="button" hx-post="http://localhost:8000/recebe-dados-json"
+        hx-trigger="click" 
+        hx-target="#resultado-post"
+        hx-swap="beforeend"
+        hx-ext="json-enc"
+        hx-vals='js:{"email":getEmail(), "nome":getNome()}'>
+        Enviar 3
+    </button>
+    <script>
+        function getEmail() {
+            return document.getElementById('meuEmail2').value;
+        }
+
+        function getNome() {
+            return document.getElementById('meuNome2').value;
+        }
+    </script>
+
+    <br>
+    <br>
+    <!-- Reimplementação do Enviar3 sem as funções -->
+    <input type="text" name="nome" placeholder="Nome" id="meuNome-ext">
+    <input type="email" name="email" placeholder="Email" id="meuEmail-ext">
+    <button type="button" hx-post="http://localhost:8000/recebe-dados-json"
+        hx-trigger="click" 
+        hx-target="#resultado-post"
+        hx-swap="beforeend"
+        hx-ext="json-enc"
+        hx-include="#meuNome-ext, #meuEmail-ext">
+        Enviar Reimplementado
+    </button>
+</body>
+</html>

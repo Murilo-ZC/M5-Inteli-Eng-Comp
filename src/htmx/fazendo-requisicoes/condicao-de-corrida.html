@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Condições de Corrida</title>
+    <script src="https://unpkg.com/htmx.org@1.9.11" integrity="sha384-0gxUXCCR8yv9FM2b+U3FDbsKthCI66oH5IA9fHppQq9DDMHuMauqq1ZHBpJxQ0J0" crossorigin="anonymous"></script>
+</head>
+<body>
+    <!-- O objetivo deste script é apresentar como ligar com condições de corrida entre os elementos -->
+    <!-- Por default, como o segundo botão não tem delay na sua resposta -->
+    <button id="primeiroBotao" hx-get="http://localhost:8000/hora-delay" hx-target="#resposta1" hx-trigger="click">
+        Primeiro Botão
+    </button>
+    <!-- Utilizando o hx-sync, é possível sincronizar as requisições. -->
+    <!--  -->
+    <button id="segundoBotao" 
+        hx-get="http://localhost:8000/" 
+        hx-target="#resposta2"
+        hx-sync="#primeiroBotao:drop">
+        Segundo Botão
+    </button>
+    <div id="resposta1">
+
+    </div>
+    <div id="resposta2">
+    
+    </div>
+</body>
+</html>

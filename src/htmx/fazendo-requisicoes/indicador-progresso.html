@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indicador de Progresso</title>
+    <script src="https://unpkg.com/htmx.org@1.9.11" integrity="sha384-0gxUXCCR8yv9FM2b+U3FDbsKthCI66oH5IA9fHppQq9DDMHuMauqq1ZHBpJxQ0J0" crossorigin="anonymous"></script>
+</head>
+<body>
+    <!-- O indicador de progresso pode ser adicionado a diversas ações. -->
+    <!-- Basta adicionar a classe "htmx-indicator" no elemento que deve ser exibido enquanto a ação estiver ocorrendo -->
+    <!-- O indicador de progresso é exibido enquanto a requisição estiver sendo realizada -->
+    <!-- IMPORTANTE: Essa implementação faz com que o mostrador apenas seja exibido uma vez, depois ele vai ser removido do DOM. -->
+    <div hx-get="http://localhost:8000/hora-delay"
+         hx-trigger="click">
+        Indicador de progresso!
+        <p class="htmx-indicator">
+            Recebendo dados...
+        </p>
+    </div>
+
+    <!-- O indicador de progresso pode ser adicionado a diversas ações. -->
+    <!-- Devemos definir o hx-indicator do elemento que vai ser carregado enquanto a ação estiver acontecendo -->
+    <div hx-get="http://localhost:8000/hora-delay"
+         hx-trigger="click"
+         hx-indicator="#loading-element">
+        Indicador de Progresso Com Implementação Externa!
+    </div>
+    <p id="loading-element" class="htmx-indicator">
+        Carregando...
+    </p>
+</body>
+</html>

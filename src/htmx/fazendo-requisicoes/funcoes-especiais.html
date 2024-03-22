@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/htmx.org@1.9.11" integrity="sha384-0gxUXCCR8yv9FM2b+U3FDbsKthCI66oH5IA9fHppQq9DDMHuMauqq1ZHBpJxQ0J0" crossorigin="anonymous"></script>
+    <title>Eventos Especiais</title>
+</head>
+<body>
+    <!-- Este evento especial é acionado quando a página é carregada -->
+    <!-- O trigger "load" é carregado quando a página é carrega. Ele não depende da interação do usuário com a página -->
+    <div hx-get="http://localhost:8000/" 
+         hx-target="#respostaLoadPagina"
+         hx-trigger="load">
+        Evento de Página sendo Carregada, na Div aqui de baixo!
+    </div>
+
+    <div id="respostaLoadPagina"> Resposta da Página Carrega</div>
+
+    <!-- Evento disparado quando um elemento é apresentado no viewport -->
+    <div hx-get="http://localhost:8000/" 
+         hx-trigger="revealed"
+         style="margin-top: 1400px;">
+        Carregado quando aparece inteiro
+    </div>
+
+    <!-- É possível também configurar o disparo evento para apenas uma porção pequena do elemento já estiver visível na tela -->
+    <!-- A porcentagem que deve estar vísivel na tela para realizar a requisição vai variar de acordo com o valor definido no atributo threshold. Por padrão é 0.0, na primeira aparição parcial ele já realiza a requisição. -->
+    <div hx-get="http://localhost:8000/" 
+         hx-trigger="intersect threshold:0.2"
+         style="margin-top: 1400px;">
+        Carregado quando aparece uma parte
+    </div>
+</body>
+</html>
