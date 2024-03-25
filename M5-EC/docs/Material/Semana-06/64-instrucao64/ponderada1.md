@@ -27,14 +27,6 @@ prototipada utilizando as ferramentas disponíveis no laboratório da
 instituição. Espera-se que os estudantes possam compreender o processo de
 construção de placas auxiliares de circuito eletrônico. 
 
-Como barema, espera-se:
-1. Diagrama esquemático da placa de circuito eletrônico (até 2.0 pontos); 2.
-Diagrama de prototipação da placa de circuito eletrônico (até 2.0 pontos); 3.
-Video com demonstração de funcinamento da placa em protoboard (até 2.0 pontos);
-4. Placa construída e finalizada (até 2.0 pontos); 5. Vídeo com demonstração de
-funcionamento da placa prototipada (até 2.0 pontos). A entrega deve ser
-realizada utilizando o GitHub além da demonstração física da placa.
-
 ## 2. Padrão de entrega
 
 :::warning
