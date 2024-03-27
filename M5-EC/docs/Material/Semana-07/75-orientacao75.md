@@ -266,7 +266,7 @@ Ao configurar as políticas CORS em um servidor web, você pode especificar quai
 
 :::
 
-Agora nossa aplicação vai conseguir realizar a requisição para o servidor. Vamos agora avaliar algumas outras requisições que podemos fazer utilizando o HTMX em nossa aplicação.
+Agora nossa aplicação vai conseguir realizar a requisição para o servidor. Vamos agora avaliar algumas outras requisições que podemos fazer utilizando o HTMX em nossa aplicação. Pessoal, lembrando que mais detalhes sobre a utilização do HTMX deve ser consultado na documentação oficial do projeto (HTMX)[https://htmx.org/].
 
 ### 4.3 Estudando o HTMX
 
@@ -375,3 +375,54 @@ Vamos avaliar o código anterior:
 - `hx-trigger="change delay:3s"`: estamos definindo que a requisição vai ser feita quando o valor do input for alterado. Isso é um evento especial que depende da interação do usuário com a página. O modificador `delay:3s` faz com que a requisição seja realizada após 3 segundos.
 - `hx-trigger="click delay:3s from:#requestTrigger"`: estamos definindo que a requisição vai ser feita quando o elemento for clicado. Isso é um evento especial que depende da interação do usuário com a página. O modificador `delay:3s` faz com que a requisição seja realizada após 3 segundos. O modificador `from:#requestTrigger` faz com que o evento seja disparado pelo elemento com o id `requestTrigger`.
 
+#### 4.3.3 Indicador de Progresso
+
+Vamos avaliar o código a seguir:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indicador de Progresso</title>
+    <script src="https://unpkg.com/htmx.org@1.9.11" integrity="sha384-0gxUXCCR8yv9FM2b+U3FDbsKthCI66oH5IA9fHppQq9DDMHuMauqq1ZHBpJxQ0J0" crossorigin="anonymous"></script>
+</head>
+<body>
+    <!-- O indicador de progresso pode ser adicionado a diversas ações. -->
+    <!-- Basta adicionar a classe "htmx-indicator" no elemento que deve ser exibido enquanto a ação estiver ocorrendo -->
+    <!-- O indicador de progresso é exibido enquanto a requisição estiver sendo realizada -->
+    <!-- IMPORTANTE: Essa implementação faz com que o mostrador apenas seja exibido uma vez, depois ele vai ser removido do DOM. -->
+    <div hx-get="http://localhost:8000/hora-delay"
+         hx-trigger="click">
+        Indicador de progresso!
+        <p class="htmx-indicator">
+            Recebendo dados...
+        </p>
+    </div>
+
+    <!-- O indicador de progresso pode ser adicionado a diversas ações. -->
+    <!-- Devemos definir o hx-indicator do elemento que vai ser carregado enquanto a ação estiver acontecendo -->
+    <div hx-get="http://localhost:8000/hora-delay"
+         hx-trigger="click"
+         hx-indicator="#loading-element">
+        Indicador de Progresso Com Implementação Externa!
+    </div>
+    <p id="loading-element" class="htmx-indicator">
+        Carregando...
+    </p>
+</body>
+</html>
+```
+
+Vamos avaliar o código anterior:
+
+- `class="htmx-indicator"`: estamos definindo que o elemento vai ser exibido enquanto a requisição estiver sendo realizada. Isso é um indicador de progresso que depende da interação do usuário com a página.
+- `hx-indicator="#loading-element"`: estamos definindo que o elemento com o id `loading-element` vai ser exibido enquanto a requisição estiver sendo realizada. Isso é um indicador de progresso que depende da interação do usuário com a página.
+
+#### 4.3.4 Configurando Polling de Dados com o HTMX
+
+O objetivo deste código é trabalhar com o evento de `polling` de dados. Vamos avaliar o código a seguir:
+
+```html
+```
