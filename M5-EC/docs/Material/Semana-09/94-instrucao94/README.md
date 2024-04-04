@@ -10,7 +10,11 @@ import TabItem from '@theme/TabItem';
 # Introdução à redes de computadores
 
 ## 1. Roteiro 
-TBD
+1. Comunicação entre computadores
+2. Modelo OSI
+3. Modelo TCP/IP
+4. UDP vs TCP
+5. Redes Industriais
 
 ## 2. Slides 
 
@@ -22,7 +26,7 @@ TBD
             width: '100%',
             height: '50vh',
         }}
-        src="https://slides.com/rodrigomangoninicola/m5-ec-encontros/embed#/encontro10"
+        src="https://slides.com/rodrigomangoninicola/m5-ec-encontros/embed#/encontro9"
         frameborder="0" 
         allowFullScreen>
     </iframe>
