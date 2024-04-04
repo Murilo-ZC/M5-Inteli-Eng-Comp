@@ -10,7 +10,11 @@ import TabItem from '@theme/TabItem';
 # Introdução à redes de computadores
 
 ## 1. Roteiro 
-TBD
+1. Comunicação entre computadores
+2. Modelo OSI
+3. Modelo TCP/IP
+4. UDP vs TCP
+5. Redes Industriais
 
 ## 2. Slides 
 
