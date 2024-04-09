@@ -13,12 +13,12 @@ Finalização do protótipo da solução.
 ## 1. Objetivos
 
 - Neste encontro os alunos serão acompanhados no refinamento dos artefatos finais da solução proposta. O objetivo é auxiliar os alunos no processo de entrega final do produto.
+- ***NOVO:*** Aplicar o teste SUS para as interfaces do protótipo.
 
 ## 2. Slides do Encontro
 
-<!-- <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vSG6q7EZA2isyGW3V_1pXMM7IJquzznhrFYcQA0ygtI8Nfv7v7SvdBN_jbO2XuOBN3kg1zpmRzti5Om/embed?start=false&loop=false&delayms=3000" frameborder="0" width="75%" height="400" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true" style={{ display: 'block', marginLeft: 'auto', marginRight: 'auto' }}></iframe> -->
+<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vR3IlWSqrXC0X66z-Bkb_F12lLf4oIWGtVmOzAEyfu9jry2oCmvM7RoVcqEB4Z8hEKcM6pATI8k3Gu-/embed?start=false&loop=false&delayms=3000" frameborder="0" width="75%" height="400" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true" style={{ display: 'block', marginLeft: 'auto', marginRight: 'auto' }}></iframe>
 
-<img src="https://i.redd.it/q0dd3k02unqb1.gif" alt="Boot process" style={{ display: 'block', marginLeft: 'auto', maxHeight: '30vh', marginRight: 'auto' }} />
 
 ## 3. Material de Autoestudo
 
@@ -30,15 +30,34 @@ Esse material NÃO substitui de forma alguma o uso da Adalove. Você DEVE entrar
 
 :::
 
-<!-- <Tabs>
+<Tabs>
   <TabItem value="autoestudos-obrigatorios" label="📘 Autoestudos Obrigatórios" default>
      
     <details> 
-        <summary mdxType="summary"> Python TinyDB: base de dados em arquivos JSON</summary>
+        <summary mdxType="summary">User Testing vs Usability Testing</summary>
 
-        - https://www.youtube.com/watch?v=99Vm0c9eNOA
+        - https://youtu.be/r3j_dwMbLo0
+    </details> 
+
+    <details> 
+        <summary mdxType="summary">Constructing and Equipping a Lab</summary>
+
+        - https://www.usability.gov/get-involved/blog/2014/12/building-a-lab-series-constructing-and-equipping-a-lab.html
     </details> 
     
+    <details> 
+        <summary mdxType="summary">Traveling Usability Lab</summary>
+
+        - https://www.nngroup.com/articles/traveling-usability-lab/
+    </details> 
+
+
+    <details> 
+        <summary mdxType="summary">How to run moderated usability testing</summary>
+
+        - https://www.hotjar.com/usability-testing/process-examples/
+    </details> 
+
   </TabItem>
   <TabItem value="autoestudos-opcionais" label="📔 Autoestudos Opcionais">
      
@@ -47,17 +66,13 @@ Esse material NÃO substitui de forma alguma o uso da Adalove. Você DEVE entrar
   </TabItem>
   <TabItem value="autoestudos-adicionais" label="📓 Autoestudos Adicionais">
     
-    <details> 
-        <summary mdxType="summary">	Lean Inception em 15 Minutos | 📎 Zup Clipes ✂️</summary>
-
-        - https://www.youtube.com/watch?v=8BI6jFwmVPA
-    </details> 
+    <img class="image-intro" src={useBaseUrl("/img/memes/mash_celebrando.gif")} style={{ display: 'block', marginLeft: 'auto', maxHeight: '40vh', marginRight: 'auto' }}/>
 
   </TabItem>
-</Tabs> -->
+</Tabs>
 
-<img src="https://i.redd.it/q0dd3k02unqb1.gif" alt="Boot process" style={{ display: 'block', marginLeft: 'auto', maxHeight: '30vh', marginRight: 'auto' }} />
+
 
 ## 4. Material de Aula
 
-<img src="https://i.redd.it/q0dd3k02unqb1.gif" alt="Boot process" style={{ display: 'block', marginLeft: 'auto', maxHeight: '30vh', marginRight: 'auto' }} />
+<img src="https://media.tenor.com/KZlpSy57J_MAAAAM/mashle-gojo.gif" alt="Boot process" style={{ display: 'block', marginLeft: 'auto', maxHeight: '30vh', marginRight: 'auto' }} />
